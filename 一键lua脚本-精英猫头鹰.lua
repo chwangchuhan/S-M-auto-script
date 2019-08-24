@@ -8,7 +8,7 @@ common.simpleStart({
     planeId = 991,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {83100,99100,99101,99102,99103,99104,99105,99106,99107,99108,99109},
-    overtime = 30 --超时时间，/分钟
+    overtime = 30, --超时时间，/分钟
     endMapIds = {99107,99108,99109}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
@@ -55,20 +55,6 @@ common.simpleStart({
 	   -- 副本17
 	   "",
     },
-    -- 任务列表
-    -- 任务会在跳转到对应地图时执行，因此如mapId中未配置或者初始飞机不在任务地点则无法领取任务
-    -- 不同npc或不同地图的任务请配置多个task
-    tasks = {
-        {
-            mapId = nil,
-            npcId = nil,
-            taskIds = {nil},
-            planeId = nil,
-        }
-    },
-    onScriptEnd = function  () -- 副本3轮执行结束回调
-       
-    end,
     onScriptRound = function () -- 副本每次切换地图回调
         if (getmapid() == 83100) then
            ini_change("tobot_hit_range_max",250)

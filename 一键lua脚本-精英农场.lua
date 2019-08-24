@@ -54,5 +54,5 @@ common.simpleStart({
 	   "",
 	   -- ¸±±¾17
 	   "",
-    }
+	},
 })

@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S&M auto\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "圣域之塔",
-    mapCount = 2,
+    mapCount = 1,
     planeId = 1210,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {18400.0,69000.0,69001.0,69002.0,69003.0,69004.0,69005.0,69006.0,69007.0,69008.0,69009.0,69010.0,69011.0,69012.0,69013.0,69014.0,69015.0,69016.0,69017.0,69018.0},

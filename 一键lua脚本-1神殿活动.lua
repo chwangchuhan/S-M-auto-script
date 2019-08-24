@@ -1,7 +1,7 @@
 check = 1
 
 
-local common = dofile(path_scripts.."S&M auto\\lib\\common.lua")
+local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.shendianStart({
     mapName = '…ÒµÓ∆’Õ®',

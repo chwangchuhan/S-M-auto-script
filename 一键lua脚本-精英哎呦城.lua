@@ -63,6 +63,7 @@ common.simpleStart({
             sleep(2000)
 			if door_if(3000,1407)==0 then
 			speak("漏怪导致没开门，Lua强制结束")
+			plane(95201)
 			return true
 			end
         end

@@ -67,34 +67,49 @@ common.simpleStart({
 	   ini_change("find_ewai","机关-开启传送门;宝箱;攻击我开始副本;时间怪物;奇怪机关;奖励宝箱;掉落喜字隐身怪;掉落悲字隐身怪;神殿时间怪物;竹偶;高级宝箱;开始副本竹偶怪;纯洁钥匙;纯净宝箱;")
         end
 	if (getmapid() == 9302) then
-	   if mob_if("机关-开启传送门")==1 then
-	   speak("机关-开启传送门")
-	   ini_change("tobot_hit_range_max",1500)
-	   ini_change("tobot_hit_range_ignore",2000)
-	   sleep(100)
-	   end
-	   if mob_if("机关-开启传送门")==0 then
-	   ini_change("tobot_hit_range_max",150)
-	   ini_change("tobot_hit_range_ignore",400)
-	   sleep(100)
+		while(true)
+		do
+			sleep(100)
+			if mob_if("机关-开启传送门")==1 then
+			speak("机关-开启传送门")
+			ini_change("tobot_hit_range_max",1500)
+			ini_change("tobot_hit_range_ignore",2000)
+			end
+			if mob_if("机关-开启传送门")==0 then
+			ini_change("tobot_hit_range_max",250)
+			ini_change("tobot_hit_range_ignore",400)
+			break
+			end
 	   end
 	end
 	if (getmapid() == 9303) then
-	   if mob_if("机关-开启传送门")==1 then
-	   speak("机关-开启传送门")
-	   ini_change("tobot_hit_range_max",1500)
-	   ini_change("tobot_hit_range_ignore",2000)
-	   sleep(100)
-	   end
-	   if mob_if("机关-开启传送门")==0 then
-	   ini_change("tobot_hit_range_max",150)
-	   ini_change("tobot_hit_range_ignore",400)
-	   sleep(100)
-	   end
+		while(true)
+		do	
+			sleep(100)
+			if mob_if("机关-开启传送门")==1 then
+			speak("机关-开启传送门")
+			ini_change("tobot_hit_range_max",1500)
+			ini_change("tobot_hit_range_ignore",2000)
+			end
+			if mob_if("机关-开启传送门")==0 then
+			ini_change("tobot_hit_range_max",250)
+			ini_change("tobot_hit_range_ignore",400)
+			break
+			end
+		end
 	end
 	if (getmapid() == 9304) then
 	   ini_change("tobot_hit_range_max",250)
 	   ini_change("tobot_hit_range_ignore",400)
 	end
+	if (getmapid() == 9308) then
+			repeat 
+					if door_if(3065,1519) == 1 then 
+						bot_stop()--停止挂机--
+						sleep(2000)
+						plane(94801)
+					end
+			until (getmapid() ~= 9308)
+    end
     end
 })

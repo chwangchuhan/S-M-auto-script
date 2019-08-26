@@ -49,19 +49,14 @@ common.simpleStart({
 	   -- 地下通道4 14
 	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3331362C3935392CB2BBB1E42C",
 	   -- 第一实验室 15
-	   "BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",
+	   "",
 	   -- 第一实验室 16
-	   "BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",
+	   "",
 	   
 	   -- 副本17
 	   "",
 	},
 	onScriptRound = function () -- 副本每次切换地图回调
-		if (getmapid() == 34204) then
-			ini_change("tobot_giveitemif",0)
-			speak("已关闭捡完物品进门功能")
-			sleep(1000)
-        end
         if (getmapid() == 34003) then
 			ini_change("tobot_hit_range_top",400)
 			ini_change("tobot_hit_range_max",400)
@@ -94,15 +89,25 @@ common.simpleStart({
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",1200)
         end
-		if (getmapid() == 34014) then
-			ini_change("tobot_giveitemif",1)
-			speak("已开启捡完物品进门功能，为防止遗漏，请及时清理包裹")
+		if (getmapid() == 34014) then	
+			speak("为防止遗漏，请及时清理包裹")
 			sleep(1000)
+			repeat
+				if door_if(823,991)==1 then  --
+				sleep(2000)
+				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA")
+				end
+			until (door_if(823,991)==1)
         end
 		if (getmapid() == 34015) then
-			ini_change("tobot_giveitemif",1)
-			speak("已开启捡完物品进门功能，为防止遗漏，请及时清理包裹")
+			speak("为防止遗漏，请及时清理包裹")
 			sleep(1000)
+			repeat
+				if door_if(823,991)==1 then  --
+				sleep(2000)
+				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA")
+				end
+			until (door_if(823,991)==1)
         end
     end
 })

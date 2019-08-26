@@ -7,7 +7,7 @@ common.simpleStart({
     mapCount = 1,
     planeId = 265,
     -- 地图名称列表，需和mapIds一一对应
-    mapIds = {35402.0,34500,34501,34502,34503,34504,34505,34506,34507,34508,34509,34510,34511},
+    mapIds = {34403.0,34500,34501,34502,34503,34504,34505,34506,34507,34508,34509,34510,34511},
     overtime = 60, --超时时间，/分钟
     endMapIds = {34511}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
@@ -19,7 +19,7 @@ common.simpleStart({
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
     scripts = {
        -- 副本进门
-       "",
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313334332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323930302C313334332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323932302C313334332CB2BBB1E42C",
        -- 殿堂	1
        "D6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C33322C313037312CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C313135322C313433392CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C363336372C313433392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363238332C313433392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363330332C313433392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363332332C313433392CD7F3C5DC2C",
        -- 殿堂	2
@@ -56,9 +56,30 @@ common.simpleStart({
 	   "",
 	},
     onScriptRound = function () -- 副本每次切换地图回调
-		if (getmapid() == 35603) then
-            useskill(43501018,1)
-			ini_change("ban_hit_mob",1)--禁止攻击--
+		if (getmapid() == 34502) then
+            useskill(5000420,1)
+			sleep(14000)
+			useskill(43501018,1)
+			sleep(12000)
+			useskill(43501022,1)
         end
+		if (getmapid() == 34505) then
+            useskill(5000420,1)
+			sleep(14000)
+			useskill(43501018,1)
+			sleep(12000)
+			useskill(43501022,1)
+			
+        end
+		if (getmapid() == 34509) then
+            if mob_if("努比亚")==1 then
+				useskill(5000420,1)
+				sleep(14000)
+				useskill(43501018,1)
+				sleep(12000)
+				useskill(43501022,1)
+			end
+        end
+		
     end
 })

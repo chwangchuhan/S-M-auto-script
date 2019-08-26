@@ -63,29 +63,45 @@ common.simpleStart({
 			sleep(1000)
         end
         if (getmapid() == 34003) then
+			ini_change("tobot_hit_range_top",400)
+			ini_change("tobot_hit_range_max",400)
+			ini_change("tobot_hit_range_ignore",2000)
 			speak("已检测到贾格尔房间，进1门")
 			sleep(1000)
         end
 		if (getmapid() == 34004) then
+			ini_change("tobot_hit_range_top",400)
+			ini_change("tobot_hit_range_max",400)
+			ini_change("tobot_hit_range_ignore",2000)
 			speak("已检测到贾格尔房间，进2门")
 			sleep(1000)
         end
 		if (getmapid() == 34005) then
+			ini_change("tobot_hit_range_top",400)
+			ini_change("tobot_hit_range_max",400)
+			ini_change("tobot_hit_range_ignore",2000)
 			speak("已检测到贾格尔房间，进3门")
 			sleep(1000)
         end
 		if (getmapid() == 34006) then
+			ini_change("tobot_hit_range_top",400)
+			ini_change("tobot_hit_range_max",400)
+			ini_change("tobot_hit_range_ignore",2000)
 			speak("已检测到贾格尔房间，进4门")
 			sleep(1000)
         end
+		if (getmapid() == 34006) then
+			ini_change("tobot_hit_range_max",250)
+			ini_change("tobot_hit_range_ignore",1200)
+        end
 		if (getmapid() == 34014) then
 			ini_change("tobot_giveitemif",1)
-			speak("已开启捡完物品进门功能，为防止遗漏，请勿将所有掉落物品过滤")
+			speak("已开启捡完物品进门功能，为防止遗漏，请及时清理包裹")
 			sleep(1000)
         end
 		if (getmapid() == 34015) then
 			ini_change("tobot_giveitemif",1)
-			speak("已开启捡完物品进门功能，为防止遗漏，请勿将所有掉落物品过滤")
+			speak("已开启捡完物品进门功能，为防止遗漏，请及时清理包裹")
 			sleep(1000)
         end
     end

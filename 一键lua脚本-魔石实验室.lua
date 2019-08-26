@@ -58,7 +58,7 @@ common.simpleStart({
 	},
 	onScriptRound = function () -- 副本每次切换地图回调
 		if (getmapid() == 34204) then
-			tobot_giveitemif=1
+			ini_change("tobot_giveitemif",0)
 			speak(“已关闭捡完物品进门功能”)
 			sleep(1000)
         end
@@ -79,12 +79,12 @@ common.simpleStart({
 			sleep(1000)
         end
 		if (getmapid() == 34014) then
-			tobot_giveitemif=1
+			ini_change("tobot_giveitemif",1)
 			speak(“已开启捡完物品进门功能，为防止遗漏，请勿将所有掉落物品过滤”)
 			sleep(1000)
         end
 		if (getmapid() == 34015) then
-			tobot_giveitemif=1
+			ini_change("tobot_giveitemif",1)
 			speak(“已开启捡完物品进门功能，为防止遗漏，请勿将所有掉落物品过滤”)
 			sleep(1000)
         end

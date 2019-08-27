@@ -85,29 +85,33 @@ common.simpleStart({
 			speak("已检测到贾格尔房间，进4门")
 			sleep(1000)
         end
-		if (getmapid() == 34006) then
+		if (getmapid() == 34007) then
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",1200)
         end
 		if (getmapid() == 34014) then	
 			speak("为防止遗漏，请及时清理包裹")
 			sleep(1000)
-			repeat
+			while(true)
+			do
 				if door_if(823,991)==1 then  --
 				sleep(2000)
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA")
+				break
 				end
-			until (door_if(823,991)==1)
+			end
         end
 		if (getmapid() == 34015) then
 			speak("为防止遗漏，请及时清理包裹")
 			sleep(1000)
-			repeat
+			while(true)
+			do
 				if door_if(823,991)==1 then  --
 				sleep(2000)
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA")
+				break
 				end
-			until (door_if(823,991)==1)
+			end
         end
     end
 })

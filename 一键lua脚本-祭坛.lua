@@ -83,10 +83,9 @@ common.simpleStart({
 					jmp(1)
 					jmp(1)
 				end
-				if getx()==3080 and gety()==225 then
+				if gety()==225 then
 					jmp(0)
 					bot_start()
-					return
 				end
 			until (getmapid() ~= 35706)
         end

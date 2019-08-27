@@ -59,6 +59,29 @@ common.simpleStart({
         if (getmapid() == 84001) then
            ini_change("ban_hit_mob",1)
         end
+		if (getmapid() == 84009) then
+			repeat
+				if getx()==2425 and gety()==2588 then
+					bot_stop()
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+					jmp(1)
+				end
+				if gety()==703 then
+					jmp(2)
+					bot_start()
+				end
+			until(getmapid() ~= 84009)
+        end
 		if (getmapid() == 84011) then
             sleep(2000)
 			if door_if(3000,1407)==0 then

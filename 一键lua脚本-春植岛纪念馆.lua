@@ -64,13 +64,18 @@ common.simpleStart({
         }
     },
 	onScriptRound = function  ()
-        if getmapid() == 37203.0 then
+		if (getmapid() == 37202.0) then
+			ini_change("tobot_hit_range_max",400)
+			ini_change("tobot_hit_range_ignore",1200)	
+		end	
+        if (getmapid() == 37203.0) then
+			ini_change("tobot_hit_range_max",250)
 			repeat
-				sleep(2000)
+				sleep(1000)
 				if door_if(1959,287) == 1 then --检测门口出来没有--
 					printgame(0,255,0,"植 已死亡~")
 					bot_stop()--停止挂机--
-					sleep(1000)
+					sleep(2000)
 					plane(285)
 				end	
 			until (getmapid() ~= 37203)	

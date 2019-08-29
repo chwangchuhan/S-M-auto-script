@@ -59,13 +59,6 @@ common.simpleStart({
 		if (getmapid() == 35603) then
             useskill(43501018,1)
 			ini_change("ban_hit_mob",1)--½ûÖ¹¹¥»÷--
-			while(true)
-			do
-				sleep(100)
-				if getx()<=1087 and getx()>=1070 and gety()<=100 and gety()>=0  then
-				useskill(9879999,0)
-				end
-			end
         end
     end
 })

@@ -64,41 +64,29 @@ common.simpleStart({
 			repeat
 				sleep(100)
 				if getx()>=2390 and getx()<= 2450 and gety()<=2590 and gety()>=2623 then
-					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("上跳")
-					jmp(1)
-				end
-				if gety()<=2431 and gety()>=2415 then
 					bot_stop()
 					speak("上跳")
 					jmp(1)
-				end
-				if gety()<=1912 and gety()>=1839 then
-					bot_stop()
-					speak("上跳")
+					sleep(500)
 					jmp(1)
-				end
-				if gety()<=1599 and gety()>=1593 then
-					bot_stop()
-					speak("上跳")
+					sleep(500)
 					jmp(1)
-				end
-				if gety()<=1599 and gety()>=1593 then
-					bot_stop()
-					speak("上跳")
+					sleep(500)
 					jmp(1)
-				end
-				if gety()<=1421 and gety()>=1407 then
-					bot_stop()
-					speak("上跳")
+					sleep(500)
 					jmp(1)
-				end
-				if gety()<=1043 and gety()>=975 then
-					bot_stop()
-					speak("上跳")
+					sleep(500)
 					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
 				end
+				
 				if gety()==703 then
 					jmp(2)
 					ini_change("tobot_scriptbot",1)

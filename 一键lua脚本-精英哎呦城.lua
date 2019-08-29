@@ -62,7 +62,9 @@ common.simpleStart({
 		if (getmapid() == 84009) then
 			repeat
 				sleep(100)
-				if gety()<=2590 and gety()>=2623 then
+				if getx()>=2390 and getx()<= 2450 gety()<=2590 and gety()>=2623 then
+					bot_stop()
+					ini_change("tobot_scriptbot",0)
 					speak("иолЬ")
 					jmp(1)
 				end
@@ -92,6 +94,8 @@ common.simpleStart({
 				end
 				if gety()==703 then
 					jmp(2)
+					ini_change("tobot_scriptbot",1)
+					bot_start()
 				end
 			until(getmapid() ~= 84009)
         end

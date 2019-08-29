@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "被感染的哎呦城",
-    mapCount = 2,
+    mapCount = 1,
     planeId = 95201,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {83100,84000,84001,84002,84003,84004,84005,84006,84007,84008,84009,84010,84011,84012,84013,84014},

@@ -4,12 +4,12 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "天空之城",
-    mapCount = 3,
+    mapCount = 5,
     planeId = 745,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {93002,93100,93101,93102,93103},
     overtime = 20, --超时时间，/分钟
-    endMapIds = {32412}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
+    endMapIds = {93103}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },

@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "被感染的哎呦城",
-    mapCount = 2,
+    mapCount = 1,
     planeId = 95201,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {83100,84000,84001,84002,84003,84004,84005,84006,84007,84008,84009,84010,84011,84012,84013,84014},
@@ -12,7 +12,8 @@ common.simpleStart({
     endMapIds = {84012,84013,84014}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
-    },
+	},
+	minXSpeed = 850,  -- 站街速低于850会死掉
 
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本

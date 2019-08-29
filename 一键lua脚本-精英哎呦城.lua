@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "被感染的哎呦城",
-    mapCount = 1,
+    mapCount = 2,
     planeId = 95201,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {83100,84000,84001,84002,84003,84004,84005,84006,84007,84008,84009,84010,84011,84012,84013,84014},
@@ -61,24 +61,37 @@ common.simpleStart({
         end
 		if (getmapid() == 84009) then
 			repeat
-				if getx()==2425 and gety()==2588 then
-					bot_stop()
+				sleep(100)
+				if gety()<=2590 and gety()>=2623 then
+					speak("上跳")
 					jmp(1)
+				end
+				if gety()<=2431 and gety()>=2415 then
+					speak("上跳")
 					jmp(1)
+				end
+				if gety()<=1912 and gety()>=1839 then
+					speak("上跳")
 					jmp(1)
+				end
+				if gety()<=1599 and gety()>=1593 then
+					speak("上跳")
 					jmp(1)
+				end
+				if gety()<=1599 and gety()>=1593 then
+					speak("上跳")
 					jmp(1)
+				end
+				if gety()<=1421 and gety()>=1407 then
+					speak("上跳")
 					jmp(1)
-					jmp(1)
-					jmp(1)
-					jmp(1)
-					jmp(1)
-					jmp(1)
+				end
+				if gety()<=1043 and gety()>=975 then
+					speak("上跳")
 					jmp(1)
 				end
 				if gety()==703 then
 					jmp(2)
-					bot_start()
 				end
 			until(getmapid() ~= 84009)
         end

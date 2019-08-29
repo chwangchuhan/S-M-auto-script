@@ -91,12 +91,13 @@ common.simpleStart({
         end
 		if (getmapid() == 34014) then	
 			speak("为防止遗漏，请及时清理包裹")
-			sleep(1000)
 			while(true)
-			do
+			do	
+				sleep(500)
 				if door_if(823,991)==1 then  --
+				speak("门开")
 				sleep(2000)
-				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA")
+				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
 				break
 				end
 			end
@@ -105,10 +106,12 @@ common.simpleStart({
 			speak("为防止遗漏，请及时清理包裹")
 			sleep(1000)
 			while(true)
-			do
+			do	
+				sleep(500)
 				if door_if(823,991)==1 then  --
+				speak("门开")
 				sleep(2000)
-				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA")
+				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
 				break
 				end
 			end

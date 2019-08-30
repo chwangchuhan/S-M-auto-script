@@ -11,7 +11,7 @@ return {
     tobot_fastladder = 0,  --默认关闭快速爬梯，防止跳过头的情况
     tobot_jmporretn = 0, --碰墙自动转身
     ban_hit_mob = 0, -- 允许攻击
-	ini_change("tobot_hit_range_max",250)
-	ini_change("tobot_hit_range_top",150)
-	ini_change("tobot_hit_range_down",20)
+	ini_change("tobot_hit_range_max",250),
+	ini_change("tobot_hit_range_top",150),
+	ini_change("tobot_hit_range_down",20),
 }

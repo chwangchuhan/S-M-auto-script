@@ -91,17 +91,27 @@ common.simpleStart({
             repeat
 				sleep(100)
 				if getx()>=3050 and getx()<=3060 and gety()==1700 and label<7 then
-				speak("Ìø6´Î")
-				jmp(1)
+				ini_change("tobot_scriptbot",0)
+				bot_stop()
+				useskill(43501018,1)
+				speak("ÉÏÌø")
 				sleep(500)
 				jmp(1)
 				sleep(500)
 				jmp(1)
 				sleep(500)
-				label=label+1		
+				jmp(1)
+				sleep(500)
+				label=label+1
+				ini_change("tobot_scriptbot",1)
+				bot_start()
+				sleep(10000)				
 				end
 				if label==7 and getx()==3080 and gety()==2751 then
+					ini_change("tobot_scriptbot",0)
 					bot_stop()
+					useskill(43501018,1)
+					sleep(500)
 					jmp(1)
 					sleep(500)
 					jmp(1)
@@ -122,6 +132,7 @@ common.simpleStart({
 				end
 				if gety()==225 then
 					jmp(0)
+					ini_change("tobot_scriptbot",1)
 					bot_start()
 				end
 			until (getmapid() ~= 35706)

@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "破坏之城",
-    mapCount = 4,
+    mapCount = 3,
     planeId = 256,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {33305, 33400 ,33401,33402,33403,33404,33405,33406,33407,33408,33409,33410},

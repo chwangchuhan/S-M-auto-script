@@ -104,7 +104,7 @@ common.simpleStart({
 			until(getmapid() ~= 84009)
         end
 		if (getmapid() == 84011) then
-            sleep(2000)
+            sleep(10000)
 			if door_if(3000,1407)==0 then
 			speak("漏怪导致没开门，Lua强制结束")
 			plane(95201)

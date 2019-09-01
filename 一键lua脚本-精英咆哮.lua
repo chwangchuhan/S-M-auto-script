@@ -110,12 +110,13 @@ common.simpleStart({
 		ini_change("find_showname",0)
 		ini_change("find_showhp",0)
 		repeat 
+			sleep(100)
 				if door_if(3065,1519) == 1 then 
 					bot_stop()--Í£Ö¹¹Ò»ú--
 					sleep(2000)
 					plane(94801)
 				end
-		until (getmapid() ~= 9308)
+		until (getmapid() ~= 9308 or getmapid() ~= 9306 or getmapid() ~= 9307 )
     end
     end
 })

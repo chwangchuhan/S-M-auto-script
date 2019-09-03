@@ -95,6 +95,16 @@ common.simpleStart({
 					jmp(1)
 					sleep(500)
 					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
+					jmp(1)
+					sleep(500)
+					jmp(1)
 				end
 				if gety()==703 then
 					jmp(2)

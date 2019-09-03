@@ -6,6 +6,7 @@ common.simpleStart({
     mapName = "海嘉尔大桥",
     mapCount = 3,
     planeId = 82800,
+    overtime = 30, --超时时间，/分钟
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {82900, 82800, 82801 ,82802,82803},
 

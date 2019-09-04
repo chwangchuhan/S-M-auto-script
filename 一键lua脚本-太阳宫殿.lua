@@ -65,7 +65,7 @@ common.simpleStart({
 			sleep(100)
 			item_use(611113016)--三星芝士汤
 			sleep(100)
-			item_use(430453126)--星球坚不可摧
+			--item_use(430453126)--星球坚不可摧
         end
 		if (getmapid() == 35605) then
             --bot_stop()

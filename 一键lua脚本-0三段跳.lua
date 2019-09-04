@@ -56,6 +56,7 @@ function lingsanduantiao.begin()
 				close_npc(700059)
 				sleep(1000)
 				item_wear("超级飞翔石(12小时)")
+				sleep(100)
 				speak("已经领取[超级飞翔石(12小时)]")
 				return
 			end

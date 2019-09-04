@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "索拉城斗兽场",
-    mapCount = 2,
+    mapCount = 3,
     planeId = 191,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {30500.0,31000.0,31001.0,31002.0,31003.0},

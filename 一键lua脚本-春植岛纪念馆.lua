@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "春植岛纪念馆",
-    mapCount = 4,
+    mapCount = 3,
     planeId = 285,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {37500.0,37200,37201,37202,37203},

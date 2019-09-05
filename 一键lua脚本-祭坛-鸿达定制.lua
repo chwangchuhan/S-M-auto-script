@@ -278,15 +278,15 @@ common.simpleStart({
 					repeat
 						sleep(100)
 						speak("¶ã±ÜµØ´Ì9")
-						if (getx()>=32 and getx()<=240 and gety()==559) then
+						if (getx()>=32 and getx()<=240 and gety()==599) then
 							ini_change("ban_hit_mob",1)
 							sleep(100)
 							ini_change("ban_hit_mob",1)
 						end
-						if (getx()>=250 and gety()==559) then
+						if (getx()>=250 and gety()==599) then
 							ini_change("ban_hit_mob",0)
 						end
-					until (getx()>350 and gety()==559)
+					until (getx()>350 and gety()==599)
 				else
 					break
 				end

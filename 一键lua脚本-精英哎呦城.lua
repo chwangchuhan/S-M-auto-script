@@ -59,7 +59,12 @@ common.simpleStart({
 	   "",
     },
     onScriptRound = function () -- 副本每次切换地图回调
-        if (getmapid() == 84001) then
+        if (getmapid() == 84000) then
+			bot_stop()
+			sleep(1000)
+			bot_start()
+        end
+		if (getmapid() == 84001) then
            ini_change("ban_hit_mob",1)
         end
 		if (getmapid() == 84009) then

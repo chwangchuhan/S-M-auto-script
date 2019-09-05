@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "巧克力花园(超越)",
-    mapCount = 3,
+    mapCount = 15,
     planeId = 269,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {18403,35005,35000,35001,35002,35003,35004,35006},

@@ -1,0 +1,28 @@
+{
+  "name": "shengxi",
+  "version": "1.0.0",
+  "description": "圣汐一键脚本",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chwangchuhan/ch-lua-script.git"
+  },
+  "author": "ch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chwangchuhan/ch-lua-script/issues"
+  },
+  "homepage": "https://github.com/chwangchuhan/ch-lua-script#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean": "^0.4.0",
+    "gulp-shell": "^0.7.1",
+    "uuid": "^3.3.3"
+  }
+}

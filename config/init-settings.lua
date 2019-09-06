@@ -15,6 +15,6 @@ return {
 	tobot_hit_range_top = 150,
 	tobot_hit_range_down = 20,
 	tobot_hit_range_ignore = 1200,
-	tobot_script_x_distance = 10,
-	tobot_script_y_distance = 10,
+	tobot_script_x_distance = 50,
+	tobot_script_y_distance = 20,
 }

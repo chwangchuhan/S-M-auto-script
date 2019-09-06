@@ -282,7 +282,7 @@ common.simpleStart({
 							sleep(100)
 							ini_change("ban_hit_mob",0)
 						end	
-					until (getx()>350 and gety()==599)
+					until (gety()>599)
 				else
 					break
 				end

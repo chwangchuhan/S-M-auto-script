@@ -343,8 +343,10 @@ local function simpleStart (config)
     end
 
     -- 如在地图中继续执行脚本
-    if isMapNumOver(config.mapName, config.mapCount) and (not checkInMap(config.mapIds)) then
-        return
+    if isMapNumOver(config.mapName, config.mapCount) then
+        if not checkInMap(config.mapIds) then
+            return
+        end
     else
         if not checkInMap(config.mapIds) then
             -- 飞机启动执行 --

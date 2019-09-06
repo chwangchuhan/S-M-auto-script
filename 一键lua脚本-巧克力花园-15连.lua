@@ -8,7 +8,7 @@ common.simpleStart({
     planeId = 269,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {18403,35005,35000,35001,35002,35003,35004,35006},
-    overtime = 50, --超时时间，/分钟
+    overtime = 15, --超时时间，/分钟
     endMapIds = {35006}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
@@ -58,6 +58,34 @@ common.simpleStart({
 	 onScriptRound = function () -- 副本每次切换地图回调
 		if (getmapid() == 35005) then
 			item_use(430453149)--古语
+        end
+		if (getmapid() == 35002) then
+			repeat
+				sleep(100)
+				if getx()>2550 and getx()<2650 and gety()==1215 then
+					sleep(500)
+					gotocoordinate(1,2600,1215)
+					sleep(500)
+					gotocoordinate(1,2600,1215)
+					sleep(500)
+					gotocoordinate(1,2600,1215)
+					sleep(500)
+					gotocoordinate(1,2600,1215)
+					sleep(500)
+					gotocoordinate(1,2600,1215)
+					sleep(500)
+					gotocoordinate(1,2600,1215)
+					ini_change("tobot_scriptbot",0)
+					ini_change("ban_hit_mob",1)
+					bot_stop()
+					sleep(500)
+					jmp(1)
+					sleep(1000)
+					ini_change("tobot_scriptbot",1)
+					ini_change("ban_hit_mob",0)
+					bot_start()
+				end
+			until(door_if(3104,1471)==1)
         end
     end
 })

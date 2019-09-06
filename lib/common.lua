@@ -13,9 +13,9 @@ local settings = dofile(path_scripts.."S-M-auto-script\\config\\init-settings.lu
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
 local defaultXMinSpeed = 550
-local defaultXMaxSpeed = 1320
+local defaultXMaxSpeed = 950
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1200
+local defaultYMaxSpeed = 1230
 
  -- 通用方法 --
 -- 游戏配置初始化 --

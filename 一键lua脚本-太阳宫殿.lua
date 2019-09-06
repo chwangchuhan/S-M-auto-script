@@ -63,6 +63,8 @@ common.simpleStart({
 		if (getmapid() == 35604) then
 			item_use(170191135)--世界树减伤药
 			sleep(100)
+			item_use(611113086)--最大吸红
+			sleep(100)
 			item_use(611113016)--三星芝士汤
 			sleep(100)
 			--item_use(430453126)--星球坚不可摧

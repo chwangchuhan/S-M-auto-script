@@ -1,0 +1,22 @@
+
+-----------下方装备自定义添加删除（打开配置目录，再配置文件中可以直接复制装备名字）--------------
+item_wear("黑熊帽子")
+sleep(10)
+item_wear("黑熊鞋子")
+sleep(10)
+item_wear("黑熊手套")
+sleep(10)
+item_wear("祈福同心+15")
+sleep(10)
+item_wear("卡兹诺圣石")
+sleep(10)
+item_wear("LA-smile-笑脸(男)T恤")
+sleep(10)
+item_wear("LA-smile-笑脸(男)短裤")
+sleep(10)
+item_wear("迪特徽章+2") --掉落徽章
+sleep(10)
+item_wear("天空之城耳环")
+sleep(10)
+item_wear("")
+sleep(10)

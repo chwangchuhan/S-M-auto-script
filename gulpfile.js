@@ -20,11 +20,11 @@ const sleep = function (time) {
 }
 
 
-console.log('-------等待打包�?--------');
+console.log('-------等待打包�?--------');
 
 // 删除build
 function cleanBuild () {
-    console.log('-------build目录清除�?-------');
+    console.log('-------build目录清除�?-------');
     return src('S-M-auto-script').pipe(clean({allowEmpty: true,}))
     
 }
@@ -53,7 +53,7 @@ function compileCommon () {
 
 function defaultTask (cb) {
   luaScripts.map((fileName) => {
-    if (fileName && /^一键lua脚本.+\.lua/.test(fileName)) {
+    if (fileName && (/^一键lua脚本.+\.lua/.test(fileName) || /^换装.+\.lua/.test(fileName))) {
       console.log('正在打包文件 -----   ' + fileName)
       const uuid = getUUID()
 
@@ -69,7 +69,7 @@ function defaultTask (cb) {
 
 // 删除build
 async function cleanScript () {
-    console.log('-------build目录清除�?-------');
+    console.log('-------build目录清除�?-------');
     await sleep(10000)
     return src('S-M-auto-script/lib/script').pipe(clean({allowEmpty: true}))
 }

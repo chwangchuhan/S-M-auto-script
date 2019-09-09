@@ -10,6 +10,14 @@
 local petSkillIds = dofile(path_scripts.."S-M-auto-script\\config\\pet-skill.lua")
 local settings = dofile(path_scripts.."S-M-auto-script\\config\\init-settings.lua")
 
+-- 一键换装配置
+local gongjiConfig1 = loadfile(path_scripts.."攻击装.lua")
+local gongjiConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\攻击装.lua")
+local diaoluoConfig1 = loadfile(path_scripts.."掉落装.lua")
+local diaoluoConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\掉落装.lua")
+local jingyanConfig1 = loadfile(path_scripts.."经验装.lua")
+local jingyanConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\经验装.lua")
+
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
 local defaultXMinSpeed = 550
@@ -280,25 +288,25 @@ local function checkXSpeed (minX, maxX)
         show('移动速度检测未通过，您的速度为：'..speed..'，当前副本需要速度：'..minX..'~'..maxX)
         return false
     end
-  end
+end
   
-  -- 检测跳跃速度
-  local function checkYSpeed(minY, maxY)
+-- 检测跳跃速度
+local function checkYSpeed(minY, maxY)
     local speed = abs(getupspeed())
-  
+
     -- 默认值速度
     if (maxY == nil) then
         maxY = defaultYMaxSpeed
     end
-  
+
     if (minY == nil) then
         minY = defaultYMinSpeed
     end
-  
+
     if (minY > maxY) then
         maxY = minY + 500
     end
-  
+
     if (speed >= minY and speed <= maxY) then
         show('跳跃速度检测通过')
         return true
@@ -306,8 +314,106 @@ local function checkXSpeed (minX, maxX)
         show('跳跃速度检测未通过，您的速度为：'..speed..'，当前副本需要跳跃速度：'..minY..'~'..maxY)
         return false
     end
-  end
+end
 
+-- 穿戴攻击装备
+local function wearGongji()
+    local wearConfig = nil
+
+    if (gongjiConfig1 and gongjiConfig2) then
+        wearConfig = gongjiConfig1()
+    end
+
+    if (not gongjiConfig1 and gongjiConfig2) then
+        wearConfig = gongjiConfig2()
+    end
+    
+    if (wearConfig ~= nil) then
+        show('更换攻击装备')
+        ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
+        sleep(1000)
+
+        for i,v in ipairs(wearConfig) do
+            local nums = item_if(v)
+            print(v)
+
+            -- 判断装备数量，避免错误穿装备
+            if (nums >= 1) then
+                wearitem(v)
+                show('更换装备'..v)
+                sleep(50)
+            end
+        end
+
+        ini_change("ban_hit_mob",0) -- 允许攻击
+    end
+end
+
+-- 穿戴经验装备
+local function wearJingyan()
+    local wearConfig = nil
+
+    if (jingyanConfig1 and jingyanConfig2) then
+        wearConfig = jingyanConfig1()
+    end
+
+    if (not jingyanConfig1 and jingyanConfig2) then
+        wearConfig = jingyanConfig2()
+    end
+    
+    if (wearConfig ~= nil) then
+        show('更换经验装备')
+        ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
+        sleep(1000)
+
+        for i,v in ipairs(wearConfig) do
+            local nums = item_if(v)
+            print(v)
+
+            -- 判断装备数量，避免错误穿装备
+            if (nums >= 1) then
+                wearitem(v)
+                show('更换装备'..v)
+                sleep(50)
+            end
+        end
+
+        ini_change("ban_hit_mob",0) -- 允许攻击
+    end
+end
+
+-- 穿戴掉落
+local function wearDiaoluo()
+    local wearConfig = nil
+
+    if (diaoluoConfig1 and diaoluoConfig2) then
+        wearConfig = diaoluoConfig1()
+    end
+
+    if (not diaoluoConfig1 and diaoluoConfig2) then
+        wearConfig = diaoluoConfig2()
+    end
+    
+    if (wearConfig ~= nil) then
+        show('更换掉落装备')
+        ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
+        sleep(1000)
+
+        for i,v in ipairs(wearConfig) do
+            local nums = item_if(v)
+            print(v)
+
+            -- 判断装备数量，避免错误穿装备
+            if (nums >= 1) then
+                wearitem(v)
+                show('更换装备'..v)
+                sleep(50)
+            end
+        end
+
+        ini_change("ban_hit_mob",0) -- 允许攻击
+    end
+end
 
 -- 脚本开始 --
 local function simpleStart (config)
@@ -732,4 +838,7 @@ return {
     doTask = doTask,
     checkMob = checkMob,
     xuemaiStart = xuemaiStart,
+    wearGongji = wearGongji,    -- 穿攻击装备
+    wearDiaoluo = wearDiaoluo,  -- 穿掉落装备
+    wearJingyan = wearJingyan,  -- 穿经验装备
 }

@@ -482,6 +482,11 @@ local function simpleStart (config)
                 wait_loadmap()
                 show('脚本超时，终止脚本')
                 resetConfig()
+
+                -- 如换了掉落装需换回攻击装
+                if (config.isAutoWearDiaoluo) then
+                    wearGongji()
+                end
                 return
             end
         end
@@ -519,7 +524,12 @@ local function simpleStart (config)
             else
             end
 
-            -- 一轮循环结束进入第二轮
+            -- 最终图换掉落装
+            if (config.isAutoWearDiaoluo and include(endMapIds, currentMapId)) then
+                wearDiaoluo()
+            end
+
+            -- 一轮循环结束进入下一轮
             if include(endMapIds, preMapId) then
                 -- 副本一轮结束清空倒计时
                 startTimeSpan = getTimeSpan()
@@ -535,8 +545,18 @@ local function simpleStart (config)
                         config.onScriptEnd()
                     end
 
+                    -- 如换了掉落装需换回攻击装
+                    if (config.isAutoWearDiaoluo) then
+                        wearGongji()
+                    end
+
                     return
                 else
+                    -- 如换了掉落装需换回攻击装
+                    if (config.isAutoWearDiaoluo) then
+                        wearGongji()
+                    end
+
                     -- 副本初始化
                     indun_init()
                 end

@@ -96,8 +96,10 @@ common.simpleStart({
 				sleep(500)
 				if door_if(823,991)==1 then  --
 				speak("门开")
+				bot_stop()
 				sleep(2000)
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
+				bot_start()
 				break
 				end
 			end
@@ -110,8 +112,10 @@ common.simpleStart({
 				sleep(500)
 				if door_if(823,991)==1 then  --
 				speak("门开")
+				bot_stop()
 				sleep(2000)
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
+				bot_start()
 				break
 				end
 			end

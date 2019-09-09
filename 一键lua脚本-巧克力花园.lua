@@ -63,12 +63,8 @@ common.simpleStart({
 			repeat
 				sleep(100)
 				if getx()>2550 and getx()<2650 and gety()==1215 then
-					gotocoordinate(1,2600,1215)
 					bot_stop()
-					gotocoordinate(1,2600,1215)
 					ini_change("tobot_scriptbot",0)
-					gotocoordinate(1,2600,1215)
-					ini_change("ban_hit_mob",1)
 					gotocoordinate(1,2600,1215)
 					bot_stop()
 					sleep(500)

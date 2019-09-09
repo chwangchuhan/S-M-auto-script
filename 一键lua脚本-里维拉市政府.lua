@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "里维拉市政府",
-    mapCount = 3,
+    mapCount = 5,
     planeId = 258,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {33900.0,34100,34101,34102,34103,34104,34105,34106},

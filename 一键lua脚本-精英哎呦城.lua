@@ -75,6 +75,7 @@ common.simpleStart({
 				bot_start()
 				end
 				if getx()>=2380 and getx()<= 2450 and gety()>=2575 and gety()<=2630 then
+					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					bot_stop()
 					speak("ÉÏÌø")

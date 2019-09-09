@@ -308,6 +308,7 @@ local function checkXSpeed (minX, maxX)
     end
   end
 
+
 -- 脚本开始 --
 local function simpleStart (config)
     -- 存在task的地图id
@@ -605,6 +606,115 @@ local function shendianStart (config)
     end
 end
 
+-- 血脉活动开始 --
+local function xuemaiStart (config)
+    -- 地图激活时间
+    local startTimeSpan = getTimeSpan()
+
+    while (true) 
+    do
+        sleep(500)
+
+        -- 超时跳过脚本
+        if (config.overtime) then
+            if (getTimeSpan() - startTimeSpan < 0) then
+                -- 由于时间戳为按周，因此<0表示周日-周日的节点
+                -- 故此兼容此场景
+                startTimeSpan = getTimeSpan()
+            end
+            -- 超时
+            -- overtime时间为分
+            if (getTimeSpan() - startTimeSpan > config.overtime * 60000) then
+                -- 终止副本
+                bot_stop()
+                plane(70)
+                show('脚本超时，终止脚本')
+                resetConfig()
+                return
+            end
+        end
+
+        -- 处于活动时间
+        if (checkInXuemaiTime()) then
+            -- 检测是否在圣域
+            if (checkInMap({18400})) then
+                open_npc(1500115)
+                npc_plane(1500115,1500115,0,1500115,0)
+                wait_loadmap()
+                close_npc(1500115)
+
+                gameConfigInit(config.initSettings)
+                mapInitDesc(config.mapName, config.mapCount)
+
+                local preMapId = -1
+                local taskMaps = {}
+                local lastMapId = config.mapIds[#config.mapIds]
+                local endMapIds = {lastMapId}
+                local currentNums = 1
+                
+                while(true) do
+                    local currentMapId = getmapid()
+
+                    -- 脚本执行
+                    if preMapId ~= currentMapId then
+                        local currentMapIndex = findIndex(config.mapIds, currentMapId)
+                        local currentScript = config.scripts[currentMapIndex]
+                        
+                        -- 判断当前脚本是否存在
+                        if currentScript then
+                            if (#currentScript <= 30) then
+                                -- 文件脚本
+                                script_txt_load(currentScript, 0)
+                            else
+                                -- hex 16进制脚本
+                                script_txt_loaddata(currentScript, 0)
+                            end
+                        end
+
+                        bot_start()
+
+                        -- 一轮循环结束进入第二轮
+                        if include(endMapIds, preMapId) then
+                            -- 副本一轮结束清空倒计时
+                            startTimeSpan = getTimeSpan()
+                            -- 血脉记录不了次数，因此通过这个记录
+                            currentNums = currentNums + 1
+
+                            -- 超出任务循环次数
+                            if (currentNums > 2) then
+                                -- 停止挂机
+                                bot_stop()  
+                                resetConfig()
+                                return
+                            end
+                        end
+                    end
+
+                    
+                    preMapId = currentMapIndex
+                    sleep(200)
+                end
+                
+                return
+            else
+                plane(1210)
+                wait_loadmap()
+            end
+        else
+            if (not config.isWaiting) then -- 不等待活动
+                show('当前不处于活动时间，['..config.mapName..']自动跳过')
+                return
+            else
+                -- 不处于活动时间则等待1分钟后查看
+                local time = '星期'..gettime(1)..' '..gettime(2)..':'..gettime(3)
+                show('正在等待活动时间，当前时间：'..time)
+                startTimeSpan = getTimeSpan() -- 等待时间不计算超时时间
+                sleep(10000)
+            end
+        end
+    end
+end
+
 
 return {
     show = show,
@@ -621,4 +731,5 @@ return {
     doPetSkill = doPetSkill,
     doTask = doTask,
     checkMob = checkMob,
+    xuemaiStart = xuemaiStart,
 }

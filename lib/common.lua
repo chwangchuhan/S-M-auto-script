@@ -159,6 +159,7 @@ local function doTask (npcId, taskIds)
     open_npc(npcId)
 
     for i,v in ipairs(taskIds) do
+        sleep(50)
         -- request_task 任务接成功返回0，失败返回-1
         if request_task(npcId, v) ~= -1 then
              show("任务领取完成")
@@ -330,7 +331,7 @@ local function wearGongji()
     if (wearConfig ~= nil) then
         show('更换攻击装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(100)
+        sleep(1000)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -340,7 +341,7 @@ local function wearGongji()
             if (nums >= 1) then
                 wearitem(v)
                 show('更换装备'..v)
-                sleep(10)
+                sleep(20)
             end
         end
 
@@ -363,7 +364,7 @@ local function wearJingyan()
     if (wearConfig ~= nil) then
         show('更换经验装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(10)
+        sleep(1000)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -373,7 +374,7 @@ local function wearJingyan()
             if (nums >= 1) then
                 wearitem(v)
                 show('更换装备'..v)
-                sleep(10)
+                sleep(20)
             end
         end
 
@@ -396,7 +397,7 @@ local function wearDiaoluo()
     if (wearConfig ~= nil) then
         show('更换掉落装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(100)
+        sleep(1000)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -406,7 +407,7 @@ local function wearDiaoluo()
             if (nums >= 1) then
                 wearitem(v)
                 show('更换装备'..v)
-                sleep(10)
+                sleep(20)
             end
         end
 

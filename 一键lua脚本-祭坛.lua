@@ -14,7 +14,7 @@ common.simpleStart({
 		tobot_giveitemif=1, --捡完东西才进门
 		tobot_fastladder = 1, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
-
+	isAutoWearDiaoluo = true,
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
@@ -709,6 +709,8 @@ common.simpleStart({
 				sleep(4000)
 				ini_change("ban_hit_mob",0)
 				sleep(20000)
+				bot_stop()
+				sleep(1000)
 				end
 				if label==7 and getx()>2879 and getx()<=3167 and gety()==2751 then
 					bot_stop()
@@ -804,7 +806,7 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-				if getx()>1600 and getx()<=2879 and gety()== 3007 then
+				if getx()>=1600 and getx()<=2879 and gety()== 3007 then
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()

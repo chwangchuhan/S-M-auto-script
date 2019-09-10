@@ -14,7 +14,7 @@ common.simpleStart({
 		tobot_giveitemif=1, --¼ñÍê¶«Î÷²Å½øÃÅ
 		tobot_fastladder = 1, -- È¡Ïû¿ìËÙÅÀÌİ£¬·ÀÖ¹´óÇÅÏÂÂ¥Ìİ²»ÎÈ¶¨
     },
-
+	isAutoWearDiaoluo = true,
     -- ½Å±¾Ãû³ÆÁĞ±í£¬ĞèºÍmapIdsÒ»Ò»¶ÔÓ¦
     -- Ö§³Ö16½øÖÆhex±àÂë½Å±¾
     -- ÓÉÓÚÕıÔò²»Í¨ÓÃ£¬Òò´ËÅĞ¶ÏÊÇ·ñÓÃhexµÄµØ·½ÊÇ×Ö·û´®³¤¶È´óÓÚ30
@@ -24,7 +24,7 @@ common.simpleStart({
        -- ¼ÀÌ³1
        "D6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C313339382C313433392CB2BBB1E42CCAB9D3C3BCBCC4DC2C353030303030380D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C313230302C313433392CD3D2C5DC2CC3BBD3D0B8BDBCD3B2CECAFD2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C313530302C313433392CD7F3C5DC2CC3BBD3D0B8BDBCD3B2CECAFD2C",
        -- ¼ÀÌ³2
-       "D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C323333352CD7F3C5DC2C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323130302C3630302CB2BBB1E42CD6B4D0D0B1E0B3CCBDC5B1BE2CB5F4C2E4D7B02E6C75610D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323130302C3530302CB2BBB1E42CD6B4D0D0B1E0B3CCBDC5B1BE2CB5F4C2E4D7B02E6C75610D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3633302C333030372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3633382C333030372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3631382C333030372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3539382C333030372CD3D2C5DC2C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C333136372C333030372E34382CB2BBB1E42CD6B4D0D0B1E0B3CCBDC5B1BE2CB9A5BBF7D7B02E6C75610D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3930302C3330302CB2BBB1E42CC3BBD3D0B8BDBCD3B2CECAFD2CD6B4D0D0B1E0B3CCBDC5B1BE2CB5F4C2E4D7B02E6C75610D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3930302C3430302CB2BBB1E42CC3BBD3D0B8BDBCD3B2CECAFD2CD6B4D0D0B1E0B3CCBDC5B1BE2CB5F4C2E4D7B02E6C75610D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3930302C3530302CB2BBB1E42CC3BBD3D0B8BDBCD3B2CECAFD2CD6B4D0D0B1E0B3CCBDC5B1BE2CB5F4C2E4D7B02E6C7561",
+       "D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C323333352CD7F3C5DC2C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323130302C3630302CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323130302C3530302CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3633302C333030372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3633382C333030372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3631382C333030372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3539382C333030372CD3D2C5DC2C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C333136372C333030372E34382CB2BBB1E42C0D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3930302C3330302CB2BBB1E42C0D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3930302C3430302CB2BBB1E42C0D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3930302C3530302CB2BBB1E42C",
        -- ¼ÀÌ³3
        "D3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3538302C3237312CD3D2C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C313335302C3339392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323938372C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333033322C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323935372C333030372CD7F3C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333034342C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3130302C333030372CD3D2C5DC2C0D0AD7F3CCF82CD7F3C5DCCAB12C313835362C323537352CD7F3C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD7F3C5DCCAB12C33322C323139312CD3D2C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD7F3C5DCCAB12C3130302C323139312CD3D2C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323637342C313535312CD7F3C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C333136372C313133342CD7F3C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C3930302C323331392CD7F3C5DC2C0D0AD3D2CCF82CD7F326D3D2CAB12C3330302C313837312CD3D2C5DC2C0D0AD3D2CCF82CD7F3C5DCCAB12C3938372C313637392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323539392C313535312CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323635392C313535312CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323631342C313535312CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323632392C313535312CD7F3C5DC2C0D0AD7F3CCF82CD7F3C5DCCAB12C313830302C313535312CD3D2C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333030302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333032302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333034302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333036302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333038302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333130302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333132302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333134302C333030372CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C333136372C333030372CD7F3C5DC2C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C323830302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C323730302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C323630302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C323430302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C323230302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C323030302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C313530302C333030372CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C313030302C333030372CB2BBB1E42C",
        -- ¼ÀÌ³4
@@ -59,6 +59,9 @@ common.simpleStart({
 	label=0,
     onScriptRound = function (config) -- ¸±±¾Ã¿´ÎÇĞ»»µØÍ¼»Øµ÷
 		if (getmapid() == 35700) then
+			bot_stop()
+			common.wearDiaoluo()
+			bot_start()
             ini_change("ban_hit_mob",1)
         end
 		if (getmapid() == 35707) then --¼ÀÌ³8 ÍÚ¿ó
@@ -69,6 +72,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					speak("ÍÚ8ÓÒ¿ó1²ã")
+					common.wearDiaoluo()
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,3100,543)
@@ -85,6 +89,7 @@ common.simpleStart({
 					sleep(1000)
 					jmp(0)
 					sleep(500)
+					common.wearGongji()
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -92,6 +97,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					speak("ÍÚÓÒ¿ó2²ã")
+					common.wearDiaoluo()
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,1327)
@@ -110,6 +116,7 @@ common.simpleStart({
 					sleep(2250)
 					jmp(0)
 					sleep(500)
+					common.wearGongji()
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -117,6 +124,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					speak("ÍÚÓÒ¿ó3²ã")
+					common.wearDiaoluo()
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,2095)
@@ -132,6 +140,7 @@ common.simpleStart({
 					useskill(5000008,1)
 					sleep(1000)
 					jmp(2)
+					common.wearGongji()
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -139,6 +148,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					speak("ÍÚ8×ó¿ó2²ã")
+					common.wearDiaoluo()
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1125,1711)
@@ -154,6 +164,7 @@ common.simpleStart({
 					useskill(5000008,1)
 					sleep(1000)
 					jmp(0)
+					common.wearGongji()
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -161,6 +172,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					speak("ÍÚ8×ó¿ó1²ã")
+					common.wearDiaoluo()
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,32,799)
@@ -181,6 +193,7 @@ common.simpleStart({
 					sleep(800)
 					jmp(2)
 					sleep(800)
+					common.wearGongji()
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -205,9 +218,10 @@ common.simpleStart({
 				end
 				if getx()>=32 and getx()<=319 and gety()==799 and labelkuang==0 then --´Ó×óÏÂÂäÍÚ¿ó
 					bot_stop()
+					speak("ÍÚ×ó¿ó1²ã1")
+					common.wearDiaoluo()
 					ini_change("tobot_scriptbot",0)
 					ini_change("ban_hit_mob",1)
-					speak("ÍÚ×ó¿ó1²ã")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,32,799)
@@ -232,7 +246,7 @@ common.simpleStart({
 				if getx()>=928 and getx()<=1279 and gety()==1711 and labelkuang==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚ×ó¿ó2²ã")
+					speak("ÍÚ×ó¿ó2²ã1")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1125,1711)
@@ -256,7 +270,7 @@ common.simpleStart({
 				if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚ×ó¿ó3²ã")
+					speak("ÍÚ×ó¿ó3²ã1")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1279,2351)
@@ -273,7 +287,7 @@ common.simpleStart({
 					sleep(1000)
 					bot_start()
 					useskill(43501018,1)
-					sleep(800)
+					sleep(2000)
 					bot_stop()
 					gotocoordinate(1,2500,3007)
 					sleep(500)
@@ -300,10 +314,15 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 				end
+				if gety()==3007 and labelkuang==0 and labelkuangwawan==1 then
+					bot_start()
+					ini_change("tobot_scriptbot",1)
+					ini_change("ban_hit_mob",0)
+				end
 				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚÓÒ¿ó3²ã")
+					speak("ÍÚÓÒ¿ó3²ã1")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,2095)
@@ -321,13 +340,16 @@ common.simpleStart({
 					jmp(2)
 					sleep(800)
 					jmp(0)
+					sleep(800)
+					jmp(0)
+					sleep(800)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
 				if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚÓÒ¿ó2²ã")
+					speak("ÍÚÓÒ¿ó2²ã1")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,1327)
@@ -352,7 +374,7 @@ common.simpleStart({
 				if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==0 then  
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚÓÒ¿ó1²ã")
+					speak("ÍÚÓÒ¿ó1²ã1")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,3167,1135)
@@ -366,19 +388,21 @@ common.simpleStart({
 					useskill(5000008,0)
 					sleep(500)
 					useskill(5000008,0)
-					sleep(500)
+					sleep(1000)
 					labelkuangwawan=1
 					bot_start()
 					sleep(800)
 					jmp(1)
+					common.wearGongji()
 					ini_change("tobot_scriptbot",1)
 					
 				end
 				if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==1 then  --´ÓÓÒÏÂÂäÍÚ¿ó
 					bot_stop()
+					speak("ÍÚÓÒ¿ó1²ã2")
+					common.wearDiaoluo()
 					ini_change("ban_hit_mob",1)
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚÓÒ¿ó1²ã")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,3167,1135)
@@ -402,7 +426,7 @@ common.simpleStart({
 				if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==1 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚÓÒ¿ó2²ã")
+					speak("ÍÚÓÒ¿ó2²ã2")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,1327)
@@ -434,7 +458,7 @@ common.simpleStart({
 				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==1 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚÓÒ¿ó3²ã")
+					speak("ÍÚÓÒ¿ó3²ã2")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,2095)
@@ -464,7 +488,6 @@ common.simpleStart({
 					jmp(2)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
-					ini_change("ban_hit_mob",0)
 				end
 				if gety()==3007 and labelkuang==1 and labelkuangwawan==0 then
 					bot_stop()
@@ -481,10 +504,15 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					ini_change("tobot_scriptbot",1)
 				end
+				if gety()==3007 and labelkuang==1 and labelkuangwawan==1 then
+					bot_start()
+					ini_change("ban_hit_mob",0)
+					ini_change("tobot_scriptbot",1)
+				end
 				if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==1 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚ×ó¿ó3²ã")
+					speak("ÍÚ×ó¿ó3²ã2")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1279,2351)
@@ -512,7 +540,7 @@ common.simpleStart({
 				if getx()>1100 and getx()<=1279 and gety()==1711 and labelkuang==1 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚ×ó¿ó2²ã")
+					speak("ÍÚ×ó¿ó2²ã2")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1125,1711)
@@ -538,7 +566,7 @@ common.simpleStart({
 				if getx()>=32 and getx()<=300 and gety()==799 and labelkuang==1 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					speak("ÍÚ×ó¿ó1²ã")
+					speak("ÍÚ×ó¿ó1²ã2")
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,32,799)
@@ -557,6 +585,7 @@ common.simpleStart({
 					bot_start()
 					sleep(400)
 					jmp(1)
+					common.wearGongji()
 					ini_change("tobot_scriptbot",1)
 				end
 			until(door_if(610,3007)==1 or getmapid()~=35701)
@@ -653,7 +682,7 @@ common.simpleStart({
 			label=1
             repeat
 				sleep(200)
-				if getx()>=2900 and getx()<=3167 and gety()==2751 and label<7 then
+				if getx()>2879 and getx()<=3167 and gety()==2751 and label<7 then
 				bot_stop()
 				ini_change("tobot_scriptbot",0)
 				ini_change("ban_hit_mob",1)
@@ -678,9 +707,10 @@ common.simpleStart({
 				sleep(4000)
 				ini_change("ban_hit_mob",0)
 				sleep(20000)
-				ini_change("tobot_scriptbot",1)
+				bot_stop()
+				sleep(1000)
 				end
-				if label==7 and getx()>=2900 and getx()<=3167 and gety()==2751 then
+				if label==7 and getx()>2879 and getx()<=3167 and gety()==2751 then
 					bot_stop()
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",1)
@@ -764,17 +794,17 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-				if getx()>2879 and getx()<3020 or getx()>3080 and gety()<=2383 and gety()>607 then
+				if getx()>2879 and getx()<=3167 and gety()<=2383 and gety()>607 then
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",1)
 					bot_start()
 				end
-				if getx()>2879 and getx()<3020 or getx()>3080 and gety()>2383 and gety()<=3007 then
+				if getx()>2879 and getx()<=3167 and gety()>2383 and gety()<=3007 then
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-				if getx()>1600 and getx()<=2879 and gety()== 3007 then
+				if getx()>=1600 and getx()<=2879 and gety()== 3007 then
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()

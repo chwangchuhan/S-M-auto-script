@@ -53,7 +53,6 @@ end
 
  -- 游戏对话框输出 --
 local function show(str)
-    sleep(200)
     printgame(123, 1, 5, "☆☆ "..str.." ☆☆")
 end
 
@@ -331,7 +330,7 @@ local function wearGongji()
     if (wearConfig ~= nil) then
         show('更换攻击装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(1000)
+        sleep(100)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -341,7 +340,7 @@ local function wearGongji()
             if (nums >= 1) then
                 wearitem(v)
                 show('更换装备'..v)
-                sleep(50)
+                sleep(10)
             end
         end
 
@@ -364,7 +363,7 @@ local function wearJingyan()
     if (wearConfig ~= nil) then
         show('更换经验装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(1000)
+        sleep(10)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -374,7 +373,7 @@ local function wearJingyan()
             if (nums >= 1) then
                 wearitem(v)
                 show('更换装备'..v)
-                sleep(50)
+                sleep(10)
             end
         end
 
@@ -397,7 +396,7 @@ local function wearDiaoluo()
     if (wearConfig ~= nil) then
         show('更换掉落装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(1000)
+        sleep(100)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -407,7 +406,7 @@ local function wearDiaoluo()
             if (nums >= 1) then
                 wearitem(v)
                 show('更换装备'..v)
-                sleep(50)
+                sleep(10)
             end
         end
 

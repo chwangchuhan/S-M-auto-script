@@ -90,6 +90,7 @@ common.simpleStart({
 					jmp(0)
 					sleep(500)
 					common.wearGongji()
+					sleep(500)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -117,6 +118,7 @@ common.simpleStart({
 					jmp(0)
 					sleep(500)
 					common.wearGongji()
+					sleep(500)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -141,6 +143,7 @@ common.simpleStart({
 					sleep(1000)
 					jmp(2)
 					common.wearGongji()
+					sleep(500)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -165,6 +168,7 @@ common.simpleStart({
 					sleep(1000)
 					jmp(0)
 					common.wearGongji()
+					sleep(500)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -194,6 +198,7 @@ common.simpleStart({
 					jmp(2)
 					sleep(800)
 					common.wearGongji()
+					sleep(500)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
@@ -315,6 +320,7 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 				end
 				if gety()==3007 and labelkuang==0 and labelkuangwawan==1 then
+					common.wearGongji()
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
@@ -394,6 +400,7 @@ common.simpleStart({
 					sleep(800)
 					jmp(1)
 					common.wearGongji()
+					sleep(500)
 					ini_change("tobot_scriptbot",1)
 					
 				end
@@ -430,9 +437,9 @@ common.simpleStart({
 					bot_stop()
 					sleep(500)
 					gotocoordinate(1,1792,1327)
-					sleep(500)
+					sleep(800)
 					gotocoordinate(1,1792,1327)
-					sleep(500)
+					sleep(800)
 					gotocoordinate(1,1792,1327)
 					sleep(500)
 					useskill(5000008,1)
@@ -443,6 +450,7 @@ common.simpleStart({
 					sleep(500)
 					bot_start()
 					ini_change("tobot_scriptbot",1)
+					sleep(800)
 				end
 				if getx()>=2900 and getx()<=3167 and gety()==2335 and labelkuang==1 then
 					bot_stop()
@@ -586,6 +594,7 @@ common.simpleStart({
 					sleep(400)
 					jmp(1)
 					common.wearGongji()
+					sleep(500)
 					ini_change("tobot_scriptbot",1)
 				end
 			until(door_if(610,3007)==1 or getmapid()~=35701)
@@ -945,7 +954,7 @@ common.simpleStart({
             repeat
 				sleep(200)
 				if door_if(1420,3007)==1 then  --
-				sleep(2000)
+				sleep(4000)
 				script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C333030372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313432302E36342C333030372E30382CD3D2C5DC2CC3BBD3D0B8BDBCD3B2CECAFD2C",0)
 				break
 				end
@@ -955,7 +964,7 @@ common.simpleStart({
             repeat
 				sleep(200)
 				if door_if(1420,3007)==1 then  --
-				sleep(2000)
+				sleep(4000)
 				script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C333030372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313432302E36342C333030372E30382CD3D2C5DC2CC3BBD3D0B8BDBCD3B2CECAFD2C",0)
 				break
 				end

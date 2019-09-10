@@ -330,7 +330,7 @@ local function wearGongji()
     if (wearConfig ~= nil) then
         show('更换攻击装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(100)
+        sleep(500)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -363,7 +363,7 @@ local function wearJingyan()
     if (wearConfig ~= nil) then
         show('更换经验装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(10)
+        sleep(500)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)
@@ -396,7 +396,7 @@ local function wearDiaoluo()
     if (wearConfig ~= nil) then
         show('更换掉落装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
-        sleep(100)
+        sleep(500)
 
         for i,v in ipairs(wearConfig) do
             local nums = item_if(v)

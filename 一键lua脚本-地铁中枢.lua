@@ -32,5 +32,9 @@ common.simpleStart({
         if (getmapid() == 28500) then
 			ini_change("ban_hit_mob",1)
         end
-    end
+    end,
+    onScriptEnd = function  ()
+        -- 放弃未完成任务
+        common.dropTask({134001021, 134001022, 134001023, 134001024, 134001025, 134001026, 134001027, 134001028, 134001029, 134001030, 134001031})
+    end,
 })

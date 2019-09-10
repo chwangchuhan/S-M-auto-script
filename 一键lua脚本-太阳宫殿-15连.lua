@@ -70,13 +70,8 @@ common.simpleStart({
 			--item_use(430453126)--星球坚不可摧
         end
 		if (getmapid() == 35605) then
-            bot_stop()
-			--local f = dofile(path_scripts.."S-M-auto-script\\config\\掉落装备.lua")
-			--bot_start()
-			sleep(2000)
-			--local f = dofile(path_scripts.."S-M-auto-script\\config\\战斗装备.lua")
+			sleep(4000)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3933362C3739392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3935362C3739392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3934362C3739392CD3D2C5DC2C0D0A",0)
-			bot_start()
 		end
     end
 })

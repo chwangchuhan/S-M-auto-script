@@ -1,22 +1,18 @@
 
 -----------下方装备自定义添加删除（打开配置目录，再配置文件中可以直接复制装备名字）--------------
-item_wear("黑熊帽子")
-sleep(10)
-item_wear("黑熊鞋子")
-sleep(10)
-item_wear("黑熊手套")
-sleep(10)
-item_wear("祈福同心+15")
-sleep(10)
-item_wear("卡兹诺圣石")
-sleep(10)
-item_wear("LA-smile-笑脸(男)T恤")
-sleep(10)
-item_wear("LA-smile-笑脸(男)短裤")
-sleep(10)
-item_wear("迪特徽章+2") --掉落徽章
-sleep(10)
-item_wear("天空之城耳环")
-sleep(10)
-item_wear("")
-sleep(10)
+-- 注：读取优先级script/掉落装.lua目录下最高，如想定制自己的装备请复制该文件到script目录下更改
+
+return {
+    -- 格式：
+    -- "装备名称或id",
+    -- 请复制已有正行内容直接改
+    "黑熊帽子",
+    "黑熊鞋子",
+    "黑熊手套",
+    "祈福同心+15",
+    "卡兹诺圣石",
+    "LA-smile-笑脸(男)T恤",
+    "LA-smile-笑脸(男)短裤",
+    "迪特徽章+2",
+    "天空之城耳环",
+}

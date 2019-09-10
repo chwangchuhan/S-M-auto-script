@@ -300,6 +300,11 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 				end
+				if gety()==3007 and labelkuang==0 and labelkuangwawan==1 then
+					bot_start()
+					ini_change("tobot_scriptbot",1)
+					ini_change("ban_hit_mob",0)
+				end
 				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
@@ -477,6 +482,11 @@ common.simpleStart({
 					jmp(2)
 					sleep(500)
 					jmp(2)
+					bot_start()
+					ini_change("ban_hit_mob",0)
+					ini_change("tobot_scriptbot",1)
+				end
+				if gety()==3007 and labelkuang==1 and labelkuangwawan==1 then
 					bot_start()
 					ini_change("ban_hit_mob",0)
 					ini_change("tobot_scriptbot",1)

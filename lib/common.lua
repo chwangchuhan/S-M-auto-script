@@ -155,15 +155,16 @@ end
 local function doTask (npcId, taskIds)
     bot_stop()
     show("任务领取/提交中 ...")
-    sleep(5000)
+    sleep(2000)
     open_npc(npcId)
 
     for i,v in ipairs(taskIds) do
-        -- request_task 任务接成功返回0，失败返回-1
-        if request_task(npcId, v) ~= -1 then
-             show("任务领取完成")
-        else
-            sleep(500)
+        sleep(200)
+        -- 任务不存在返回0
+        if (task_get_state(v) == 0) then
+            request_task(npcId, v)
+            show("任务领取完成")
+        elseif (task_get_state(v) == 3) then -- 任务已完成
             submit_task(npcId, v)
             show("任务提交成功")
 
@@ -174,6 +175,19 @@ local function doTask (npcId, taskIds)
     end
 
     close_npc(npcId)
+end
+
+-- 放弃任务 --
+local function dropTask(taskIds)
+    show("放弃任务中 ...")
+
+    for i,v in ipairs(taskIds) do
+        sleep(200)
+        -- 未完成任务
+        if (task_get_state(v) == 2) then
+            close_task(v)
+        end
+    end
 end
 
 -- 获取按照星期的时间戳
@@ -536,6 +550,8 @@ local function simpleStart (config)
                     bot_stop()  
                     resetConfig()
 
+                    sleep(500)
+
                     -- 结束脚本回调
                     if (config.onScriptEnd) then
                         config.onScriptEnd()
@@ -671,6 +687,10 @@ local function shendianStart (config)
                             plane(70)
                             show('脚本超时，终止脚本')
                             resetConfig()
+
+                            if (config.onScriptEnd) then
+                                config.onScriptEnd()
+                            end
                             return
                         end
                     end
@@ -851,7 +871,8 @@ return {
     shendianStart = shendianStart,
     doMouseScript = doMouseScript,
     doPetSkill = doPetSkill,
-    doTask = doTask,
+    doTask = doTask,            -- 领取任务
+    dropTask = dropTask,        -- 放弃任务
     checkMob = checkMob,
     xuemaiStart = xuemaiStart,
     wearGongji = wearGongji,    -- 穿攻击装备

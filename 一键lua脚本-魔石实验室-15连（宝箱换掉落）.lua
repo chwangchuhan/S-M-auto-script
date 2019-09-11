@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "魔石实验室",
-    mapCount = 3,
+    mapCount = 15,
     planeId = 259,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {34204,34000,34001,34002,34003,34004,34005,34006,34007,34008,34009,34010,34011,34012,34013,34014,34015},

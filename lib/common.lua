@@ -357,7 +357,6 @@ local function wearGongji()
                 sleep(10)
             end
         end
-
         ini_change("ban_hit_mob",0) -- ÔÊÐí¹¥»÷
     end
 end
@@ -390,7 +389,6 @@ local function wearJingyan()
                 sleep(10)
             end
         end
-
         ini_change("ban_hit_mob",0) -- ÔÊÐí¹¥»÷
     end
 end
@@ -423,7 +421,6 @@ local function wearDiaoluo()
                 sleep(10)
             end
         end
-
         ini_change("ban_hit_mob",0) -- ÔÊÐí¹¥»÷
     end
 end

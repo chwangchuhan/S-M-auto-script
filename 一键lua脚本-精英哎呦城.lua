@@ -66,6 +66,8 @@ common.simpleStart({
         end
 		if (getmapid() == 84001) then
            ini_change("ban_hit_mob",1)
+		   sleep(1000)
+		   ini_change("ban_hit_mob",1)
         end
 		if (getmapid() == 84009) then
 			repeat
@@ -76,9 +78,10 @@ common.simpleStart({
 				end
 				if getx()>=2380 and getx()<= 2450 and gety()>=2575 and gety()<=2630 then
 					bot_stop()
+					speak("ÉÏÌø")
+					sleep(1000)
 					ini_change("tobot_scriptbot",0)
 					bot_stop()
-					speak("ÉÏÌø")
 					sleep(500)
 					jmp(1)
 					sleep(500)

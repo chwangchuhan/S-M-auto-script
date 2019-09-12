@@ -119,6 +119,10 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					bot_start()
 				end
+				if gety()>703 and gety()<2600 then
+					ini_change("tobot_scriptbot",1)
+					bot_start()
+				end
 			until(getmapid() ~= 84009)
         end
 		if (getmapid() == 84011) then

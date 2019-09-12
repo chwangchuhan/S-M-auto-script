@@ -53,6 +53,7 @@ end
 
  -- 游戏对话框输出 --
 local function show(str)
+    sleep(10)
     printgame(123, 1, 5, "☆☆ "..str.." ☆☆")
 end
 

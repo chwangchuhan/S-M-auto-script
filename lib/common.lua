@@ -53,6 +53,7 @@ end
 
  -- 游戏对话框输出 --
 local function show(str)
+    sleep(10)
     printgame(123, 1, 5, "☆☆ "..str.." ☆☆")
 end
 
@@ -813,8 +814,6 @@ local function xuemaiStart (config)
                             end
                         end
 
-                        bot_start()
-
                         -- 一轮循环结束进入第二轮
                         if include(endMapIds, preMapId) then
                             -- 副本一轮结束清空倒计时
@@ -830,10 +829,11 @@ local function xuemaiStart (config)
                                 return
                             end
                         end
+
+                        preMapId = currentMapId
+                        bot_start()
                     end
 
-                    
-                    preMapId = currentMapIndex
                     sleep(200)
                 end
                 

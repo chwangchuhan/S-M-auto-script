@@ -25,7 +25,7 @@ local defaultXMaxSpeed = 1700
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1500
 
--- local defaultLuckyDog = true
+local defaultLuckyDog = true
 
  -- 通用方法 --
 -- 游戏配置初始化 --
@@ -901,7 +901,7 @@ local function xuemaiStart (config)
         end
     end
 end
-
+local defaultLuckyDog = true
 
 return {
     show = show,

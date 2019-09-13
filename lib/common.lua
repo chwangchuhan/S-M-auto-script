@@ -25,6 +25,8 @@ local defaultXMaxSpeed = 1700
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1500
 
+local defaultLuckyDog = true
+
  -- 通用方法 --
 -- 游戏配置初始化 --
 local function gameConfigInit(initSettings)
@@ -426,6 +428,43 @@ local function wearDiaoluo()
     end
 end
 
+-- 获取数字次方
+local function getNumExp(n, v)
+    local res = 1
+    for i=1,v-1 do
+        res = res * n
+    end
+    return res
+end
+
+-- 获取随机数（根据时间戳伪随机）
+local function getRandom(v1, v2)
+    local time = getnowtime()
+    local timeStr = getnowtime()..''
+    local length = #timeStr - 2
+    local skew = getNumExp(10, length)
+
+    while(true) do
+        if ((time - skew) > skew) then
+            time = time - skew
+
+        else
+            if (time - skew) > 0 then
+                time = time - skew
+            end
+            skew = skew / 10 
+        end
+
+        if (time > v1 and time < v2) then
+            return time
+        end
+
+        if (time < 0 or skew <= 1) then
+            return 0
+        end
+    end
+end
+
 -- 脚本开始 --
 local function simpleStart (config)
     -- 存在task的地图id
@@ -440,6 +479,12 @@ local function simpleStart (config)
 
     gameConfigInit(config.initSettings)
     mapInitDesc(config.mapName, config.mapCount)
+
+    if (defaultLuckyDog and config.isLuckyDog) then
+        if (getRandom(1, 1000) > 800) then
+            item_horn("大喇叭","圣汐、莫里一键土拨鼠S&M脚本，价格50元，Q群:472390696，现已支持8大精英、祭坛、各种超越副本、定时血脉、神殿，后续即将更新小星球。")
+        end
+    end
 
     -- 速度检测
     if (not checkXSpeed(config.minXSpeed, config.maxXSpeed) or not checkYSpeed(config.minYSpeed, config.maxYSpeed)) then
@@ -856,7 +901,7 @@ local function xuemaiStart (config)
         end
     end
 end
-
+local defaultLuckyDog = true
 
 return {
     show = show,

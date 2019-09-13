@@ -13,6 +13,8 @@ common.simpleStart({
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
+    isLuckyDog = true,
+
 	isAutoWearDiaoluo = true,
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本

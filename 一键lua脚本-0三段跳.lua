@@ -58,6 +58,8 @@ function lingsanduantiao.begin()
 				sleep(1000)
 				item_wear("超级飞翔石(12小时)")
 				sleep(100)
+				item_wear("超级飞翔石(12小时)")
+				sleep(100)
 				speak("已经领取[超级飞翔石(12小时)]")
 				ini_change("ban_hit_mob",0)
 				return

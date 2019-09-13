@@ -14,6 +14,8 @@ common.simpleStart({
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
 
+    isLuckyDog = true,
+
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30

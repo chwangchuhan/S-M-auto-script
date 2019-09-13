@@ -16,6 +16,7 @@ common.simpleStart({
 	minXSpeed = 850,  -- 站街速低于850会死掉
 	minYSpeed = 1120,
 	maxYSpeed = 2000,
+	isLuckyDog = true,
 
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本

@@ -177,6 +177,9 @@ local function doTask (npcId, taskIds)
         end
     end
 
+    sleep(500)
+
+    close_npc(npcId)
     close_npc(npcId)
 end
 

@@ -59,7 +59,7 @@ common.simpleStart({
     },
     onScriptRound = function () -- 副本每次切换地图回调
         if (getmapid() == 83602) then
-			ini_change("tobot_hit_range_max",800)
+			ini_change("tobot_hit_range_max",700)
 			ini_change("tobot_hit_range_ignore",2000)
         end
 		if (getmapid() == 83603) then

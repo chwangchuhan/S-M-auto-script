@@ -20,8 +20,8 @@ local jingyanConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\¾­Ñé×°.l
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 400
-local defaultXMaxSpeed = 1700
+local defaultXMinSpeed = 550
+local defaultXMaxSpeed = 1500
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1500
 

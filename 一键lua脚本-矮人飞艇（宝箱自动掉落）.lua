@@ -13,7 +13,6 @@ common.simpleStart({
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
-	isAutoWearDiaoluo = true,
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
@@ -37,9 +36,9 @@ common.simpleStart({
        -- 8
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3634302C3834372CB2BBB1E42C",
 	   -- 副本9
-	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3634302C3834372CB2BBB1E42C",
+	   "",
 	   -- 副本10
-	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3634302C3834372CB2BBB1E42C",
+	   "",
 	   -- 副本11
 	   "",
 	   -- 副本12
@@ -71,16 +70,17 @@ common.simpleStart({
 			config.label=1
 			repeat
 				sleep(100)
-				if door_if(3098,1407)~=1 then
+				if door_if(1550,1023)~=1 then
 					speak("亚齐龙")
 					ini_change("ban_hit_mob",0)
 					useskill(43501018,1)
 				end
-				if door_if(3098,1407)==1 then
+				if door_if(1550,1023)==1 then
 					speak("速度出门")
 					ini_change("ban_hit_mob",1)
 				end
-			until(door_if(3098,1407)==1)
+			until(door_if(1550,1023)==1)
+			ini_change("ban_hit_mob",1)
 		end
 		if (getmapid() == 35106) then
 		ini_change("ban_hit_mob",0)
@@ -92,5 +92,19 @@ common.simpleStart({
 				script_txt_load("",1)
 			end
         end
+		if (getmapid() == 35107) then
+			item_use(611113016)--三星芝士汤
+			sleep(100)
+		end
+		if getmapid() == 35108 or getmapid() == 35109 then
+			bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
+			sleep(3000)
+			common.wearGongji()
+			sleep(1000)
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3634302C3834372CB2BBB1E42C",0)
+		end
     end
 })

@@ -13,7 +13,6 @@ common.simpleStart({
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
-    isAutoWearDiaoluo = true,
     isLuckyDog = true,
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
@@ -71,7 +70,13 @@ common.simpleStart({
 			--item_use(430453126)--星球坚不可摧
         end
 		if (getmapid() == 35605) then
+			 bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
 			sleep(4000)
+			common.wearGongji()
+			sleep(1000)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3933362C3739392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3935362C3739392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3934362C3739392CD3D2C5DC2C0D0A",0)
 		end
     end

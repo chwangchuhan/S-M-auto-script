@@ -58,6 +58,10 @@ common.simpleStart({
     onScriptRound = function (config) -- 副本每次切换地图回调
         if (getmapid() == 35100) then
 		config.label=0
+		bot_stop()
+		common.wearGongji()
+		sleep(1000)
+		bot_start()
         end
 		if (getmapid() == 35102) then
 			useskill(5000420,1) --放一个魔免
@@ -102,8 +106,10 @@ common.simpleStart({
 			sleep(500)
 			bot_start()
 			sleep(3000)
+			bot_stop()
 			common.wearGongji()
 			sleep(1000)
+			bot_start()
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C3834372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3634302C3834372CB2BBB1E42C",0)
 		end
     end

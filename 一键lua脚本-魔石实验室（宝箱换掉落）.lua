@@ -58,7 +58,13 @@ common.simpleStart({
 	   "",
 	},
 	onScriptRound = function () -- 副本每次切换地图回调
-        if (getmapid() == 34003) then
+        if (getmapid() == 34000) then
+			bot_stop()
+			common.wearGongji()
+			sleep(1000)
+			bot_start()
+        end
+		if (getmapid() == 34003) then
 			ini_change("tobot_hit_range_top",400)
 			ini_change("tobot_hit_range_max",400)
 			ini_change("tobot_hit_range_ignore",2000)
@@ -107,19 +113,17 @@ common.simpleStart({
         end
 		if (getmapid() == 34015) then
 			speak("为防止遗漏，请及时清理包裹")
+			sleep(500)
+			bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
+			sleep(3000)
+			bot_stop()
+			common.wearGongji()
 			sleep(1000)
-			while(true)
-			do	
-				sleep(500)
-				if door_if(823,991)==1 then  --
-				speak("门开")
-				bot_stop()
-				sleep(2000)
-				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
-				bot_start()
-				break
-				end
-			end
+			bot_start()
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
         end
     end
 })

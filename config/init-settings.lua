@@ -12,7 +12,7 @@ return {
     tobot_jmporretn = 0, --碰墙自动转身
     ban_hit_mob = 0, -- 允许攻击
 	tobot_hit_range_max = 250,
-	tobot_hit_range_top = 150,
+	tobot_hit_range_top = 100,
 	tobot_hit_range_down = 20,
 	tobot_hit_range_ignore = 1200,
 	tobot_script_x_distance = 50,

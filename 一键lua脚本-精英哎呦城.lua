@@ -70,6 +70,11 @@ common.simpleStart({
 		   sleep(1000)
 		   ini_change("ban_hit_mob",1)
         end
+		if (getmapid() == 84002) then
+           ini_change("ban_hit_mob",0)
+		   sleep(1000)
+		   ini_change("ban_hit_mob",0)
+        end
 		if (getmapid() == 84009) then
 			repeat
 				sleep(100)

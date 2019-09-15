@@ -21,11 +21,11 @@ local jingyanConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\经验装.l
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
 local defaultXMinSpeed = 550
-local defaultXMaxSpeed = 950
+local defaultXMaxSpeed = 1500
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1250
+local defaultYMaxSpeed = 1500
 
-local defaultLuckyDog = true
+local defaultLuckyDog = false
 
  -- 通用方法 --
 -- 游戏配置初始化 --

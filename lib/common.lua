@@ -88,7 +88,7 @@ end
 -- @mobIds: string | table 如传入string也识别
 -- @returns: boolean
 function checkMob(mobIds)
-    if (mobIds == 'string') then
+    if (type(mobIds) == 'string') then
         return mob_if(mobIds) == 1
     end
 

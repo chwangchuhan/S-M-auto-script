@@ -64,6 +64,7 @@ common.simpleStart({
         end
 		if (getmapid() == 83603) then
 			ini_change("tobot_hit_range_max",300)
+			ini_change("tobot_hit_range_top",150)
 			ini_change("tobot_hit_range_ignore",2000)
         end
     end

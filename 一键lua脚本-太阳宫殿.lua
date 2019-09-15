@@ -11,7 +11,8 @@ common.simpleStart({
     overtime = 90, --超时时间，/分钟
     endMapIds = {35605}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
-        tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
+        tobot_giveitemif=1, 
+		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
     isLuckyDog = true,
     -- 脚本名称列表，需和mapIds一一对应
@@ -56,11 +57,19 @@ common.simpleStart({
 	   "",
 	},
     onScriptRound = function () -- 副本每次切换地图回调
+		if (getmapid() == 35600) then
+            bot_stop()
+			common.wearGongji()
+			sleep(1000)
+			bot_start()
+        end
 		if (getmapid() == 35603) then
             useskill(43501018,1)
 			ini_change("ban_hit_mob",1)--禁止攻击--
         end
 		if (getmapid() == 35604) then
+			ini_change("tobot_hit_range_max",300)
+			ini_change("tobot_hit_range_ignore",2000)
 			item_use(170191135)--世界树减伤药
 			sleep(100)
 			item_use(611113086)--最大吸红
@@ -70,13 +79,17 @@ common.simpleStart({
 			--item_use(430453126)--星球坚不可摧
         end
 		if (getmapid() == 35605) then
-			 bot_stop()
+			bot_stop()
 			common.wearDiaoluo()
 			sleep(500)
+			ini_change("tobot_hit_range_max",250)
+			ini_change("tobot_hit_range_ignore",2000)
 			bot_start()
 			sleep(4000)
+			bot_stop()
 			common.wearGongji()
-			sleep(1000)
+			sleep(2000)
+			bot_start()
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3933362C3739392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3935362C3739392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3934362C3739392CD3D2C5DC2C0D0A",0)
 		end
     end

@@ -158,8 +158,9 @@ end
 local function doTask (npcId, taskIds)
     bot_stop()
     show("任务领取/提交中 ...")
-    sleep(2000)
+    sleep(1000)
     open_npc(npcId)
+    sleep(1000)
 
     for i,v in ipairs(taskIds) do
         sleep(200)
@@ -178,6 +179,8 @@ local function doTask (npcId, taskIds)
     end
 
     close_npc(npcId)
+    sleep(2000)
+
 end
 
 -- 放弃任务 --

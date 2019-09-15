@@ -25,7 +25,7 @@ local defaultXMaxSpeed = 1500
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1500
 
-local defaultLuckyDog = true
+local defaultLuckyDog = false
 
  -- 通用方法 --
 -- 游戏配置初始化 --
@@ -158,8 +158,9 @@ end
 local function doTask (npcId, taskIds)
     bot_stop()
     show("任务领取/提交中 ...")
-    sleep(2000)
+    sleep(1000)
     open_npc(npcId)
+    sleep(1000)
 
     for i,v in ipairs(taskIds) do
         sleep(200)
@@ -177,10 +178,9 @@ local function doTask (npcId, taskIds)
         end
     end
 
-    sleep(500)
+    close_npc(npcId)
+    sleep(2000)
 
-    close_npc(npcId)
-    close_npc(npcId)
 end
 
 -- 放弃任务 --

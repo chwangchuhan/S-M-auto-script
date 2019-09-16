@@ -301,10 +301,10 @@ local function checkXSpeed (minX, maxX)
     end
   
     if (speed >= minX and speed <= maxX) then
-        show('移动速度检测通过')
+        -- show('移动速度检测通过')
         return true
     else
-        show('移动速度检测未通过，您的速度为：'..speed..'，当前副本需要速度：'..minX..'~'..maxX)
+        -- show('移动速度检测未通过，您的速度为：'..speed..'，当前副本需要速度：'..minX..'~'..maxX)
         return false
     end
 end
@@ -327,10 +327,10 @@ local function checkYSpeed(minY, maxY)
     end
 
     if (speed >= minY and speed <= maxY) then
-        show('跳跃速度检测通过')
+        -- show('跳跃速度检测通过')
         return true
     else
-        show('跳跃速度检测未通过，您的速度为：'..speed..'，当前副本需要跳跃速度：'..minY..'~'..maxY)
+        -- show('跳跃速度检测未通过，您的速度为：'..speed..'，当前副本需要跳跃速度：'..minY..'~'..maxY)
         return false
     end
 end

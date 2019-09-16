@@ -11,7 +11,8 @@ common.simpleStart({
     overtime = 30, --超时时间，/分钟
     endMapIds = {83505,83506,83507}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
-        tobot_script_x_distance = 40,
+        tobot_giveitemif=1,
+		tobot_script_x_distance = 40,
 		tobot_script_y_distance = 20,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },

@@ -11,6 +11,7 @@ common.simpleStart({
     overtime = 30, --超时时间，/分钟
     endMapIds = {83604,83605,83606}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
+		tobot_giveitemif=1,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
     
@@ -60,6 +61,7 @@ common.simpleStart({
     onScriptRound = function () -- 副本每次切换地图回调
         if (getmapid() == 83602) then
 			ini_change("tobot_hit_range_max",700)
+			ini_change("tobot_hit_range_top",150)
 			ini_change("tobot_hit_range_ignore",2000)
         end
 		if (getmapid() == 83603) then

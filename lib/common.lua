@@ -17,13 +17,15 @@ local diaoluoConfig1 = loadfile(path_scripts.."掉落装.lua")
 local diaoluoConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\掉落装.lua")
 local jingyanConfig1 = loadfile(path_scripts.."经验装.lua")
 local jingyanConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\经验装.lua")
+local suduConfig1 = loadfile(path_scripts.."速度装.lua")
+local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua")
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
 local defaultXMinSpeed = 550
-local defaultXMaxSpeed = 950
+local defaultXMaxSpeed = 1500
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1250
+local defaultYMaxSpeed = 1500
 
 local defaultLuckyDog = false
 
@@ -381,6 +383,38 @@ local function wearJingyan()
     
     if (wearConfig ~= nil) then
         show('更换经验装备')
+        ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
+        sleep(500)
+
+        for i,v in ipairs(wearConfig) do
+            local nums = item_if(v)
+            print(v)
+
+            -- 判断装备数量，避免错误穿装备
+            if (nums >= 1) then
+                wearitem(v)
+                show('更换装备'..v)
+                sleep(10)
+            end
+        end
+        ini_change("ban_hit_mob",0) -- 允许攻击
+    end
+end
+
+-- 穿戴速度装备
+local function wearSudu()
+    local wearConfig = nil
+
+    if (suduConfig1 and suduConfig2) then
+        wearConfig = suduConfig1()
+    end
+
+    if (not suduConfig1 and suduConfig2) then
+        wearConfig = suduConfig2()
+    end
+    
+    if (wearConfig ~= nil) then
+        show('更换速度装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
         sleep(500)
 
@@ -926,4 +960,5 @@ return {
     wearGongji = wearGongji,    -- 穿攻击装备
     wearDiaoluo = wearDiaoluo,  -- 穿掉落装备
     wearJingyan = wearJingyan,  -- 穿经验装备
+	wearSudu = wearSudu,  		-- 穿速度装备
 }

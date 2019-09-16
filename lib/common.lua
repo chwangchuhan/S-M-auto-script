@@ -90,7 +90,7 @@ end
 -- @mobIds: string | table 如传入string也识别
 -- @returns: boolean
 function checkMob(mobIds)
-    if (mobIds == 'string') then
+    if (type(mobIds) == 'string') then
         return mob_if(mobIds) == 1
     end
 
@@ -209,16 +209,14 @@ local function getTimeSpan ()
 end
 
 -- 检测是否在血脉活动时间
--- 活动时间，每天晚上8-9点
+-- 活动时间，每天晚上8:10-9点
 local function checkInShendianTime ()
     local hour = gettime(2) * 60 * 60 * 1000
     local minute = gettime(3) * 60 * 1000
 
     -- 7点：68400000
     -- 8点：72000000
-    -- -- 1分：60000
-    -- -- 59分：3540000
-    if ((hour + minute) >= 72060000 and (hour + minute) <= 75540000) then 
+    if ((hour + minute) >= 72600000 and (hour + minute) <= 75540000) then 
         return true
     end
 
@@ -227,9 +225,9 @@ end
 
 -- 检测是否在血脉活动时间
 -- 活动时间
-    -- 周一：154860000 ~ 161940000
-    -- 周三：327660000 ~ 334740000
-    -- 周五：500460000 ~ 507540000
+    -- 周一：7:10-8.59
+    -- 周三：7:10-8.59
+    -- 周五：7:10-8.59
 local function checkInXuemaiTime()
     local timeSpan = getTimeSpan()
 
@@ -237,15 +235,15 @@ local function checkInXuemaiTime()
         return false
     end
 
-    if (timeSpan >= 154860000 and timeSpan <= 161940000) then --周一7-9点
+    if (timeSpan >= 155400000 and timeSpan <= 161940000) then --周一7-9点
         return true
     end
 
-    if (timeSpan >= 327660000 and timeSpan <= 334740000) then --周三7-9点
+    if (timeSpan >= 328200000 and timeSpan <= 334740000) then --周三7-9点
         return true
     end
 
-    if (timeSpan >= 500460000 and timeSpan <= 507540000) then --周五7-9点
+    if (timeSpan >= 501000000 and timeSpan <= 507540000) then --周五7-9点
         return true
     end
 
@@ -303,10 +301,10 @@ local function checkXSpeed (minX, maxX)
     end
   
     if (speed >= minX and speed <= maxX) then
-        show('移动速度检测通过')
+        -- show('移动速度检测通过')
         return true
     else
-        show('移动速度检测未通过，您的速度为：'..speed..'，当前副本需要速度：'..minX..'~'..maxX)
+        -- show('移动速度检测未通过，您的速度为：'..speed..'，当前副本需要速度：'..minX..'~'..maxX)
         return false
     end
 end
@@ -329,10 +327,10 @@ local function checkYSpeed(minY, maxY)
     end
 
     if (speed >= minY and speed <= maxY) then
-        show('跳跃速度检测通过')
+        -- show('跳跃速度检测通过')
         return true
     else
-        show('跳跃速度检测未通过，您的速度为：'..speed..'，当前副本需要跳跃速度：'..minY..'~'..maxY)
+        -- show('跳跃速度检测未通过，您的速度为：'..speed..'，当前副本需要跳跃速度：'..minY..'~'..maxY)
         return false
     end
 end
@@ -516,6 +514,7 @@ local function simpleStart (config)
 
     gameConfigInit(config.initSettings)
     mapInitDesc(config.mapName, config.mapCount)
+    print(config.mapName..'启动时间为'..startTimeSpan)
 
     if (defaultLuckyDog and config.isLuckyDog) then
         if (getRandom(1, 1000) > 800) then
@@ -569,6 +568,8 @@ local function simpleStart (config)
             -- 超时
             -- overtime时间为分
             if (getTimeSpan() - startTimeSpan > config.overtime * 60000) then
+                print('检测时间为'..startTimeSpan)
+                print('您在副本中的时间为'..(getTimeSpan() - startTimeSpan))
                 -- 终止副本
                 bot_stop()
                 plane(70)

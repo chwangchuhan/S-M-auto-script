@@ -905,7 +905,6 @@ local function xuemaiStart (config)
         end
     end
 end
-local defaultLuckyDog = true
 
 return {
     show = show,

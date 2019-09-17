@@ -49,9 +49,9 @@ common.simpleStart({
 	   -- 地下通道4 14
 	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3331362C3935392CB2BBB1E42C",
 	   -- 第一实验室 15
-	   "",
+	   "BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C383030",
 	   -- 第一实验室 16
-	   "",
+	   "BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C383030",
 	   
 	   -- 副本17
 	   "",
@@ -92,34 +92,11 @@ common.simpleStart({
 		if (getmapid() == 34014) then	
 			ini_change("tobot_hit_range_top",100)
 			speak("为防止遗漏，请及时清理包裹")
-			while(true)
-			do	
-				sleep(500)
-				if door_if(823,991)==1 then  --
-				speak("门开")
-				bot_stop()
-				sleep(2000)
-				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
-				bot_start()
-				break
-				end
-			end
+			sleep(500)
         end
 		if (getmapid() == 34015) then
 			speak("为防止遗漏，请及时清理包裹")
-			sleep(1000)
-			while(true)
-			do	
-				sleep(500)
-				if door_if(823,991)==1 then  --
-				speak("门开")
-				bot_stop()
-				sleep(2000)
-				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3832332C3939312CB2BBB1E42CA",0)
-				bot_start()
-				break
-				end
-			end
+			sleep(500)
         end
     end
 })

@@ -3,7 +3,7 @@ check=1
 local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
-    mapName = "神秘殿堂",
+    mapName = "神秘教堂",
     mapCount = 3,
     planeId = 268,
     -- 地图名称列表，需和mapIds一一对应

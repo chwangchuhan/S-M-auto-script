@@ -152,7 +152,7 @@ local function isMapNumOver(mapName, mapCount)
 
     local leftCount = mapCount - indun_get(mapName)
 
-    show("["..mapName.."]还地图需执行"..leftCount.."次，当前地图已执行"..indun_get(mapName).."次")
+    show("["..mapName.."]副本需执行"..leftCount.."次，当前副本已执行"..indun_get(mapName).."次")
 	return false
 end
 
@@ -182,7 +182,7 @@ local function doTask (npcId, taskIds)
 
     close_npc(npcId)
     sleep(2000)
-
+	bot_start()
 end
 
 -- 放弃任务 --
@@ -518,7 +518,7 @@ local function simpleStart (config)
 
     if (defaultLuckyDog and config.isLuckyDog) then
         if (getRandom(1, 1000) > 800) then
-            item_horn("大喇叭","圣汐、莫里一键土拨鼠S&M脚本，价格50元，Q群:472390696，现已支持8大精英、祭坛、各种超越副本、定时血脉、神殿，后续即将更新小星球。")
+            item_horn("大喇叭",".")
         end
     end
 
@@ -551,6 +551,7 @@ local function simpleStart (config)
             -- 飞机启动执行 --
             plane(config.planeId)
             wait_loadmap()
+			sleep(500)
         end
     end
 
@@ -614,6 +615,7 @@ local function simpleStart (config)
                 if (taskData.planeId) then
                     plane(taskData.planeId)
                     wait_loadmap()
+					sleep(500)
                 end
             else
             end
@@ -631,6 +633,7 @@ local function simpleStart (config)
                 -- 超出任务循环次数
                 if isMapNumOver(config.mapName, config.mapCount) then
                     -- 停止挂机
+					sleep(500)
                     bot_stop()  
                     resetConfig()
 

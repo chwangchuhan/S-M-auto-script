@@ -55,14 +55,14 @@ common.simpleStart({
 	   -- ¸±±¾17
 	   "",
 	},
-	tasks = {
+	--[[tasks = {
         {
             mapId = 37500,
             npcId = 7226,
             taskIds = {181002001},
             planeId = nil,
         }
-    },
+    },]]--
 	onScriptRound = function  ()
 		if (getmapid() == 37202.0) then
 			ini_change("tobot_hit_range_max",400)

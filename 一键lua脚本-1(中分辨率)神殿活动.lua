@@ -35,6 +35,7 @@ common.shendianStart({
         taskIds = {43603201, 43603202, 43603203, 43603204, 43603205, 43603206},
     },
     onScriptRound = function  ()
+        sleep(3000)
         if (common.checkMob('终极神殿二阶 英雄王')) then
             speak('遇到英雄王了')
             sleep(2000)

@@ -819,6 +819,7 @@ local function shendianStart (config)
             else
                 plane(186)
                 wait_loadmap()
+				sleep(500)
             end
         else
             if (not config.isWaiting) then -- 不等待活动

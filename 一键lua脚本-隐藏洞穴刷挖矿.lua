@@ -55,7 +55,7 @@ common.simpleStart({
                         for i=1,50 do
                             if (gety() > 100) then
                                 jmp(1)
-						        sleep(800)
+						        sleep(900)
                             end
                         end
                         bot_start()

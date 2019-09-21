@@ -69,14 +69,16 @@ common.simpleStart({
 			ini_change("tobot_hit_range_ignore",1200)	
 		end	
         if (getmapid() == 37203.0) then
+			labelnext=0
 			ini_change("tobot_hit_range_max",250)
 			repeat
-				sleep(1000)
+				sleep(100)
 				if door_if(1959,287) == 1 then --检测门口出来没有--
 					printgame(0,255,0,"植 已死亡~")
 					sleep(10000)
 					bot_stop()--停止挂机--
 					plane(285)
+					labelnext=1
 				end	
 				if getx()>1376 and getx()<1600 and gety()==1423 then 
 					sleep(10000)
@@ -101,7 +103,7 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-			until (getmapid() ~= 37203)	
+			until (getmapid() ~= 37203 or labelnext==1)	
 		end	
     end,
 })

@@ -62,6 +62,8 @@ common.simpleStart({
 			ini_change("ban_hit_mob",1)--½ûÖ¹¹¥»÷--
         end
 		if (getmapid() == 35604) then
+			ini_change("tobot_hit_range_top",300)
+			ini_change("tobot_hit_range_down",100)
 			ini_change("tobot_hit_range_max",300)
 			ini_change("tobot_hit_range_ignore",2000)
 			item_use(170191135)--ÊÀ½çÊ÷¼õÉËÒ©
@@ -73,6 +75,8 @@ common.simpleStart({
 			--item_use(430453126)--ÐÇÇò¼á²»¿É´Ý
         end
 		if (getmapid() == 35605) then
+			ini_change("tobot_hit_range_top",100)
+			ini_change("tobot_hit_range_down",20)
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",2000)
 			sleep(3000)

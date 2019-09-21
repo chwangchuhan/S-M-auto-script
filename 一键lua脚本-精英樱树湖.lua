@@ -62,7 +62,7 @@ common.simpleStart({
     onScriptRound = function () -- 副本每次切换地图回调
         if (getmapid() == 99200) then
 			labelnext=0
-			ini_change("tobot_hit_range_top",400)
+			ini_change("tobot_hit_range_top",250)
 			ini_change("tobot_hit_range_max",300)
 			repeat
 				sleep(200)
@@ -98,7 +98,7 @@ common.simpleStart({
 			until(labelnext==1)
         end
 		if (getmapid() == 99203) then
-			ini_change("tobot_hit_range_top",400)
+			ini_change("tobot_hit_range_top",250)
 			ini_change("tobot_hit_range_max",300)
         end
     end

@@ -22,7 +22,7 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 550
+local defaultXMinSpeed = 400
 local defaultXMaxSpeed = 1500
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1500
@@ -182,7 +182,7 @@ local function doTask (npcId, taskIds)
 
     close_npc(npcId)
     sleep(2000)
-	bot_start()
+	close_npc(npcId)
 end
 
 -- 放弃任务 --
@@ -511,6 +511,8 @@ local function simpleStart (config)
     local endMapIds = {lastMapId}
     -- 地图激活时间
     local startTimeSpan = getTimeSpan()
+	
+	bot_stop() --站立启动，检测站街速度
 
     gameConfigInit(config.initSettings)
     mapInitDesc(config.mapName, config.mapCount)

@@ -335,6 +335,24 @@ local function checkYSpeed(minY, maxY)
     end
 end
 
+-- 检测道具是否存在
+-- @items 道具array
+-- @returns 是否存在布尔值
+local function checkItemExist(items)
+    if (type(items) == 'table') then
+        local res = {}
+
+        for i,v in ipairs(items) do
+            if (item_if(v) == 0) then
+                return false
+            end
+        end
+
+        return true
+    end
+    return false
+end
+
 -- 穿戴攻击装备
 local function wearGongji()
     local wearConfig = nil
@@ -596,7 +614,7 @@ local function simpleStart (config)
 
             -- 判断当前脚本是否存在
             if currentScript then
-                if (#currentScript <= 30) then
+                if (#currentScript <= 30 and #currentScript ~= 0) then
                     -- 文件脚本
                     script_txt_load(currentScript, 0)
                 else
@@ -691,6 +709,12 @@ local function simpleStart (config)
                     return
                 end
             end
+        end
+
+
+        -- 每次while回调
+        if (config.onScriptWhileCallback) then 
+            config.onScriptWhileCallback(config)
         end
 
         sleep(200)
@@ -966,5 +990,6 @@ return {
     wearGongji = wearGongji,    -- 穿攻击装备
     wearDiaoluo = wearDiaoluo,  -- 穿掉落装备
     wearJingyan = wearJingyan,  -- 穿经验装备
-	wearSudu = wearSudu,  		-- 穿速度装备
+    wearSudu = wearSudu,  		-- 穿速度装备
+    checkItemExist = checkItemExist,             -- 检测道具是否存在
 }

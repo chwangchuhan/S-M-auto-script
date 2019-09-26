@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "太阳宫殿(超越)",
-    mapCount = 3,
+    mapCount = 1,
     planeId = 273,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {35402.0,35600.0,35601.0,35602.0,35603.0,35604.0,35605.0},

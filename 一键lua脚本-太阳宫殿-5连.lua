@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "太阳宫殿(超越)",
-    mapCount = 15,
+    mapCount = 5,
     planeId = 273,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {35402.0,35600.0,35601.0,35602.0,35603.0,35604.0,35605.0},
@@ -57,12 +57,6 @@ common.simpleStart({
 	   "",
 	},
     onScriptRound = function () -- 副本每次切换地图回调
-		if (getmapid() == 35600) then
-            bot_stop()
-			common.wearGongji()
-			sleep(1000)
-			bot_start()
-        end
 		if (getmapid() == 35603) then
             useskill(43501018,1)
 			ini_change("ban_hit_mob",1)--禁止攻击--
@@ -81,19 +75,11 @@ common.simpleStart({
 			--item_use(430453126)--星球坚不可摧
         end
 		if (getmapid() == 35605) then
-			bot_stop()
-			common.wearDiaoluo()
-			sleep(500)
 			ini_change("tobot_hit_range_top",100)
 			ini_change("tobot_hit_range_down",20)
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",2000)
-			bot_start()
-			sleep(4000)
-			bot_stop()
-			common.wearGongji()
-			sleep(2000)
-			bot_start()
+			sleep(3000)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3933362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3935362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3934362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C383030",0)
 		end
     end

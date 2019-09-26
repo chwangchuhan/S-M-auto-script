@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "神秘教堂",
-    mapCount = 3,
+    mapCount = 1,
     planeId = 268,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {34801.0,34900,34901,34902,34903,34904,34905,34906,34907,34908,34909,34910,34911,34912,34913,34914},

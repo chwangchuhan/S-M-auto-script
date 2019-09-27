@@ -614,7 +614,7 @@ local function simpleStart (config)
 
             -- 判断当前脚本是否存在
             if currentScript then
-                if (#currentScript <= 30 and #currentScript ~= 0) then
+                if (#currentScript <= 30) then
                     -- 文件脚本
                     script_txt_load(currentScript, 0)
                 else

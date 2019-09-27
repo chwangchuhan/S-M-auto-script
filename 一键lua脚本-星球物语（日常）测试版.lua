@@ -64,10 +64,10 @@ common.simpleStart({
             taskIds = {9520101},
         }
     },
-	labeldun=0,
+	
 	 onScriptRound = function (config) -- 副本每次切换地图回调
 		if getmapid()==1700 then
-			speak("小星球一键lua，请装备照顾雨伞！！！")
+			speak("小星球一键lua，挂机技能请添加弱攻击，并装备<照顾雨伞>！！！")
 			item_wear("照顾雨伞")
 			sleep(700)
 			item_wear("照顾雨伞")
@@ -76,6 +76,10 @@ common.simpleStart({
 			open_npc(508)
 			submit_task(508,9520101)
 			close_npc(508)
+			if 	gettime(2)==20 then
+					plane(70)
+					return true
+			end
 		end
 		if getmapid() == 83900 then
 			bot_stop()
@@ -83,32 +87,22 @@ common.simpleStart({
 			repeat
 				sleep(200)
 				if gettime(2)==18 and gettime(3)<=12 then --"坏的"
-					if getx()~=1540 then
-						bot_stop()
-						ini_change("tobot_nomovebot",0)
-						gotocoordinate(1,1540,1407)
-					end
-					if getx()==1540 then
-						ini_change("tobot_nomovebot",1)
-						bot_start()
-						sleep(200)
-						item_use(430453101)
-					end
+					ini_change("tobot_hit_range_right",1500)
+					ini_change("tobot_hit_range_left",1600)
+					ini_change("tobot_nomovebot",0)
+					bot_start()
+					item_use(430453101)--用土
+					sleep(500)
 				end
 				if gettime(2)==18 and gettime(3)<=25 and gettime(3)>12 then --"好的"
-					if getx()~=2550 then
-						bot_stop()
-						ini_change("tobot_nomovebot",0)
-						gotocoordinate(1,2550,1407)
-					end
-					if getx()==2550 then
-						ini_change("tobot_nomovebot",1)
-						bot_start()
-						sleep(200)
-						item_use(430453102)
-					end
+					ini_change("tobot_hit_range_right",2500)
+					ini_change("tobot_hit_range_left",2600)
+					ini_change("tobot_nomovebot",0)
+					bot_start()
+					item_use(430453102)--用水
+					sleep(500)
 				end
-			until(gettime(2)==18 and gettime(3)>25)
+			until(gettime(2)==18 and gettime(3)>25 or gettime(2)==19)
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_scriptbot",1)
 			bot_start()
@@ -121,11 +115,18 @@ common.simpleStart({
 			repeat
 				sleep(200)
 				if gettime(2)==18 and gettime(3)>25 and gettime(3)<=40 then
-					--gotocoordinate(1,1250,)
-					sleep(3000)
-					useskill(9531001,1) --消灭怪物
+					local mobId = mob_obj_get('土之魂')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531001,1) --消灭怪物
+						bot_start()
+					end	
 				end
-			until(gettime(2)==18 and gettime(3)>40)
+			until(gettime(2)==18 and gettime(3)>40 or gettime(2)==19)
 			ini_change("tobot_hit_range_left",3167)
 		end
 		if getmapid() == 83907 then   --水土
@@ -136,64 +137,84 @@ common.simpleStart({
 			repeat
 				sleep(200)
 				if gettime(2)==18 and gettime(3)>40 and gettime(3)<=55 then
-					--gotocoordinate(1,1250,)
-					sleep(3000)
-					useskill(9531001,1) --消灭怪物
+					local mobId = mob_obj_get('水之魂')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531001,1) --消灭怪物
+						bot_start()
+					end	
 				end
-			until(gettime(2)==18 and gettime(3)>55)
+			until(gettime(2)==18 and gettime(3)>55 or gettime(2)==19 )
 			ini_change("tobot_hit_range_left",3167)
 		end
 		if getmapid() == 83902 then
 			label=0
 			ini_change("tobot_nomovebot",0)
+			sleep(4000)
 			repeat
 				sleep(200)
 				if gettime(2)==18 and gettime(3)<=59 then --喜
-					ini_change("tobot_hit_range_right",2700)
-					ini_change("tobot_hit_range_left",3000)
-					bot_start()
-					sleep(500)
-					useskill(9531003,1) --喜
+					ini_change("tobot_hit_range_right",2600)
+					ini_change("tobot_hit_range_left",3167)
+					local mobId = mob_obj_get('成年的玫瑰')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(2500)
+						useskill(9531003,1) --喜
+						bot_start()
+					end	
 				end
-				if gettime(2)==17 and gettime(3)<=05 then --喜
-					ini_change("tobot_hit_range_right",2700)
-					ini_change("tobot_hit_range_left",3000)
-					bot_start()
-					sleep(500)
-					useskill(9531003,1) --喜
+				if gettime(2)==19 and gettime(3)<=05 then --喜
+					ini_change("tobot_hit_range_right",2600)
+					ini_change("tobot_hit_range_left",3167)
+					local mobId = mob_obj_get('成年的玫瑰')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531003,1) --喜
+						bot_start()
+						sleep(100)
+					end	
 				end
 				if gettime(2)==19 and gettime(3)>05 and gettime(3)<=15 then --悲
-					ini_change("tobot_hit_range_right",2700)
-					ini_change("tobot_hit_range_left",3000)
-					bot_start()
-					sleep(500)
-					useskill(9531004,1) --悲
+					ini_change("tobot_hit_range_right",2600)
+					ini_change("tobot_hit_range_left",3167)
+					local mobId = mob_obj_get('成年的玫瑰')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531004,1) --悲
+						bot_start()
+						sleep(100)
+					end	
 				end
 				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>15then--成长
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
-					bot_stop()
-					gotocoordinate(1,600,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
-					gotocoordinate(1,900,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
-					gotocoordinate(1,1200,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
-					gotocoordinate(1,1500,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
-					gotocoordinate(1,1800,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
-					gotocoordinate(1,2100,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
-					gotocoordinate(1,2400,1455)
-					sleep(2500)
-					useskill(9531002,1) --洒水
+					local mobId = mob_obj_get('玫瑰')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531002,1) --洒水
+						bot_start()
+						sleep(100)
+					end	
 				end
 				if 	gettime(2)==20 then
 					label=1

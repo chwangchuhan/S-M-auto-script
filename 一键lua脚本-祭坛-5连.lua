@@ -220,11 +220,11 @@ common.simpleStart({
 				if getx()==2100 and gety()>0 and gety()<600 then
 					labelkuang=1
 				end
-				if getx()>=32 and getx()<=319 and gety()==799 and labelkuang==0 then --´Ó×óÏÂÂäÍÚ¿ó
+				if getx()>=32 and getx()<=319 and gety()==799 and labelkuang==0 and labelkuangwawan==0  then --´Ó×óÏÂÂäÍÚ¿ó
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>=32 and getx()<=319 and gety()==799 and labelkuang==0 then
+					if getx()>=32 and getx()<=319 and gety()==799 and labelkuang==0 and labelkuangwawan==0 then
 						speak("ÍÚ×ó¿ó1²ã1")
 						common.wearDiaoluo()
 						ini_change("ban_hit_mob",1)
@@ -246,11 +246,11 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>=928 and getx()<=1279 and gety()==1711 and labelkuang==0 then
+				if getx()>=928 and getx()<=1279 and gety()==1711 and labelkuang==0 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>=928 and getx()<=1279 and gety()==1711 and labelkuang==0 then
+					if getx()>=928 and getx()<=1279 and gety()==1711 and labelkuang==0 and labelkuangwawan==0 then
 						speak("ÍÚ×ó¿ó2²ã1")
 						bot_stop()
 						sleep(500)
@@ -270,11 +270,11 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==0 then
+				if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==0 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==0 then
+					if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==0 and labelkuangwawan==0 then
 						speak("ÍÚ×ó¿ó3²ã1")
 						bot_stop()
 						sleep(500)
@@ -302,7 +302,7 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if gety()==3007 and labelkuang==0 and labelkuangwawan==0 then
+				if gety()==3007 and labelkuang==0 and labelkuangwawan==0 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					ini_change("ban_hit_mob",1)
@@ -318,11 +318,11 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 				end
-				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==0 then
+				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==0 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==0 then
+					if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==0 and labelkuangwawan==0 then
 						speak("ÍÚÓÒ¿ó3²ã1")
 						bot_stop()
 						sleep(500)
@@ -344,11 +344,11 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==0 then
+				if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==0 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==0 then
+					if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==0 and labelkuangwawan==0 then
 						speak("ÍÚÓÒ¿ó2²ã1")
 						bot_stop()
 						sleep(500)
@@ -368,11 +368,11 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==0 then  
+				if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==0 and labelkuangwawan==0 then  
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==0 then  
+					if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==0 and labelkuangwawan==0 then  
 						speak("ÍÚÓÒ¿ó1²ã1")
 						bot_stop()
 						sleep(500)
@@ -411,12 +411,12 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
-				end                                                    --
-				if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==1 then  --´ÓÓÒÏÂÂäÍÚ¿ó
+				end                                                    
+				if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==1 and labelkuangwawan==0 then  --´ÓÓÒÏÂÂäÍÚ¿ó
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==1 then  --´ÓÓÒÏÂÂäÍÚ¿ó
+					if getx()>2900 and getx()<=3167 and gety()==1135 and labelkuang==1 and labelkuangwawan==0 then  --´ÓÓÒÏÂÂäÍÚ¿ó
 						speak("ÍÚÓÒ¿ó1²ã2")
 						common.wearDiaoluo()
 						ini_change("ban_hit_mob",1)
@@ -437,13 +437,13 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==1 then
+				if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==1 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					bot_stop()
 					sleep(1500)
 					bot_stop()
-					if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==1 then
+					if getx()>=1792 and getx()<=2000 and gety()==1327 and labelkuang==1 and labelkuangwawan==0 then
 						speak("ÍÚÓÒ¿ó2²ã2")
 						bot_stop()
 						sleep(500)
@@ -460,11 +460,11 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					sleep(500)
 				end
-				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==1 then
+				if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==1 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==1 then
+					if getx()>=1792 and getx()<=2000 and gety()==2095  and labelkuang==1 and labelkuangwawan==0 then
 						speak("ÍÚÓÒ¿ó3²ã2")
 						bot_stop()
 						sleep(500)
@@ -507,11 +507,11 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==1 then
+				if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==1 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==1 then
+					if getx()>1090 and getx()<=1279 and gety()==2351 and labelkuang==1 and labelkuangwawan==0 then
 						speak("ÍÚ×ó¿ó3²ã2")
 						bot_stop()
 						sleep(500)
@@ -534,11 +534,11 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>1005 and getx()<=1279 and gety()==1711 and labelkuang==1 then
+				if getx()>1005 and getx()<=1279 and gety()==1711 and labelkuang==1 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>1005 and getx()<=1279 and gety()==1711 and labelkuang==1 then
+					if getx()>1005 and getx()<=1279 and gety()==1711 and labelkuang==1 and labelkuangwawan==0 then
 						speak("ÍÚ×ó¿ó2²ã2")
 						bot_stop()
 						sleep(500)
@@ -559,11 +559,11 @@ common.simpleStart({
 					bot_start()
 					ini_change("tobot_scriptbot",1)
 				end
-				if getx()>=32 and getx()<=300 and gety()==799 and labelkuang==1 then
+				if getx()>=32 and getx()<=300 and gety()==799 and labelkuang==1 and labelkuangwawan==0 then
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(1000)
-					if getx()>=32 and getx()<=300 and gety()==799 and labelkuang==1 then
+					if getx()>=32 and getx()<=300 and gety()==799 and labelkuang==1 and labelkuangwawan==0 then
 						speak("ÍÚ×ó¿ó1²ã2")
 						bot_stop()
 						sleep(500)
@@ -644,6 +644,13 @@ common.simpleStart({
 					sleep(900)
 					useskill(9879999,1)
 					sleep(500)
+					ini_change("tobot_scriptbot",1)
+					ini_change("ban_hit_mob",0)
+					bot_start()
+					sleep(500)
+					bot_start()
+				end
+				if getx()>=1200 and getx()<=2000 and gety()==2479 then 
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()

@@ -22,10 +22,10 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 700
-local defaultXMaxSpeed = 1400
+local defaultXMinSpeed = 550
+local defaultXMaxSpeed = 950
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1500
+local defaultYMaxSpeed = 1250
 
 local defaultLuckyDog = false
 
@@ -614,7 +614,7 @@ local function simpleStart (config)
 
             -- 判断当前脚本是否存在
             if currentScript then
-                if (#currentScript <= 30 and #currentScript ~= 0) then
+                if (#currentScript <= 30) then
                     -- 文件脚本
                     script_txt_load(currentScript, 0)
                 else

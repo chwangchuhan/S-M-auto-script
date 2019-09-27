@@ -20,11 +20,11 @@ const sleep = function (time) {
 }
 
 
-console.log('-------等待打包�?--------');
+console.log('-------等待打包�??--------');
 
 // 删除build
 function cleanBuild () {
-    console.log('-------build目录清除�?-------');
+    console.log('-------build目录清除�??-------');
     return src('S-M-auto-script').pipe(clean({allowEmpty: true,}))
     
 }
@@ -69,8 +69,8 @@ function defaultTask (cb) {
 
 // 删除build
 async function cleanScript () {
-    console.log('-------build目录清除�?-------');
-    await sleep(10000)
+    console.log('-------build目录清除�??-------');
+    await sleep(15000)
     return src('S-M-auto-script/lib/script').pipe(clean({allowEmpty: true}))
 }
 

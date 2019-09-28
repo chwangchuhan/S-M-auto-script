@@ -35,11 +35,12 @@ common.shendianStart({
         taskIds = {43603201, 43603202, 43603203, 43603204, 43603205, 43603206},
     },
     onScriptRound = function  ()
-        sleep(3000)
-        if (common.checkMob('终极神殿二阶 英雄王')) then
-            speak('遇到英雄王了')
-            sleep(2000)
-            useskill(43501018,1) -- 使用猴子无敌
+        if (getmapid() == 68202 or getmapid() == 68203) then
+            sleep(6000)
+            if (common.checkMob('终极神殿二阶 英雄王')) then
+                speak('遇到英雄王了')
+                useskill(43501018,1) -- 使用猴子无敌
+            end
         end
     end,
 })

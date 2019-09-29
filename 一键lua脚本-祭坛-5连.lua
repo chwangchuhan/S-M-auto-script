@@ -952,8 +952,10 @@ common.simpleStart({
         end
 		if (getmapid() == 35710) then   --º¿Ã≥11
 			bot_stop()
+			ini_change("ban_hit_mob",1)
 			common.wearDiaoluo()
 			sleep(500)
+			ini_change("ban_hit_mob",0)
 			bot_start()
 			sleep(4000)
 			bot_stop()
@@ -963,9 +965,11 @@ common.simpleStart({
 			script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C333030372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313432302C333030372CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C353030",0)
         end
 		if (getmapid() == 35711) then   --º¿Ã≥12  
-            bot_stop()
+			bot_stop()
+			ini_change("ban_hit_mob",1)
 			common.wearDiaoluo()
 			sleep(500)
+			ini_change("ban_hit_mob",0)
 			bot_start()
 			sleep(4000)
 			bot_stop()

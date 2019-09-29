@@ -123,6 +123,7 @@ common.simpleStart({
 					gotocoordinate(1, mobX, mobY)
 					sleep(500)
 					bot_start()
+					sleep(2000)
 				end	
 			end
 		until( mobId ==0 or getmapid() ~= 9504 or door_if(400,287)==1)

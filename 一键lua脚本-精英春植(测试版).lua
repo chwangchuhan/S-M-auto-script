@@ -60,14 +60,28 @@ common.simpleStart({
     },
     onScriptRound = function () -- 副本每次切换地图回调
         if (getmapid() == 83602) then
-			ini_change("tobot_hit_range_max",700)
-			ini_change("tobot_hit_range_top",150)
-			ini_change("tobot_hit_range_ignore",2000)
-        end
-		if (getmapid() == 83603) then
+			repeat
+				sleep(100)
+				if gety()==1199 then
+				ini_change("tobot_hit_range_max",1000)
+				ini_change("tobot_hit_range_top",150)
+				ini_change("tobot_hit_range_ignore",2000)
+				end
+			until(door_if(3130,1199)==1 or getmapid() ~= 83602)
 			ini_change("tobot_hit_range_max",300)
 			ini_change("tobot_hit_range_top",150)
-			ini_change("tobot_hit_range_ignore",2000)
+        end
+		if (getmapid() == 83603) then
+			repeat
+				sleep(100)
+				if gety()==1359 then
+				ini_change("tobot_hit_range_max",1000)
+				ini_change("tobot_hit_range_top",150)
+				ini_change("tobot_hit_range_ignore",2000)
+				end
+			until(door_if(3130,1487)==1 or getmapid() ~= 83603)
+			ini_change("tobot_hit_range_max",300)
+			ini_change("tobot_hit_range_top",150)
         end
     end
 })

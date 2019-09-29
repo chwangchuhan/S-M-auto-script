@@ -68,7 +68,7 @@ common.simpleStart({
 		   labelnext=0
 		   repeat
 				sleep(200)
-				if mob_if("±¦Ïä1")==0 and mob_if("±¦Ïä2")==0 and door_if(3060,911)==1 and labelnext==0 then
+				if mob_if("±¦Ïä1")==0 and mob_if("±¦Ïä2")==0 and mob_if("½±Àø±¦Ïä")==0 and door_if(3060,911)==1 and labelnext==0 then
 				speak("¿ªÆô½øÃÅ")
 				labelnext=1
 				script_txt_loaddata("D3D2CCF828D6FAC5DC292CD3D2C5DCCAB12C3139302C313136372CD7F3C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD7F3C5DCCAB12C313830302C313432332CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333034302C3931312CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333036302C3931312CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038302C3931312CD7F3C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD7F3C5DCCAB12C333036302C3931312CD7F3C5DC2C",0)
@@ -78,10 +78,10 @@ common.simpleStart({
 		if (getmapid() == 99103) then
 		   ini_change("tobot_hit_range_top",300)
            ini_change("tobot_hit_range_max",400)
-		   --[[repeat
+		   repeat
 			sleep(100)
-			if getx()>=1312 and getx()<=1759 and gety()==1439 then
-				local mobId = mob_obj_get('µÁÔôÍ·Ä¿')
+			if getx()>=320 and getx()<=831 and gety()==1311 then
+				local mobId = mob_obj_get('µÁÔô´óÍ·Ä¿')
 				if (mobId > 0) then
 					local mobX = mob_obj_x(mobId)
 					local mobY = gety()
@@ -89,9 +89,10 @@ common.simpleStart({
 					gotocoordinate(1, mobX, mobY)
 					sleep(500)
 					bot_start()
+					sleep(4000)
 				end	
 			end
-		until( mobId ==0 or getmapid() ~= 99103)]]--
+		until( mobId ==0 or getmapid() ~= 99103)
         end
 		if (getmapid() == 99104) then
 		   ini_change("tobot_hit_range_top",100)

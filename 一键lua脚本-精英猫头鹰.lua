@@ -78,6 +78,20 @@ common.simpleStart({
 		if (getmapid() == 99103) then
 		   ini_change("tobot_hit_range_top",300)
            ini_change("tobot_hit_range_max",400)
+		   --[[repeat
+			sleep(100)
+			if getx()>=1312 and getx()<=1759 and gety()==1439 then
+				local mobId = mob_obj_get('µÁÔôÍ·Ä¿')
+				if (mobId > 0) then
+					local mobX = mob_obj_x(mobId)
+					local mobY = gety()
+					bot_stop()
+					gotocoordinate(1, mobX, mobY)
+					sleep(500)
+					bot_start()
+				end	
+			end
+		until( mobId ==0 or getmapid() ~= 99103)]]--
         end
 		if (getmapid() == 99104) then
 		   ini_change("tobot_hit_range_top",100)

@@ -117,13 +117,16 @@ common.simpleStart({
 	   bot_start()
 	end
 	if (getmapid() == 9306) then
+		ini_change("ban_hit_mob",1)
 		ini_change("find_showname",0)
 		ini_change("find_showhp",0)
 		bot_stop()
 	    ini_change("tobot_scriptbot",0)
 	    sleep(500)
+		bot_stop()
 	    common.wearDiaoluo()
 	    sleep(500)
+		ini_change("ban_hit_mob",0)
 	    ini_change("tobot_scriptbot",1)
 	    bot_start()
 		repeat 
@@ -136,13 +139,16 @@ common.simpleStart({
 		until (getmapid() ~= 9306)
     end
 	if (getmapid() == 9307) then
+		ini_change("ban_hit_mob",1)
 		ini_change("find_showname",0)
 		ini_change("find_showhp",0)
 		bot_stop()
 	    ini_change("tobot_scriptbot",0)
 	    sleep(500)
+		bot_stop()
 	    common.wearDiaoluo()
 	    sleep(500)
+		ini_change("ban_hit_mob",0)
 	    ini_change("tobot_scriptbot",1)
 	    bot_start()
 		repeat 
@@ -155,13 +161,16 @@ common.simpleStart({
 		until (getmapid() ~= 9307 )
     end
 	if (getmapid() == 9308) then
+		ini_change("ban_hit_mob",1)
 		ini_change("find_showname",0)
 		ini_change("find_showhp",0)
 		bot_stop()
 	    ini_change("tobot_scriptbot",0)
 	    sleep(500)
+		bot_stop()
 	    common.wearDiaoluo()
 	    sleep(500)
+		ini_change("ban_hit_mob",0)
 	    ini_change("tobot_scriptbot",1)
 	    bot_start()
 		repeat 

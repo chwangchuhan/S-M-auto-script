@@ -82,12 +82,14 @@ common.simpleStart({
         end
 		if (getmapid() == 35605) then
 			bot_stop()
+			ini_change("ban_hit_mob",1)
 			common.wearDiaoluo()
 			sleep(500)
 			ini_change("tobot_hit_range_top",100)
 			ini_change("tobot_hit_range_down",20)
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",2000)
+			ini_change("ban_hit_mob",0)
 			bot_start()
 			sleep(4000)
 			bot_stop()

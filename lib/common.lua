@@ -64,7 +64,7 @@ end
 -- 查找数组index值，index从1开始 --
 local function findIndex (array, value)
     -- 值检测
-    if not array or not value then 
+    if not array or not value then
         return -1
     end
 
@@ -101,7 +101,28 @@ function checkMob(mobIds)
             res[i] = mob_if(v)
         end
 
-        return common.include(res, 1)
+        return include(res, 1)
+    end
+
+    return false
+end
+
+-- 检测怪物是否存在
+-- @mobIds: string | table 如传入string也识别
+-- @returns: boolean
+function checkBuff(buffids)
+    if (type(buffids) == 'string') then
+        return isbuff(buffids) == 1
+    end
+
+    if (type(buffids) == 'table') then
+        local res = {}
+
+        for i,v in ipairs(buffids) do
+            res[i] = isbuff(v)
+        end
+
+        return include(res, 1)
     end
 
     return false
@@ -112,7 +133,7 @@ end
  -- mapName：地图名称，mapCount：地图次数
 local function mapInitDesc(mapName, mapCount)
     maketeam()
-    show("此Lua为全自动["..mapName.."]"..mapCount.."次") 
+    show("此Lua为全自动["..mapName.."]"..mapCount.."次")
     show("在任意地图载入启动 请放心使用 若按错 你有5秒时间停止载入")
     show("普通30元，高级50元，lua编写by:圣汐，莫里")
     show("-------有疑问联系qq:404833948、597673687------")
@@ -216,7 +237,7 @@ local function checkInShendianTime ()
 
     -- 7点：68400000
     -- 8点：72000000
-    if ((hour + minute) >= 72600000 and (hour + minute) <= 75540000) then 
+    if ((hour + minute) >= 72600000 and (hour + minute) <= 75540000) then
         return true
     end
 
@@ -258,7 +279,7 @@ local function doMouseScript (filePath, num)
         show('鼠标脚本文件不存在，跳过执行')
         return
     end
-    
+
     if (num == nil) then
         num = 1
     end
@@ -286,20 +307,20 @@ end
 -- 检测移动速度
 local function checkXSpeed (minX, maxX)
     local speed = abs(getxspeed())
-  
+
     -- 默认值速度
     if (maxX == nil) then
         maxX = defaultXMaxSpeed
     end
-  
+
     if (minX == nil) then
         minX = defaultXMinSpeed
     end
-  
+
     if (minX > maxX) then
         maxX = minX + 500
     end
-  
+
     if (speed >= minX and speed <= maxX) then
         -- show('移动速度检测通过')
         return true
@@ -308,7 +329,7 @@ local function checkXSpeed (minX, maxX)
         return false
     end
 end
-  
+
 -- 检测跳跃速度
 local function checkYSpeed(minY, maxY)
     local speed = abs(getupspeed())
@@ -364,7 +385,7 @@ local function wearGongji()
     if (not gongjiConfig1 and gongjiConfig2) then
         wearConfig = gongjiConfig2()
     end
-    
+
     if (wearConfig ~= nil) then
         show('更换攻击装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
@@ -396,7 +417,7 @@ local function wearJingyan()
     if (not jingyanConfig1 and jingyanConfig2) then
         wearConfig = jingyanConfig2()
     end
-    
+
     if (wearConfig ~= nil) then
         show('更换经验装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
@@ -428,7 +449,7 @@ local function wearSudu()
     if (not suduConfig1 and suduConfig2) then
         wearConfig = suduConfig2()
     end
-    
+
     if (wearConfig ~= nil) then
         show('更换速度装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
@@ -460,7 +481,7 @@ local function wearDiaoluo()
     if (not diaoluoConfig1 and diaoluoConfig2) then
         wearConfig = diaoluoConfig2()
     end
-    
+
     if (wearConfig ~= nil) then
         show('更换掉落装备')
         ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
@@ -505,7 +526,7 @@ local function getRandom(v1, v2)
             if (time - skew) > 0 then
                 time = time - skew
             end
-            skew = skew / 10 
+            skew = skew / 10
         end
 
         if (time > v1 and time < v2) then
@@ -529,7 +550,7 @@ local function simpleStart (config)
     local endMapIds = {lastMapId}
     -- 地图激活时间
     local startTimeSpan = getTimeSpan()
-	
+
 	bot_stop() --站立启动，检测站街速度
 
     gameConfigInit(config.initSettings)
@@ -546,7 +567,7 @@ local function simpleStart (config)
     if (not checkXSpeed(config.minXSpeed, config.maxXSpeed) or not checkYSpeed(config.minYSpeed, config.maxYSpeed)) then
         show('脚本结束')
         sleep(3000)
-        return 
+        return
     end
 
     -- 任务地图map
@@ -605,7 +626,7 @@ local function simpleStart (config)
                 return
             end
         end
-        
+
         if currentMapId ~= preMapId then
             local currentMapIndex = findIndex(config.mapIds, currentMapId)
             local currentScript = config.scripts[currentMapIndex]
@@ -621,14 +642,14 @@ local function simpleStart (config)
                     -- hex 16进制脚本
                     script_txt_loaddata(currentScript, 0)
                 end
-                
+
             end
 
             -- 任务处理
             if include(taskMaps, currentMapId) then -- 存在任务
                 local currentTaskIndex = findIndex(taskMaps, currentMapId)
                 local taskData = config.tasks[currentTaskIndex]
-                
+
                 doTask(taskData.npcId, taskData.taskIds)
 
                 -- 表示存在任务结束后飞机
@@ -654,7 +675,7 @@ local function simpleStart (config)
                 if isMapNumOver(config.mapName, config.mapCount) then
                     -- 停止挂机
 					sleep(500)
-                    bot_stop()  
+                    bot_stop()
                     resetConfig()
 
                     sleep(500)
@@ -684,9 +705,9 @@ local function simpleStart (config)
 
             -- 死亡或传送出副本
             if not checkInMap(config.mapIds) then
-                bot_stop()  
+                bot_stop()
                 resetConfig()
-                
+
                 -- 结束脚本回调
                 if (config.onScriptEnd) then
                     config.onScriptEnd()
@@ -694,7 +715,7 @@ local function simpleStart (config)
 
                 return
             end
-            
+
             -- 前一次访问地图更新
             preMapId = currentMapId
 
@@ -713,7 +734,7 @@ local function simpleStart (config)
 
 
         -- 每次while回调
-        if (config.onScriptWhileCallback) then 
+        if (config.onScriptWhileCallback) then
             config.onScriptWhileCallback(config)
         end
 
@@ -726,13 +747,13 @@ end
 local function shendianStart (config)
     gameConfigInit()
     mapInitDesc(config.mapName, 1)
-    show('----------------------------') 
+    show('----------------------------')
     show('由于神殿脚本需要模拟鼠标操作，请控制分辨率在800*600')
 
     -- 地图激活时间
     local startTimeSpan = getTimeSpan()
 
-    while (true) 
+    while (true)
     do
         sleep(500)
 
@@ -779,7 +800,7 @@ local function shendianStart (config)
                 -- 鼠标操作基础路径在scripts/mouse
                 local mouseFilePath =  "..\\S-M-auto-script\\mouse\\"..config.mapMouseFile
                 doMouseScript(mouseFilePath, 3)
-                
+
                 -- 进入地图后开始执行脚本挂机
                 while (true)
                 do
@@ -818,7 +839,7 @@ local function shendianStart (config)
                         -- 启动挂机
                         script_txt_loaddata('BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3937312E3335392C3634302CB2BBB1E42CC3BBD3D0B8BDBCD3B2CECAFD2C', 0)
                         bot_start()
-                        
+
                         lastMapId = getmapid()
                     end
 
@@ -838,7 +859,7 @@ local function shendianStart (config)
                         return
                     end
                 end
-                
+
                 -- 终止整个循环
                 return
 
@@ -867,7 +888,7 @@ local function xuemaiStart (config)
     -- 地图激活时间
     local startTimeSpan = getTimeSpan()
 
-    while (true) 
+    while (true)
     do
         sleep(500)
 
@@ -907,7 +928,7 @@ local function xuemaiStart (config)
                 local lastMapId = config.mapIds[#config.mapIds]
                 local endMapIds = {lastMapId}
                 local currentNums = 1
-                
+
                 while(true) do
                     local currentMapId = getmapid()
 
@@ -915,7 +936,7 @@ local function xuemaiStart (config)
                     if preMapId ~= currentMapId then
                         local currentMapIndex = findIndex(config.mapIds, currentMapId)
                         local currentScript = config.scripts[currentMapIndex]
-                        
+
                         -- 判断当前脚本是否存在
                         if currentScript then
                             if (#currentScript <= 30) then
@@ -937,7 +958,7 @@ local function xuemaiStart (config)
                             -- 超出任务循环次数
                             if (currentNums > 2) then
                                 -- 停止挂机
-                                bot_stop()  
+                                bot_stop()
                                 resetConfig()
                                 return
                             end
@@ -949,7 +970,7 @@ local function xuemaiStart (config)
 
                     sleep(200)
                 end
-                
+
                 return
             else
                 plane(1210)
@@ -972,6 +993,7 @@ end
 
 return {
     show = show,
+    gameConfigInit = gameConfigInit,
     findIndex = findIndex,
     include = include,
     checkInMap = checkInMap,
@@ -986,6 +1008,7 @@ return {
     doTask = doTask,            -- 领取任务
     dropTask = dropTask,        -- 放弃任务
     checkMob = checkMob,
+    checkBuff = checkBuff,      -- 检测buf
     xuemaiStart = xuemaiStart,
     wearGongji = wearGongji,    -- 穿攻击装备
     wearDiaoluo = wearDiaoluo,  -- 穿掉落装备

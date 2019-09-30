@@ -66,7 +66,7 @@ common.simpleStart({
 		if (getmapid() == 83702) then
 			repeat 
 				sleep(200)
-				local mobId = mob_obj_get('机械战士')
+				local mobId = mob_if('机械战士')
 				if mobId >0 then
 					speak("优先攻击机械战士")
 					ini_change("tobot_hit_range_right",32)

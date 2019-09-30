@@ -530,9 +530,13 @@ common.simpleStart({
 						jmp(1)
 						sleep(850)
 						jmp(1)
-						sleep(500)
+						sleep(700)
 						jmp(2)
-						sleep(500)
+						sleep(300)
+						jmp(2)
+						sleep(300)
+						jmp(2)
+						sleep(300)
 						jmp(2)
 					end
 					bot_start()
@@ -690,7 +694,7 @@ common.simpleStart({
 			label=1
             repeat
 				sleep(200)
-				if getx()>2879 and getx()<=3167 and gety()==2751 and label<7 then
+				if getx()>2879 and getx()<=3167 and gety()==2751 and label<7 then  --右下平台
 					sleep(20000)
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
@@ -717,7 +721,7 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					bot_start()
 				end
-				if label==7 and getx()>2879 and getx()<=3167 and gety()==2751 then
+				if label==7 and getx()>2879 and getx()<=3167 and gety()==2751 then   --定点连跳
 					bot_stop()
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",1)
@@ -791,28 +795,30 @@ common.simpleStart({
 					sleep(100)
 					bot_start()
 				end
-				if gety()==225 then
+				if gety()==225 then  --右上台阶
 					jmp(0)
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-				if getx()>2879 and getx()<=3167 and gety()<=2383 and gety()>607 then
+				if getx()>2879 and getx()<=3167 and gety()<=2383 and gety()>607 then   --台阶中间禁止打怪
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",1)
 					bot_start()
 				end
-				if getx()>2879 and getx()<=3167 and gety()>2383 and gety()<=3007 then
+				if getx()>2879 and getx()<=3167 and gety()>2383 and gety()<=3007 then   --不在台阶的时候允许打怪
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-				if getx()>=1600 and getx()<=2879 and gety()== 3007 then
+				if getx()>=1600 and getx()<=2879 and gety()== 3007 then    --boss下面的坑位自动开启挂机
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()
+					sleep(1000)
+					bot_start()
 				end
-				if getx()>=32 and getx()<=191 and gety()>2448 and gety()<=3007 and door_if(112,3007)==0 then
+				if getx()>=32 and getx()<=191 and gety()>2448 and gety()<=3007 and door_if(112,3007)==0 then   --回跳操作
 					ini_change("tobot_scriptbot",0)
 					sleep(500)
 					if getx()>=32 and getx()<=191 and gety()>2448 and gety()<=3007 and door_if(112,3007)==0 then
@@ -852,7 +858,7 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					bot_start()
 				end
-				if getx()>=1056 and getx()<=1311 and gety()>2448 and gety()<=3007 and door_if(1200,3007)==0 then
+				if getx()>=1056 and getx()<=1311 and gety()>2448 and gety()<=3007 and door_if(1200,3007)==0 then --回跳操作
 					ini_change("tobot_scriptbot",0)
 					sleep(500)
 					if getx()>=1056 and getx()<=1311 and gety()>2448 and gety()<=3007 and door_if(1200,3007)==0 then

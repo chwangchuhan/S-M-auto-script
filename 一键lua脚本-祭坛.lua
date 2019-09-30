@@ -212,7 +212,7 @@ common.simpleStart({
         end
 		if (getmapid() == 35701) then --¼ÀÌ³2 ÍÚ¿ó
             ini_change("ban_hit_mob",1)
-			labelkuang=0
+			labelkuang=1
 			labelkuangwawan=0
 			repeat
 				sleep(100)
@@ -526,17 +526,11 @@ common.simpleStart({
 						useskill(5000008,0)
 						sleep(1000)
 						bot_start()
-						sleep(500)
+						sleep(550)
 						jmp(1)
 						sleep(850)
-						jmp(1)
-						sleep(700)
 						jmp(2)
-						sleep(300)
-						jmp(2)
-						sleep(300)
-						jmp(2)
-						sleep(300)
+						sleep(850)
 						jmp(2)
 					end
 					bot_start()

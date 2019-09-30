@@ -368,7 +368,7 @@ common.simpleStart({
 					sleep(500)
 					label=1
 				end
-			until(label==1)
+			until(label==1 or door_if(1471,303)==1)
 		end
 		if getmapid()==36908 then --±¦Ê¯9
 			labelwakuang1=0

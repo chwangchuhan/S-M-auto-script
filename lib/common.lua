@@ -668,9 +668,7 @@ local function simpleStart (config)
 
             -- 一轮循环结束进入下一轮
             if include(endMapIds, preMapId) then
-                -- 副本一轮结束清空倒计时
                 startTimeSpan = getTimeSpan()
-
                 -- 超出任务循环次数
                 if isMapNumOver(config.mapName, config.mapCount) then
                     -- 停止挂机

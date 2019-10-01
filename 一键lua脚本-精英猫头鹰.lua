@@ -83,13 +83,11 @@ common.simpleStart({
 			if getx()>=320 and getx()<=831 and gety()==1311 then
 				local mobId = mob_obj_get('µÁÔô´óÍ·Ä¿')
 				if (mobId > 0) then
-					local mobX = mob_obj_x(mobId)
-					local mobY = gety()
-					bot_stop()
-					gotocoordinate(1, mobX, mobY)
-					sleep(500)
-					bot_start()
-					sleep(4000)
+					ini_change("tobot_hit_range_right",32)
+					ini_change("tobot_hit_range_left",831)
+				else 
+					ini_change("tobot_hit_range_right",32)
+					ini_change("tobot_hit_range_left",3167)
 				end	
 			end
 		until( mobId ==0 or getmapid() ~= 99103)

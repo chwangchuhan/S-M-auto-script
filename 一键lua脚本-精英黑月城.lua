@@ -118,12 +118,29 @@ common.simpleStart({
 				local mobId = mob_obj_get('不动心白影忍者')
 				if (mobId > 0) then
 					local mobX = mob_obj_x(mobId)
-					local mobY = gety()
-					bot_stop()
-					gotocoordinate(1, mobX, mobY)
-					sleep(500)
-					bot_start()
-					sleep(2000)
+					local mobY = mob_obj_y(mobId)
+					if mobX>=1312 and mobX<=1759 then
+						bot_stop()
+						gotocoordinate(1, mobX, 1439)
+						sleep(500)
+						bot_start()
+						sleep(2000)
+					end
+					if mobX>=2720 and mobX<=3167 then
+						bot_stop()
+						jmp(2)
+						sleep(800)
+						jmp(2)
+						sleep(800)
+						jmp(2)
+						sleep(800)
+						jmp(2)
+						sleep(800)
+						jmp(2)
+						sleep(800)
+						bot_start()
+						sleep(2000)
+					end
 				end	
 			end
 		until( mobId ==0 or getmapid() ~= 9504 or door_if(400,287)==1)
@@ -143,6 +160,16 @@ common.simpleStart({
 				sleep(1000)
 				useskill(5000005,1)
 				ini_change("tobot_scriptbot",1)
+				labelfanhui=1
+			end
+			if getx()>=925 and getx()<=1450 and gety()==543 and mob_if("可使用机关")==1 then
+				bot_stop()
+				ini_change("tobot_scriptbot",0)
+				gotocoordinate(1,1085,543)
+				sleep(1000)
+				jmp(1)
+				ini_change("tobot_scriptbot",1)
+				bot_start()
 				labelfanhui=1
 			end
 		until(labelfanhui==1 or getmapid()~=9509)

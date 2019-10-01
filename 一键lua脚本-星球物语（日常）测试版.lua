@@ -7,7 +7,7 @@ common.simpleStart({
     mapCount = 1,
     planeId = nil,
     -- 地图名称列表，需和mapIds一一对应
-    mapIds = {1700,83900,83906,83901,83907,83902},
+    mapIds = {600,1700,83900,83906,83901,83907,83902},
     overtime = 150, --超时时间，/分钟
     endMapIds = {83902}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
@@ -57,25 +57,47 @@ common.simpleStart({
 	   -- 副本17
 	   "",
 	},
-	tasks = {
-        {
-            mapId = 1700,
-            npcId = 508,
-            taskIds = {9520101},
-        }
-    },
-	
+	labels=0,
+	labelm=0,
 	 onScriptRound = function (config) -- 副本每次切换地图回调
+		if getmapid()==600 then
+			open_npc(110088)
+			npc_plane(110088,212,4,5,0)
+			close_npc(110088)
+		end
 		if getmapid()==1700 then
 			speak("小星球一键lua，挂机技能请添加弱攻击，并装备<照顾雨伞>！！！")
+			bot_stop()
+			gotocoordinate(1, 8265, 1407)
+			sleep(1000)
 			item_wear("照顾雨伞")
 			sleep(700)
 			item_wear("照顾雨伞")
 			sleep(700)
 			item_wear("照顾雨伞")
 			open_npc(508)
+			request_task(508,9520101)
 			submit_task(508,9520101)
 			close_npc(508)
+			bot_start()
+			repeat
+				sleep(200)
+					if gettime(2)<=18 then
+						speak("小星球未到时间，当前时间"..gettime(2).."点"..gettime(3).."分，请等待。")
+						bot_stop()
+					end
+					if gettime(2)>=20 then
+						speak("小星球时间已过，当前时间"..gettime(2).."点"..gettime(3).."分，副本自动终结。")
+						sleep(10000)
+						plane(70)
+						return true
+					end
+			until(gettime(2)==18 or gettime(2)==19)
+			if gettime(2)==18 or gettime(2)==19 then
+				bot_start()
+				config.labels=gettime(2)    --记录进入时间
+				config.labelm=gettime(3)    --记录进入时间
+			end
 			if 	gettime(2)==20 then
 					plane(70)
 					return true
@@ -86,7 +108,7 @@ common.simpleStart({
 			ini_change("tobot_scriptbot",0)
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)<=12 then --"坏的"
+				if gettime(2)==18 and gettime(3)<=15 then --"坏的"刷15分钟
 					ini_change("tobot_hit_range_right",1500)
 					ini_change("tobot_hit_range_left",1600)
 					ini_change("tobot_nomovebot",0)
@@ -94,7 +116,7 @@ common.simpleStart({
 					item_use(430453101)--用土
 					sleep(500)
 				end
-				if gettime(2)==18 and gettime(3)<=25 and gettime(3)>12 then --"好的"
+				if gettime(2)==18 and gettime(3)<=30 and gettime(3)>15 then --"好的"刷15分钟
 					ini_change("tobot_hit_range_right",2500)
 					ini_change("tobot_hit_range_left",2600)
 					ini_change("tobot_nomovebot",0)
@@ -102,19 +124,19 @@ common.simpleStart({
 					item_use(430453102)--用水
 					sleep(500)
 				end
-			until(gettime(2)==18 and gettime(3)>25 or gettime(2)==19)
+			until(gettime(2) == 18 and gettime(3)>30 or gettime(2)==19)
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_scriptbot",1)
 			bot_start()
 		end
-		if getmapid() == 83906 then   --水土
+		if getmapid() == 83906 then   --水土	"土"刷10分钟
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_hit_range_right",1250)
 			ini_change("tobot_hit_range_left",1700)
 			speak("获取土")
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>25 and gettime(3)<=40 then
+				if gettime(2)==18 and gettime(3)>30 and gettime(3)<=40 then
 					local mobId = mob_obj_get('土之魂')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -129,14 +151,14 @@ common.simpleStart({
 			until(gettime(2)==18 and gettime(3)>40 or gettime(2)==19)
 			ini_change("tobot_hit_range_left",3167)
 		end
-		if getmapid() == 83907 then   --水土
+		if getmapid() == 83907 then   --水土   "水"刷10分钟
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_hit_range_right",1250)
 			ini_change("tobot_hit_range_left",1700)
 			speak("获取水")
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>40 and gettime(3)<=55 then
+				if gettime(2)==18 and gettime(3)>40 and gettime(3)<=50 then
 					local mobId = mob_obj_get('水之魂')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -148,16 +170,16 @@ common.simpleStart({
 						bot_start()
 					end	
 				end
-			until(gettime(2)==18 and gettime(3)>55 or gettime(2)==19 )
+			until(gettime(2)==18 and gettime(3)>50 or gettime(2)==19 )
 			ini_change("tobot_hit_range_left",3167)
 		end
-		if getmapid() == 83902 then
+		if getmapid() == 83902 then	
 			label=0
 			ini_change("tobot_nomovebot",0)
 			sleep(4000)
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)<=59 then --喜
+				if gettime(2)==18 and gettime(3)<=59 then --喜--"喜"刷10分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -171,22 +193,7 @@ common.simpleStart({
 						bot_start()
 					end	
 				end
-				if gettime(2)==19 and gettime(3)<=05 then --喜
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531003,1) --喜
-						bot_start()
-						sleep(100)
-					end	
-				end
-				if gettime(2)==19 and gettime(3)>05 and gettime(3)<=15 then --悲
+				if gettime(2)==19 and gettime(3)>=0 and gettime(3)<=10 then --悲--"悲"刷10分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -201,7 +208,7 @@ common.simpleStart({
 						sleep(100)
 					end	
 				end
-				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>15then--成长
+				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>10then--成长"成长"刷50分钟
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('玫瑰')

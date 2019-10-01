@@ -555,7 +555,7 @@ common.simpleStart({
 						jmp(1)
 						sleep(900)
 						jmp(0)
-						sleep(800)
+						sleep(700)
 						jmp(0)
 					end
 					bot_start()

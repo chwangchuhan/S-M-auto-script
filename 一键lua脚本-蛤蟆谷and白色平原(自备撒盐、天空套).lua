@@ -2,6 +2,33 @@ check=1
 
 local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
+wearitem("精良的天空头盔（男）")
+wearitem("精良的天空盔甲（男）")
+wearitem("精良的天空裤子（男）")
+wearitem("精良的天空手套（男）")
+wearitem("精良的天空鞋子（男）")
+wearitem("精良的天空头盔（女）")
+wearitem("精良的天空盔甲（女）")
+wearitem("精良的天空裤子（女）")
+wearitem("精良的天空手套（女）")
+wearitem("精良的天空鞋子（女）")
+wearitem("精良的天空之英雄披风")
+wearitem("精良的天空之剑圣披风")
+wearitem("精良的天空之星芒披风")
+wearitem("精良的天空之宗师披风")
+wearitem("精良的天空之元素披风")
+wearitem("精良的天空之巨星披风")
+wearitem("精良的天空之刺客披风")
+wearitem("精良的天空之魔枪披风")
+wearitem("精良的天空之远古披风")
+wearitem("精良的天空之恶魔披风")
+wearitem("精良的天空之流浪剑客披风")
+wearitem("精良的天空之天穹卡牌师披风")
+wearitem("精良的天空之暗影卡牌师披风")
+wearitem("精良的天空之阿格尼披风")
+wearitem("精良的天空之逐暗者披风")
+wearitem("精良的天空之神之使者披风")
+
 local baiseScripts = {
     -- 1 牛东-白色平原1-0.txt
     -- 其实是空脚本，单纯为了适配
@@ -51,37 +78,6 @@ common.simpleStart({
     tasks = {},
     onScriptWhileCallback = function ()
         if (getmapid() == 11600) then
-			bot_stop()
-			ini_change("ban_hit_mob",1)
-			wearitem("精良的天空头盔（男）")
-			wearitem("精良的天空盔甲（男）")
-			wearitem("精良的天空裤子（男）")
-			wearitem("精良的天空手套（男）")
-			wearitem("精良的天空鞋子（男）")
-			wearitem("精良的天空头盔（女）")
-			wearitem("精良的天空盔甲（女）")
-			wearitem("精良的天空裤子（女）")
-			wearitem("精良的天空手套（女）")
-			wearitem("精良的天空鞋子（女）")
-			wearitem("精良的天空之英雄披风")
-			wearitem("精良的天空之剑圣披风")
-			wearitem("精良的天空之星芒披风")
-			wearitem("精良的天空之宗师披风")
-			wearitem("精良的天空之元素披风")
-			wearitem("精良的天空之巨星披风")
-			wearitem("精良的天空之刺客披风")
-			wearitem("精良的天空之魔枪披风")
-			wearitem("精良的天空之远古披风")
-			wearitem("精良的天空之恶魔披风")
-			wearitem("精良的天空之流浪剑客披风")
-			wearitem("精良的天空之天穹卡牌师披风")
-			wearitem("精良的天空之暗影卡牌师披风")
-			wearitem("精良的天空之阿格尼披风")
-			wearitem("精良的天空之逐暗者披风")
-			wearitem("精良的天空之神之使者披风")
-			sleep(500)
-			ini_change("ban_hit_mob",0)
-			bot_start()
             local mobId = mob_obj_get('蛤蟆大王')
             if (mobId > 0) then
                 local mobX = mob_obj_x(mobId)
@@ -94,7 +90,7 @@ common.simpleStart({
                 bot_start()
             end
         end
-        
+
     end,
 })
 
@@ -178,14 +174,6 @@ common.simpleStart({
     -- 不同npc或不同地图的任务请配置多个task
     tasks = {},
     onScriptWhileCallback = function ()
-		if(getmapid()==98500) then
-            bot_stop()
-			ini_change("ban_hit_mob",1)
-			common.wearDiaoluo()
-			sleep(500)
-			ini_change("ban_hit_mob",0)
-			bot_start()
-        end
         if(getmapid()==29303.0) then
             if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
                 script_txt_loaddata(baiseScripts[4], 0)

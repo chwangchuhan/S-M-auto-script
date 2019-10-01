@@ -18,7 +18,6 @@ local killMob = function(mob, killId)
         bot_stop()
         gotocoordinate(1, mobX, mobY)
         useskill(killId, 1)
-        print(mob_obj_id(mobId))
         sleep(200)
         bot_start()
     end

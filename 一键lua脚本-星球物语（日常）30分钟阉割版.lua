@@ -66,16 +66,44 @@ common.simpleStart({
     },
 	
 	 onScriptRound = function (config) -- 副本每次切换地图回调
+		if getmapid()==600 then
+			open_npc(110088)
+			npc_plane(110088,212,4,5,0)
+			close_npc(110088)
+		end
 		if getmapid()==1700 then
 			speak("小星球一键lua，挂机技能请添加弱攻击，并装备<照顾雨伞>！！！")
+			bot_stop()
+			gotocoordinate(1, 8265, 1407)
+			sleep(1000)
 			item_wear("照顾雨伞")
 			sleep(700)
 			item_wear("照顾雨伞")
 			sleep(700)
 			item_wear("照顾雨伞")
 			open_npc(508)
+			request_task(508,9520101)
 			submit_task(508,9520101)
 			close_npc(508)
+			bot_start()
+			repeat
+				sleep(200)
+					if gettime(2)<=18 then
+						speak("小星球未到时间，当前时间"..gettime(2).."点"..gettime(3).."分，请等待。")
+						bot_stop()
+					end
+					if gettime(2)>=20 then
+						speak("小星球时间已过，当前时间"..gettime(2).."点"..gettime(3).."分，副本自动终结。")
+						sleep(10000)
+						plane(70)
+						return true
+					end
+			until(gettime(2)==18 or gettime(2)==19)
+			if gettime(2)==18 or gettime(2)==19 then
+				bot_start()
+				config.labels=gettime(2)    --记录进入时间
+				config.labelm=gettime(3)    --记录进入时间
+			end
 			if 	gettime(2)==20 then
 					plane(70)
 					return true

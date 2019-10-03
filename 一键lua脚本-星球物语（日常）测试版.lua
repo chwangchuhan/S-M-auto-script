@@ -82,7 +82,7 @@ common.simpleStart({
 			bot_start()
 			repeat
 				sleep(200)
-					if gettime(2)<=18 then
+					if gettime(2)<18 then
 						speak("小星球未到时间，当前时间"..gettime(2).."点"..gettime(3).."分，请等待。")
 						bot_stop()
 					end
@@ -95,6 +95,7 @@ common.simpleStart({
 			until(gettime(2)==18 or gettime(2)==19)
 			if gettime(2)==18 or gettime(2)==19 then
 				bot_start()
+				ini_change("tobot_scriptbot",1)
 				config.labels=gettime(2)    --记录进入时间
 				config.labelm=gettime(3)    --记录进入时间
 			end

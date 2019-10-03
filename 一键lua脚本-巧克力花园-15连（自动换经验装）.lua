@@ -58,6 +58,12 @@ common.simpleStart({
 	},
 	 onScriptRound = function () -- 副本每次切换地图回调
 		if (getmapid() == 35005) then
+			bot_stop()
+			ini_change("ban_hit_mob",1)
+			common.wearJingyan()
+			sleep(500)
+			ini_change("ban_hit_mob",0)
+			bot_start()
 			item_use(430453149)--古语
         end
 		if (getmapid() == 35002) then
@@ -86,6 +92,14 @@ common.simpleStart({
 				end
 			until(label==1 or getmapid() ~= 35002)
 			ini_change("tobot_scriptbot",1)
+			ini_change("ban_hit_mob",0)
+			bot_start()
+        end
+		if (getmapid() == 35006) then
+			bot_stop()
+			ini_change("ban_hit_mob",1)
+			common.wearDiaoluo()
+			sleep(500)
 			ini_change("ban_hit_mob",0)
 			bot_start()
         end

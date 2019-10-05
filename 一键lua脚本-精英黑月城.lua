@@ -112,10 +112,11 @@ common.simpleStart({
 	if (getmapid() == 9504) then
 		ini_change("tobot_hit_range_max",300)
 		ini_change("tobot_hit_range_ignore",2000)
+		sleep(4000)
         repeat
 			sleep(100)
+			local mobId = mob_obj_get('不动心白影忍者')
 			if getx()>=1312 and getx()<=1759 and gety()==1439 then
-				local mobId = mob_obj_get('不动心白影忍者')
 				if (mobId > 0) then
 					local mobX = mob_obj_x(mobId)
 					local mobY = mob_obj_y(mobId)
@@ -150,7 +151,6 @@ common.simpleStart({
 		script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3338302C313131392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3339302C313131392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313933302C313131392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C313131392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C313131392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313134302C313131392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313136302C313131392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313138302C313131392CD3D2C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C313530302C313131392CD7F3C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C313630302C313131392CD7F3C5DC2C",2)
 	end
 	if getmapid()==9509 then
-	labelfanhui=0
 		repeat
 			sleep(200)
 			if getx()>=925 and getx()<=1450 and gety()==543 and mob_if("未被触发的机关")==1 then
@@ -170,9 +170,8 @@ common.simpleStart({
 				jmp(1)
 				ini_change("tobot_scriptbot",1)
 				bot_start()
-				labelfanhui=1
 			end
-		until(labelfanhui==1 or getmapid()~=9509)
+		until(door_if(1160,543)==1 or getmapid()~=9509)
     end
 	end
 })

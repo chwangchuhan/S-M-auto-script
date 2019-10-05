@@ -36,7 +36,7 @@ common.shendianStart({
     },
     onScriptRound = function  ()
         if (getmapid() == 68202 or getmapid() == 68203) then
-            sleep(6000)
+            sleep(4000)
             if (common.checkMob('终极神殿二阶 英雄王')) then
                 speak('遇到英雄王了')
                 useskill(43501018,1) -- 使用猴子无敌

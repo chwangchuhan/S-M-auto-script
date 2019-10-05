@@ -78,21 +78,22 @@ common.simpleStart({
 		if (getmapid() == 99103) then
 		   ini_change("tobot_hit_range_top",300)
            ini_change("tobot_hit_range_max",400)
+		   sleep(2000)
 		   repeat
 			sleep(100)
-			if getx()>=320 and getx()<=831 and gety()==1311 then
 				local mobId = mob_obj_get('µÁÔô´óÍ·Ä¿')
 				if (mobId > 0) then
 					ini_change("tobot_hit_range_right",32)
 					ini_change("tobot_hit_range_left",831)
-				else 
+				else
 					ini_change("tobot_hit_range_right",32)
 					ini_change("tobot_hit_range_left",3167)
 				end	
-			end
 		until( mobId ==0 or getmapid() ~= 99103)
         end
 		if (getmapid() == 99104) then
+			ini_change("tobot_hit_range_right",32)
+			ini_change("tobot_hit_range_left",3167)
 		   ini_change("tobot_hit_range_top",100)
            ini_change("tobot_hit_range_max",300)
         end

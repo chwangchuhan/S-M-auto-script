@@ -547,8 +547,11 @@ common.simpleStart({
 		if getmapid()==36909 then
 			ini_change("tobot_hit_range_top",100)
 			wearitem("金牛座的黄金守护+4")
+			sleep(10)
 			wearitem("摩羯座的黄金守护+4")
+			sleep(10)
 			wearitem("处女座的黄金守护+4")
+			sleep(10)
 			item_use(170191135)--世界树减伤药
 			sleep(100)
 			item_use(611113086)--最大吸红

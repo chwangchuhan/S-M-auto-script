@@ -117,7 +117,7 @@ common.simpleStart({
 						jmp(2)
 						sleep(2250)
 						jmp(0)
-						sleep(500)
+						sleep(900)
 						jmp(0)
 						sleep(500)
 						common.wearGongji()

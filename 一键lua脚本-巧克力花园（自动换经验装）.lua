@@ -4,7 +4,7 @@ local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
     mapName = "巧克力花园(超越)",
-    mapCount = 15,
+    mapCount = 3,
     planeId = 269,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {18403,35005,35000,35001,35002,35003,35004,35006},
@@ -58,6 +58,12 @@ common.simpleStart({
 	},
 	 onScriptRound = function () -- 副本每次切换地图回调
 		if (getmapid() == 35005) then
+			bot_stop()
+			ini_change("ban_hit_mob",1)
+			common.wearJingyan()
+			sleep(500)
+			ini_change("ban_hit_mob",0)
+			bot_start()
 			item_use(430453149)--古语
         end
 		if (getmapid() == 35002) then
@@ -86,6 +92,14 @@ common.simpleStart({
 				end
 			until(label==1 or getmapid() ~= 35002)
 			ini_change("tobot_scriptbot",1)
+			ini_change("ban_hit_mob",0)
+			bot_start()
+        end
+		if (getmapid() == 35006) then
+			bot_stop()
+			ini_change("ban_hit_mob",1)
+			common.wearDiaoluo()
+			sleep(500)
 			ini_change("ban_hit_mob",0)
 			bot_start()
         end

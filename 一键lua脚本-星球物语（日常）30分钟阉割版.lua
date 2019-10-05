@@ -88,7 +88,7 @@ common.simpleStart({
 			bot_start()
 			repeat
 				sleep(200)
-					if gettime(2)<=18 then
+					if gettime(2)<18 then
 						speak("小星球未到时间，当前时间"..gettime(2).."点"..gettime(3).."分，请等待。")
 						bot_stop()
 					end
@@ -100,6 +100,7 @@ common.simpleStart({
 					end
 			until(gettime(2)==18 or gettime(2)==19)
 			if gettime(2)==18 or gettime(2)==19 then
+				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383234352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383236352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383238352C313430372CB2BBB1E42C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C373330302C313430372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C383530302C313430372CD7F3C5DC2C",0)
 				bot_start()
 				config.labels=gettime(2)    --记录进入时间
 				config.labelm=gettime(3)    --记录进入时间
@@ -133,6 +134,8 @@ common.simpleStart({
 			until(gettime(2)==18 and gettime(3)>6 or gettime(2)==19)
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_scriptbot",1)
+			script_txt_loaddata("C9CFCCF82CD7F326D3D2CAB12C323830302C313430372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313136372CD3D2C5DC2C",0)
+			bot_start()
 			bot_start()
 		end
 		if getmapid() == 83906 then   --水土

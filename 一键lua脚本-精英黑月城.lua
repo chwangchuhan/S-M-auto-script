@@ -153,6 +153,8 @@ common.simpleStart({
 	if getmapid()==9509 then
 		repeat
 			sleep(200)
+			local mobId = mob_obj_get('可使用机关')
+			local mobY = mob_obj_y(mobId)
 			if getx()>=925 and getx()<=1450 and gety()==543 and mob_if("未被触发的机关")==1 then
 				bot_stop()
 				ini_change("tobot_scriptbot",0)
@@ -162,7 +164,7 @@ common.simpleStart({
 				ini_change("tobot_scriptbot",1)
 				labelfanhui=1
 			end
-			if getx()>=925 and getx()<=1450 and gety()==543 and mob_if("可使用机关")==1 then
+			if getx()>=925 and getx()<=1450 and gety()==543 and mobY==271 then
 				bot_stop()
 				ini_change("tobot_scriptbot",0)
 				gotocoordinate(1,1085,543)

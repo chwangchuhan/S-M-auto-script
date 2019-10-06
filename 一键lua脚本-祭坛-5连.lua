@@ -822,7 +822,7 @@ common.simpleStart({
 				end
 				if getx()>=32 and getx()<=191 and gety()>2448 and gety()<=3007 and door_if(112,3007)==0 then   --回跳操作
 					ini_change("tobot_scriptbot",0)
-					sleep(500)
+					sleep(2000)
 					if getx()>=32 and getx()<=191 and gety()>2448 and gety()<=3007 and door_if(112,3007)==0 then
 						sleep(20000)
 						speak("左边没有开门")
@@ -862,7 +862,7 @@ common.simpleStart({
 				end
 				if getx()>=1056 and getx()<=1311 and gety()>2448 and gety()<=3007 and door_if(1200,3007)==0 then --回跳操作
 					ini_change("tobot_scriptbot",0)
-					sleep(500)
+					sleep(2000)
 					if getx()>=1056 and getx()<=1311 and gety()>2448 and gety()<=3007 and door_if(1200,3007)==0 then
 						sleep(20000)
 						speak("右边没有开门")

@@ -393,7 +393,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					ini_change("ban_hit_mob",1)
-					sleep(1000)
+					sleep(2000)
 					if getx()>=4520 and getx()<=5090 and gety()==1167 and labeldoor==1 and labelwakuang2==0 then --±¦Ê¯9ÍÚ¿ó
 						speak("±¦Ê¯9ÍÚ¿ó2")
 						bot_stop()
@@ -461,7 +461,7 @@ common.simpleStart({
 				if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 then --±¦Ê¯9ÍÚ¿ó
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
-					sleep(1500)
+					sleep(2000)
 					if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 then --±¦Ê¯9ÍÚ¿ó
 						speak("±¦Ê¯9ÍÚ¿ó1")
 						bot_stop()
@@ -522,8 +522,8 @@ common.simpleStart({
 						common.wearGongji()
 						sleep(500)
 					end
-					bot_start()
 					ini_change("tobot_scriptbot",1)
+					bot_start()
 				end
 				if gety()==1727 and labeldoor==1 and labelwakuang2==1 then
 					bot_stop()

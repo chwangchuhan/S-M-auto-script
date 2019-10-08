@@ -61,7 +61,7 @@ common.simpleStart({
 	   "",
     },
     onScriptRound = function () -- 副本每次切换地图回调
-        if (getmapid() == 84000) then
+		if (getmapid() == 84000) then
 			bot_stop()
 			sleep(1000)
 			bot_start()
@@ -72,6 +72,10 @@ common.simpleStart({
 		   ini_change("ban_hit_mob",1)
         end
 		if (getmapid() == 84002) then
+			bot_stop()
+			common.wearSudu()
+			sleep(1000)
+			bot_start()
            ini_change("ban_hit_mob",0)
 		   sleep(1000)
 		   ini_change("ban_hit_mob",0)
@@ -137,7 +141,11 @@ common.simpleStart({
 			until(getmapid() ~= 84009)
         end
 		if (getmapid() == 84011) then
-            sleep(20000)
+            bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
+			sleep(20000)
 			if getmapid() == 84011 then
 			speak("漏怪导致没开门，Lua强制结束")
 			plane(95201)

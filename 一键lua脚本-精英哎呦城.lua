@@ -81,6 +81,10 @@ common.simpleStart({
 		   ini_change("ban_hit_mob",0)
         end
 		if (getmapid() == 84009) then
+			bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
 			repeat
 				sleep(100)
 				if getx()<2380 or getx()> 2450 then
@@ -151,6 +155,14 @@ common.simpleStart({
 			plane(95201)
 			return true
 			end
+        end
+		if getmapid() == 84012 or getmapid() == 84013 or getmapid() == 84014 then
+            bot_stop()
+			ini_change("ban_hit_mob",1)
+			common.wearDiaoluo()
+			sleep(500)
+			ini_change("ban_hit_mob",0)
+			bot_start()
         end
     end
 })

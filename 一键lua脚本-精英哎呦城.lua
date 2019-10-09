@@ -14,7 +14,7 @@ common.simpleStart({
 		tobot_giveitemif=1,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
 	},
-	minXSpeed = 850,  -- 站街速低于850会死掉
+	--minXSpeed = 850,  -- 站街速低于850会死掉
 	minYSpeed = 1120,
 	maxYSpeed = 2000,
 	isLuckyDog = true,

@@ -923,13 +923,15 @@ common.simpleStart({
 			end
 			repeat
 				sleep(200)
-				if (getx()>=32 and getx()<=240 and gety()==559) then
+				if (getx()>=32 and getx()<=250 and gety()==559) then
 					speak("¶ã±ÜµØ´Ì9")
 					sleep(100)
 					ini_change("ban_hit_mob",1)
 					bot_start()
 				end
-				if (getx()>=250 and gety()==559) then
+				if (getx()>250 and gety()==559) then
+					ini_change("ban_hit_mob",0)
+					sleep(500)
 					ini_change("ban_hit_mob",0)
 				end
 			until (gety()>599 and gety()<=1199)

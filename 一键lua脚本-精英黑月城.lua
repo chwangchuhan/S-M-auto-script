@@ -155,8 +155,10 @@ common.simpleStart({
 	if getmapid()==9509 then
 		repeat
 			sleep(200)
-			local mobId = mob_obj_get('可使用机关')
-			local mobY = mob_obj_y(mobId)
+			local mobId1 = mob_obj_get('可使用机关')
+			local mobY1 = mob_obj_y(mobId)
+			local mobId2 = mob_obj_get('动心鬼武士')
+			local mobY2 = mob_obj_y(mobId)
 			if getx()>=925 and getx()<=1450 and gety()==543 and mob_if("未被触发的机关")==1 then
 				bot_stop()
 				ini_change("tobot_scriptbot",0)
@@ -166,7 +168,16 @@ common.simpleStart({
 				ini_change("tobot_scriptbot",1)
 				labelfanhui=1
 			end
-			if getx()>=925 and getx()<=1450 and gety()==543 and mobY==271 then
+			if getx()>=925 and getx()<=1450 and gety()==543 and mobY1==271 then
+				bot_stop()
+				ini_change("tobot_scriptbot",0)
+				gotocoordinate(1,1085,543)
+				sleep(1000)
+				jmp(1)
+				ini_change("tobot_scriptbot",1)
+				bot_start()
+			end
+			if getx()>=925 and getx()<=1450 and gety()==543 and mobY2==271 then
 				bot_stop()
 				ini_change("tobot_scriptbot",0)
 				gotocoordinate(1,1085,543)

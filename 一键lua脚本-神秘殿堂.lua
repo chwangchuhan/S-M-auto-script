@@ -57,7 +57,6 @@ common.simpleStart({
 	},
     onScriptRound = function () -- 副本每次切换地图回调
 		if (getmapid() == 34502) then
-            ini_change("tobot_hit_range_top",400)
 			useskill(5000420,1)
 			sleep(14000)
 			useskill(43501018,1)

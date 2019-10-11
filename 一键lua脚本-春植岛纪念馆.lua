@@ -103,7 +103,6 @@ common.simpleStart({
 			if labelnext==1 then --检测门口出来没有--
 				printgame(0,255,0,"植 已死亡~")
 				sleep(10000)
-				bot_stop()--停止挂机--
 				plane(285)
 			end	
 		end	

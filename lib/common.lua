@@ -22,10 +22,10 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 700
-local defaultXMaxSpeed = 1950
+local defaultXMinSpeed = 1000
+local defaultXMaxSpeed = 1480
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1600
+local defaultYMaxSpeed = 1500
 
 local defaultLuckyDog = false
 
@@ -623,6 +623,7 @@ local function simpleStart (config)
                 if (config.isAutoWearDiaoluo) then
                     wearGongji()
                 end
+				sleep(100)
                 return
             end
         end
@@ -687,7 +688,8 @@ local function simpleStart (config)
                     if (config.isAutoWearDiaoluo) then
                         wearGongji()
                     end
-
+					
+					sleep(100)
                     return
                 else
                     -- 如换了掉落装需换回攻击装
@@ -725,7 +727,8 @@ local function simpleStart (config)
                 local roundRes = config.onScriptRound(config)
                 if (roundRes) then
                     bot_stop()
-                    return
+					sleep(100)
+					return
                 end
             end
         end

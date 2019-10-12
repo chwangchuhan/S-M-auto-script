@@ -156,9 +156,9 @@ common.simpleStart({
 		repeat
 			sleep(200)
 			local mobId1 = mob_obj_get('可使用机关')
-			local mobY1 = mob_obj_y(mobId)
+			local mobY1 = mob_obj_y(mobId1)
 			local mobId2 = mob_obj_get('动心鬼武士')
-			local mobY2 = mob_obj_y(mobId)
+			local mobY2 = mob_obj_y(mobId2)
 			if getx()>=925 and getx()<=1450 and gety()==543 and mob_if("未被触发的机关")==1 then
 				bot_stop()
 				ini_change("tobot_scriptbot",0)

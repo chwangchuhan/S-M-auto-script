@@ -141,7 +141,7 @@ common.simpleStart({
 			speak("获取土")
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>30 and gettime(3)<=40 then
+				if gettime(2)==18 and gettime(3)<=40 then
 					local mobId = mob_obj_get('土之魂')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -206,7 +206,24 @@ common.simpleStart({
 						sleep(500)
 					end	
 				end
-				if gettime(2)==19 and gettime(3)>=0 and gettime(3)<=10 then --悲--"悲"刷10分钟
+
+				if gettime(2)==19 and gettime(3)>=0 and gettime(3)<=10 then --喜--"喜"刷10分钟
+					ini_change("tobot_hit_range_right",2600)
+					ini_change("tobot_hit_range_left",3167)
+					local mobId = mob_obj_get('成年的玫瑰')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(100)
+						useskill(9531003,1) --喜
+						bot_start()
+						sleep(500)
+					end	
+				end
+
+				if gettime(2)==19 and gettime(3)>=11 and gettime(3)<=20 then --悲--"悲"刷10分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -221,7 +238,7 @@ common.simpleStart({
 						sleep(500)
 					end	
 				end
-				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>10then--成长"成长"刷50分钟
+				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>20then--成长"成长"刷40分钟
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('玫瑰')

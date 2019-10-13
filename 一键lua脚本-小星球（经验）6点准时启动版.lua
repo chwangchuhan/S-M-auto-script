@@ -134,14 +134,18 @@ common.simpleStart({
 			script_txt_loaddata("C9CFCCF82CD7F326D3D2CAB12C323830302C313430372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313136372CD3D2C5DC2C",0)
 			bot_start()
 		end
-		if getmapid() == 83906 then   --水土	"土"刷10分钟
+		if getmapid() == 83906 then   --水土	"土"刷7分钟
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_hit_range_right",1250)
 			ini_change("tobot_hit_range_left",1700)
 			speak("获取土")
 			repeat
 				sleep(200)
+<<<<<<< HEAD
 				if gettime(2)==18 and gettime(3)<=40 then
+=======
+				if gettime(2)==18 and gettime(3)>30 and gettime(3)<=37 then
+>>>>>>> b4777bcd408fc5f0d9e5740bdeab7fcf6c2b55ad
 					local mobId = mob_obj_get('土之魂')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -161,14 +165,14 @@ common.simpleStart({
 		if getmapid() == 83901 then  
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",0)
 		end
-		if getmapid() == 83907 then   --水土   "水"刷10分钟
+		if getmapid() == 83907 then   --水土   "水"刷7分钟
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_hit_range_right",1250)
 			ini_change("tobot_hit_range_left",1700)
 			speak("获取水")
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>40 and gettime(3)<=50 then
+				if gettime(2)==18 and gettime(3)>37 and gettime(3)<=44 then
 					local mobId = mob_obj_get('水之魂')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -180,7 +184,7 @@ common.simpleStart({
 						bot_start()
 					end	
 				end
-			until(gettime(2)==18 and gettime(3)>50 or gettime(2)==19 )
+			until(gettime(2)==18 and gettime(3)>44 or gettime(2)==19 )
 			ini_change("tobot_hit_range_left",3167)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
@@ -191,7 +195,7 @@ common.simpleStart({
 			sleep(4000)
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)<=59 then --喜--"喜"刷10分钟
+				if gettime(2)==18 and gettime(3)<=59 then --喜--"喜"刷16分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -206,24 +210,7 @@ common.simpleStart({
 						sleep(500)
 					end	
 				end
-
-				if gettime(2)==19 and gettime(3)>=0 and gettime(3)<=10 then --喜--"喜"刷10分钟
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(100)
-						useskill(9531003,1) --喜
-						bot_start()
-						sleep(500)
-					end	
-				end
-
-				if gettime(2)==19 and gettime(3)>=11 and gettime(3)<=20 then --悲--"悲"刷10分钟
+				if gettime(2)==19 and gettime(3)>=0 and gettime(3)<=15 then --悲--"悲"刷16分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -238,7 +225,7 @@ common.simpleStart({
 						sleep(500)
 					end	
 				end
-				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>20then--成长"成长"刷40分钟
+				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>15then--成长"成长"刷45分钟
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('玫瑰')

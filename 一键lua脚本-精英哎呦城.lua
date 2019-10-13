@@ -14,7 +14,7 @@ common.simpleStart({
 		tobot_giveitemif=1,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
 	},
-	minXSpeed = 850,  -- 站街速低于850会死掉
+	--minXSpeed = 850,  -- 站街速低于850会死掉
 	minYSpeed = 1120,
 	maxYSpeed = 2000,
 	isLuckyDog = true,
@@ -61,7 +61,7 @@ common.simpleStart({
 	   "",
     },
     onScriptRound = function () -- 副本每次切换地图回调
-        if (getmapid() == 84000) then
+		if (getmapid() == 84000) then
 			bot_stop()
 			sleep(1000)
 			bot_start()
@@ -72,11 +72,19 @@ common.simpleStart({
 		   ini_change("ban_hit_mob",1)
         end
 		if (getmapid() == 84002) then
+			bot_stop()
+			common.wearSudu()
+			sleep(1000)
+			bot_start()
            ini_change("ban_hit_mob",0)
 		   sleep(1000)
 		   ini_change("ban_hit_mob",0)
         end
 		if (getmapid() == 84009) then
+			bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
 			repeat
 				sleep(100)
 				if getx()<2380 or getx()> 2450 then
@@ -137,12 +145,24 @@ common.simpleStart({
 			until(getmapid() ~= 84009)
         end
 		if (getmapid() == 84011) then
-            sleep(20000)
+            bot_stop()
+			common.wearDiaoluo()
+			sleep(500)
+			bot_start()
+			sleep(20000)
 			if getmapid() == 84011 then
 			speak("漏怪导致没开门，Lua强制结束")
 			plane(95201)
 			return true
 			end
+        end
+		if getmapid() == 84012 or getmapid() == 84013 or getmapid() == 84014 then
+            bot_stop()
+			ini_change("ban_hit_mob",1)
+			common.wearDiaoluo()
+			sleep(500)
+			ini_change("ban_hit_mob",0)
+			bot_start()
         end
     end
 })

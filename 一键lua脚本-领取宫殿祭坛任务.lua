@@ -38,6 +38,7 @@ common.simpleStart({
 			sleep(200)
 			if (getmapid() == 35500) then
 			  sleep(10000)
+			  ini_change("ban_hit_mob",0)
 			  return true
 			end
 		until(getmapid() ~= 35500)

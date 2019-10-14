@@ -65,6 +65,8 @@ common.simpleStart({
 			ini_change("ban_hit_mob",1)
 			common.wearJingyan()
 			sleep(500)
+			common.wearJingyan()
+			sleep(500)
 			ini_change("ban_hit_mob",0)
 			bot_start()
 			item_use(430453149)--π≈”Ô

@@ -631,7 +631,7 @@ common.simpleStart({
 				if getx()>450 and gety()==1135 then
 					ini_change("ban_hit_mob",0)
 				end
-				if door_if(1615,2479)==1 then --祭坛4进门
+				if gety()==3007 and door_if(1615,2479)==1 then --祭坛4进门
 					speak("开门，上跳进门")
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
@@ -862,6 +862,12 @@ common.simpleStart({
 						sleep(900)
 						jmp(1)
 						sleep(900)
+						jmp(1)
+						sleep(900)
+						jmp(1)
+						sleep(900)
+						jmp(1)
+						sleep(900)
 					end
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
@@ -878,6 +884,12 @@ common.simpleStart({
 						sleep(500)
 						gotocoordinate(1,1200,3007)
 						sleep(500)
+						jmp(1)
+						sleep(900)
+						jmp(1)
+						sleep(900)
+						jmp(1)
+						sleep(900)
 						jmp(1)
 						sleep(900)
 						jmp(1)

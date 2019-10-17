@@ -632,7 +632,9 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 				end
 				if gety()==3007 and door_if(1615,2479)==1 then --祭坛4进门
+					sleep(1000)
 					speak("开门，上跳进门")
+					sleep(1000)
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					bot_stop()
@@ -999,6 +1001,7 @@ common.simpleStart({
 		if (getmapid() == 35711) then   --祭坛12  
 			bot_stop()
 			ini_change("ban_hit_mob",1)
+			ini_change("tobot_scriptbot",0)
 			common.wearDiaoluo()
 			sleep(500)
 			ini_change("ban_hit_mob",0)
@@ -1007,6 +1010,7 @@ common.simpleStart({
 			bot_stop()
 			common.wearGongji()
 			sleep(1000)
+			ini_change("tobot_scriptbot",1)
 			bot_start()
 			script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C333030372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313432302C333030372CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C353030",0)
         end

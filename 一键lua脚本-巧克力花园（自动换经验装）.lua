@@ -100,9 +100,13 @@ common.simpleStart({
 		if (getmapid() == 35006) then
 			bot_stop()
 			ini_change("ban_hit_mob",1)
+			ini_change("tobot_scriptbot",0)
+			common.wearDiaoluo()
+			sleep(500)
 			common.wearDiaoluo()
 			sleep(500)
 			ini_change("ban_hit_mob",0)
+			ini_change("tobot_scriptbot",1)
 			bot_start()
         end
     end

@@ -83,6 +83,7 @@ common.simpleStart({
 		if (getmapid() == 35605) then
 			bot_stop()
 			ini_change("ban_hit_mob",1)
+			ini_change("tobot_scriptbot",0)
 			common.wearDiaoluo()
 			sleep(500)
 			ini_change("tobot_hit_range_top",100)
@@ -95,6 +96,7 @@ common.simpleStart({
 			bot_stop()
 			common.wearGongji()
 			sleep(2000)
+			ini_change("tobot_scriptbot",1)
 			bot_start()
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3933362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3935362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3934362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C383030",0)
 		end

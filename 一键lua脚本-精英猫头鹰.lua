@@ -109,7 +109,7 @@ common.simpleStart({
 		   until(labelnext==1)
         end
 		if (getmapid() == 99106) then
-           ini_change("tobot_hit_range_top",200)
+           ini_change("tobot_hit_range_top",100)
 		   ini_change("tobot_hit_range_down",100)
         end
     end

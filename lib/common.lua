@@ -22,10 +22,10 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 1000
-local defaultXMaxSpeed = 1480
+local defaultXMinSpeed = 550
+local defaultXMaxSpeed = 950
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1500
+local defaultYMaxSpeed = 1250
 
 local defaultLuckyDog = false
 
@@ -749,7 +749,7 @@ local function shendianStart (config)
     gameConfigInit()
     mapInitDesc(config.mapName, 1)
     show('----------------------------')
-    show('由于神殿脚本需要模拟鼠标操作，请控制分辨率在800*600')
+    show('由于神殿脚本需要模拟鼠标操作，分辨率在800*600为低分辨率，1024*768为中分辨率，1280*800为高分辨率')
 
     -- 地图激活时间
     local startTimeSpan = getTimeSpan()

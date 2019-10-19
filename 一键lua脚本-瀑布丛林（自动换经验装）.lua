@@ -65,6 +65,8 @@ common.simpleStart({
 			ini_change("ban_hit_mob",1)
 			common.wearJingyan()
 			sleep(500)
+			common.wearJingyan()
+			sleep(500)
 			ini_change("ban_hit_mob",0)
 			bot_start()
 			item_use(430453149)--π≈”Ô
@@ -92,9 +94,11 @@ common.simpleStart({
 			ini_change("tobot_hit_range_top",150)
 			bot_stop()
 			ini_change("ban_hit_mob",1)
+			ini_change("tobot_scriptbot",0)
 			common.wearDiaoluo()
 			sleep(500)
 			ini_change("ban_hit_mob",0)
+			ini_change("tobot_scriptbot",1)
 			bot_start()
         end
     end

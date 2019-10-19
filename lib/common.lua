@@ -376,6 +376,40 @@ local function checkItemExist(items)
     return false
 end
 
+-- 检测特定怪是否在身边
+local function checkMobIsAside(mobId, xkew, ykew)
+    if (not checkMob(mobId)) then
+        return false
+    end
+
+    local mobId = mob_obj_get(mobId)
+    local mobX = mob_obj_x(mobId)
+    local mobY = mob_obj_y(mobId)
+    local x = getx()
+    local y = gety()
+
+    local resX = x - mobX
+    local resY = y - mobY
+
+    if (not ykew) then
+        ykew = 0
+    end
+
+    if (resX < 0) then
+        resX = resX * -1
+    end
+
+    if (resY < 0) then
+        resY = resY * -1
+    end
+
+    if (resX <= xkew and resY <= ykew) then
+        return true
+    end
+
+    return false
+end
+
 -- 穿戴攻击装备
 local function wearGongji()
     local wearConfig = nil
@@ -1018,4 +1052,5 @@ return {
     wearJingyan = wearJingyan,  -- 穿经验装备
     wearSudu = wearSudu,  		-- 穿速度装备
     checkItemExist = checkItemExist,             -- 检测道具是否存在
+    checkMobIsAside = checkMobIsAside,
 }

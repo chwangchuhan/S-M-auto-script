@@ -162,7 +162,7 @@ function xingzhiqiaobi.begin()
 					
 					if door_if(647,848) == 1 then --检测门口出来没有--
 						bot_stop()--停止挂机--
-						sleep(2000)
+						sleep(5000)
 						planeToEntry()
 						break
 					end

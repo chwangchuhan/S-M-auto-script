@@ -22,7 +22,7 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 550
+local defaultXMinSpeed = 1
 local defaultXMaxSpeed = 950
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1250
@@ -371,6 +371,40 @@ local function checkItemExist(items)
 
         return true
     end
+    return false
+end
+
+-- 检测特定怪是否在身边
+local function checkMobIsAside(mobId, xkew, ykew)
+    if (not checkMob(mobId)) then
+        return false
+    end
+
+    local mobId = mob_obj_get(mobId)
+    local mobX = mob_obj_x(mobId)
+    local mobY = mob_obj_y(mobId)
+    local x = getx()
+    local y = gety()
+
+    local resX = x - mobX
+    local resY = y - mobY
+
+    if (not ykew) then
+        ykew = 0
+    end
+
+    if (resX < 0) then
+        resX = resX * -1
+    end
+
+    if (resY < 0) then
+        resY = resY * -1
+    end
+
+    if (resX <= xkew and resY <= ykew) then
+        return true
+    end
+
     return false
 end
 
@@ -1016,4 +1050,5 @@ return {
     wearJingyan = wearJingyan,  -- 穿经验装备
     wearSudu = wearSudu,  		-- 穿速度装备
     checkItemExist = checkItemExist,             -- 检测道具是否存在
+    checkMobIsAside = checkMobIsAside,
 }

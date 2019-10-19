@@ -1,7 +1,7 @@
 while(true)
 do	
 	sleep(1)
-	if mob_if("å®ˆæ–¹å®ç®±")==1 then
+	if mob_if("ÊØ·½±¦Ïä")==1 then
 	useskill(9551002,1)
 	end
 end

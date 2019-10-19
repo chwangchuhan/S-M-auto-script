@@ -189,7 +189,7 @@ function xingzhiyaolan.begin()
 						printgame(0,255,255,"Ó¢ĞÛÍõÒÑËÀ~")
 						bot_stop()--Í£Ö¹¹Ò»ú--
 						ini_change("ban_hit_mob",1)--½ûÖ¹¹¥»÷--
-						sleep(2000)
+						sleep(5000)
 						planeToEntry()
 						break
 					end

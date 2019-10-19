@@ -19,12 +19,21 @@ const sleep = function (time) {
     })
 }
 
+const checkPackFileNames = [
+    /^一键lua脚本.+\.lua/,
+    /^换装.+\.lua/,
+    /^皇帝戒指.+\.lua/,
+]
+const filterFileNames = [
+    /^(?!一键lua脚本-小星球（经验）完整版)/
+]
 
-console.log('-------等待打包�??--------');
+
+console.log('-------等待打包�??--------');
 
 // 删除build
 function cleanBuild () {
-    console.log('-------build目录清除�??-------');
+    console.log('-------build目录清除�??-------');
     return src('S-M-auto-script').pipe(clean({allowEmpty: true,}))
     
 }
@@ -53,15 +62,25 @@ function compileCommon () {
 
 function defaultTask (cb) {
   luaScripts.map((fileName) => {
-    if (fileName && (/^一键lua脚本.+\.lua/.test(fileName) || /^换装.+\.lua/.test(fileName))) {
-      console.log('正在打包文件 -----   ' + fileName)
-      const uuid = getUUID()
+    if (fileName) {
+        let res = checkPackFileNames.map((reg) => {
+            return reg.test(fileName)
+        }).includes(true)
 
-      fs.writeFileSync(`S-M-auto-script/${fileName}`, `check=1;dofile(path_scripts.."S-M-auto-script\\\\lib\\\\${uuid}.lua")`)
+        let filtersRes = filterFileNames.map((reg) => {
+            return reg.test(fileName)
+        }).includes(false)
 
-      src(fileName)
-        .pipe(dest('S-M-auto-script/lib/script'))
-        .pipe(shell([`luajit -o .\\S-M-auto-script\\lib\\${uuid}.lua  S-M-auto-script\\lib\\script\\${fileName}`]))
+        if (res && !filtersRes) {
+            console.log('正在打包文件 -----   ' + fileName)
+            const uuid = getUUID()
+
+            fs.writeFileSync(`S-M-auto-script/${fileName}`, `check=1;dofile(path_scripts.."S-M-auto-script\\\\lib\\\\${uuid}.lua")`)
+
+            src(fileName)
+                .pipe(dest('S-M-auto-script/lib/script'))
+                .pipe(shell([`luajit -o .\\S-M-auto-script\\lib\\${uuid}.lua  S-M-auto-script\\lib\\script\\${fileName}`]))
+            }
     }
   })
   cb()
@@ -69,7 +88,7 @@ function defaultTask (cb) {
 
 // 删除build
 async function cleanScript () {
-    console.log('-------build目录清除�??-------');
+    console.log('-------build目录清除�??-------');
     await sleep(15000)
     return src('S-M-auto-script/lib/script').pipe(clean({allowEmpty: true}))
 }

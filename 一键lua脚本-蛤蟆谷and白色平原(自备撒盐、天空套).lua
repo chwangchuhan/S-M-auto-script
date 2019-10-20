@@ -66,6 +66,8 @@ common.simpleStart({
     mapName = "蛤蟆谷",
     mapCount = 3,
     planeId = 37,
+    minYSpeed = 200,
+	maxYSpeed = 2000,
     overtime = 20, --超时时间，/分钟
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {11204, 11600},
@@ -96,181 +98,185 @@ common.simpleStart({
 
 common.wearDiaoluo()
 
-common.simpleStart({
-    mapName = "白色平原",
-    mapCount = 3,
-    planeId = 9999999999999999,
-    overtime = 20, --超时时间，/分钟
-    -- 地图名称列表，需和mapIds一一对应
-    mapIds = {98500, 29300, 29301, 29302, 29303, 29304, 29305, 29306, 29307, 29308, 29309, 29310, 29311, 29312, 29313, 29314, 29315, 29316, 29317, 29318, 29319, 29320, 29321, 29322, 29323, 29324, 29325, 29326, 29327, 29328},
-    endMapIds = {29328},
-    -- 脚本名称列表，需和mapIds一一对应
-    -- 支持16进制hex编码脚本
-    -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
-    scripts = {
-       -- 入口
-       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333039362E32382C313339322CB2BBB1E40D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038392E31322C313234382E30382CB2BBB1E4",
-       -- 29300
-       baiseScripts[2],
-       -- 29301
-       baiseScripts[2],
-       -- 29302
-       baiseScripts[2],
-       -- 29303
-       baiseScripts[3],
-       -- 29304
-       baiseScripts[5],
-       -- 29305
-       baiseScripts[2],
-       -- 29306
-       baiseScripts[2],
-       -- 29307
-       baiseScripts[2],
-       -- 29308
-       baiseScripts[1],
-       -- 29309
-       baiseScripts[2],
-       -- 29310
-       baiseScripts[2],
-       -- 29311
-       baiseScripts[1],
-       -- 29312
-       baiseScripts[1],
-       -- 29313
-       baiseScripts[3],
-       -- 29314
-       baiseScripts[3],
-       -- 29315
-       '',
-       -- 29316
-       '',
-       -- 29317
-       baiseScripts[7],
-       -- 29318
-       baiseScripts[7],
-       -- 29319
-       baiseScripts[5],
-       -- 29320
-       '',
-       -- 29321
-       baiseScripts[2],
-       -- 29322
-       baiseScripts[2],
-       -- 29323
-       baiseScripts[1],
-       -- 29324
-       baiseScripts[1],
-       -- 29325
-       baiseScripts[2],
-       -- 29326
-       baiseScripts[1],
-       -- 29327
-       baiseScripts[1],
-       -- 29328
-       baiseScripts[1],
-    },
-    -- 任务列表
-    -- 任务会在跳转到对应地图时执行，因此如mapId中未配置或者初始飞机不在任务地点则无法领取任务
-    -- 不同npc或不同地图的任务请配置多个task
-    tasks = {},
-    onScriptWhileCallback = function ()
-        if(getmapid()==29303.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[4], 0)
+if (getmapid() == 98500) then
+    common.simpleStart({
+        mapName = "白色平原",
+        mapCount = 3,
+        planeId = 9999999999999999,
+        overtime = 20, --超时时间，/分钟
+        -- 地图名称列表，需和mapIds一一对应
+        mapIds = {98500, 29300, 29301, 29302, 29303, 29304, 29305, 29306, 29307, 29308, 29309, 29310, 29311, 29312, 29313, 29314, 29315, 29316, 29317, 29318, 29319, 29320, 29321, 29322, 29323, 29324, 29325, 29326, 29327, 29328},
+        endMapIds = {29328},
+        -- 脚本名称列表，需和mapIds一一对应
+        -- 支持16进制hex编码脚本
+        -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
+        scripts = {
+           -- 入口
+           "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333039362E32382C313339322CB2BBB1E40D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038392E31322C313234382E30382CB2BBB1E4",
+           -- 29300
+           baiseScripts[2],
+           -- 29301
+           baiseScripts[2],
+           -- 29302
+           baiseScripts[2],
+           -- 29303
+           baiseScripts[3],
+           -- 29304
+           baiseScripts[5],
+           -- 29305
+           baiseScripts[2],
+           -- 29306
+           baiseScripts[2],
+           -- 29307
+           baiseScripts[2],
+           -- 29308
+           baiseScripts[1],
+           -- 29309
+           baiseScripts[2],
+           -- 29310
+           baiseScripts[2],
+           -- 29311
+           baiseScripts[1],
+           -- 29312
+           baiseScripts[1],
+           -- 29313
+           baiseScripts[3],
+           -- 29314
+           baiseScripts[3],
+           -- 29315
+           '',
+           -- 29316
+           '',
+           -- 29317
+           baiseScripts[7],
+           -- 29318
+           baiseScripts[7],
+           -- 29319
+           baiseScripts[5],
+           -- 29320
+           '',
+           -- 29321
+           baiseScripts[2],
+           -- 29322
+           baiseScripts[2],
+           -- 29323
+           baiseScripts[1],
+           -- 29324
+           baiseScripts[1],
+           -- 29325
+           baiseScripts[2],
+           -- 29326
+           baiseScripts[1],
+           -- 29327
+           baiseScripts[1],
+           -- 29328
+           baiseScripts[1],
+        },
+        -- 任务列表
+        -- 任务会在跳转到对应地图时执行，因此如mapId中未配置或者初始飞机不在任务地点则无法领取任务
+        -- 不同npc或不同地图的任务请配置多个task
+        tasks = {},
+        onScriptWhileCallback = function ()
+            if(getmapid()==29303.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[4], 0)
+                end
+            end
+    
+            if(getmapid()==29304.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[6], 0)
+                end
+            end
+    
+            if(getmapid()==29308.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if (getmapid()==29311.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if(getmapid()==29312.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if(getmapid()==29313.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[4], 0)
+                end
+            end
+    
+            if(getmapid()==29314.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[4], 0)
+                end
+            end
+    
+            if(getmapid()==29315.0) then
+                --根据跳跃高度加载不同的脚本--
+                if(getjmpheight()>340) then
+                    script_txt_loaddata(baiseScripts[9], 0)
+                else
+                    script_txt_loaddata(baiseScripts[10], 0)
+                end
+            end
+    
+            if(getmapid()==29317.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[8], 0)
+                end
+            end
+    
+            if(getmapid()==29318.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[8], 0)
+                end
+            end
+    
+            if(getmapid()==29319.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[6], 0)
+                end
+            end
+    
+            if(getmapid()==29323.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if(getmapid()==29324.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if(getmapid()==29326.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if(getmapid()==29327.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
+            end
+    
+            if(getmapid()==29328.0) then
+                if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
+                    script_txt_loaddata(baiseScripts[2], 0)
+                end
             end
         end
+    })
+end
 
-        if(getmapid()==29304.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[6], 0)
-            end
-        end
 
-        if(getmapid()==29308.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if (getmapid()==29311.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if(getmapid()==29312.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if(getmapid()==29313.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[4], 0)
-            end
-        end
-
-        if(getmapid()==29314.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[4], 0)
-            end
-        end
-
-        if(getmapid()==29315.0) then
-            --根据跳跃高度加载不同的脚本--
-            if(getjmpheight()>340) then
-                script_txt_loaddata(baiseScripts[9], 0)
-            else
-                script_txt_loaddata(baiseScripts[10], 0)
-            end
-        end
-
-        if(getmapid()==29317.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[8], 0)
-            end
-        end
-
-        if(getmapid()==29318.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[8], 0)
-            end
-        end
-
-        if(getmapid()==29319.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[6], 0)
-            end
-        end
-
-        if(getmapid()==29323.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if(getmapid()==29324.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if(getmapid()==29326.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if(getmapid()==29327.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-
-        if(getmapid()==29328.0) then
-            if(mob_if("平原的黑月公主")==0 and mob_if("狼孩")==0 and mob_if("平原的上忍")==0) then
-                script_txt_loaddata(baiseScripts[2], 0)
-            end
-        end
-    end
-})

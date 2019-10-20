@@ -123,10 +123,8 @@ common.simpleStart({
             end
 
             if (y < 500 and y > 400 and x <= 1000 and not checkMob("宝箱") and not checkMob('资深魔法术士的徒弟')) then
-                speak('不攻击')
                 ini_change("ban_hit_mob", 1) -- 不允许攻击
             else
-                speak('攻击')
                 ini_change("ban_hit_mob", 0) -- 允许攻击
             end
 

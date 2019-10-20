@@ -22,10 +22,10 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 1
-local defaultXMaxSpeed = 950
+local defaultXMinSpeed = 550
+local defaultXMaxSpeed = 1980
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1250
+local defaultYMaxSpeed = 1550
 
 local defaultLuckyDog = false
 
@@ -165,9 +165,11 @@ local function isMapNumOver(mapName, mapCount)
 
     --判断执行次数--
     if indun_get(mapName) >= mapCount then
+		bot_stop()
         show("----------------------------------------------")
         show("["..mapName.."]已刷完"..mapCount.."次，此lua执行完毕")
         show("----------------------------------------------")
+		sleep(500)
 		return true
 	end
 

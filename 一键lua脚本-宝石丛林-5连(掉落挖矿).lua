@@ -376,7 +376,7 @@ common.simpleStart({
 					speak("宝石7进入时间:"..labellasttime..",当前时间："..labelnowtime.."跳了5分钟，超时，启动打怪模式")
 					ini_change("ban_hit_mob",0)
 				end
-				if getx()>3167 then
+				if getx()>3500 then
 					bot_stop()
 					ini_change("ban_hit_mob",1)
 					common.wearGongji()

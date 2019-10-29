@@ -9,7 +9,7 @@ ini_change("tobot_fastladder ",0)
 ini_change("tobot_scriptbot",1)
 while(true)
 do
-	sleep(200)
+	sleep(100)
 	mapid_now = getmapid()
 		if mapid_now ~= mapid_last --∑¿÷πº”‘ÿµÿÕº±¿¿£--
 		then

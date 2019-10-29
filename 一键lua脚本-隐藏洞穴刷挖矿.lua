@@ -33,7 +33,13 @@ common.simpleStart({
     -- 任务列表
     -- 任务会在跳转到对应地图时执行，因此如mapId中未配置或者初始飞机不在任务地点则无法领取任务
     -- 不同npc或不同地图的任务请配置多个task
-    tasks = {},
+    tasks = {
+		 {
+            mapId = 33304,
+            npcId = 7098,
+            taskIds = {154008088},
+        }
+	},
     onScriptRound = function (config) -- 副本每次切换地图回调
         if (getmapid() == 33201) then
             local isBacking = false -- 是否正在返回

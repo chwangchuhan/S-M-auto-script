@@ -76,7 +76,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					bot_stop()
-					sleep(500)
+					sleep(200)
 					jmp(1)
 					sleep(1000)
 					ini_change("tobot_scriptbot",1)

@@ -103,7 +103,7 @@ common.wearDiaoluo()
 if (getmapid() == 98500) then
     common.simpleStart({
         mapName = "°×É«Æ½Ô­",
-        mapCount = 3,
+        mapCount = 15,
         planeId = 9999999999999999,
 		minYSpeed = 200,
 		maxYSpeed = 2000,

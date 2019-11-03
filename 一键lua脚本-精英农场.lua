@@ -87,7 +87,6 @@ common.simpleStart({
 			until(door_if(6260,1376)==1 or labelnext==1)
 			if labelnext==1 then
 				plane(83700)
-				break
 			end
         end
     end

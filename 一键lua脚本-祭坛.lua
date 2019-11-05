@@ -798,10 +798,6 @@ common.simpleStart({
 							item_use(611113016)--ÈýÐÇÖ¥Ê¿ÌÀ
 							sleep(100)
 						end
-						if mobY==3007 then
-							jmp(0)
-							sleep(900)
-						end
 					end
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)

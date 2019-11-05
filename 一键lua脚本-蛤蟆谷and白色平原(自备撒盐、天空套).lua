@@ -67,8 +67,10 @@ if (getmapid() ~= 98500) then
         mapName = "蛤蟆谷",
         mapCount = 3,
         planeId = 37,
-        minYSpeed = 200,
+         minYSpeed = 200,
         maxYSpeed = 2000,
+		minXSpeed = 200,
+        maxXSpeed = 2000,
         overtime = 20, --超时时间，/分钟
         -- 地图名称列表，需和mapIds一一对应
         mapIds = {11204, 11600},
@@ -105,8 +107,10 @@ if (getmapid() == 98500) then
         mapName = "白色平原",
         mapCount = 3,
         planeId = 9999999999999999,
-		minYSpeed = 200,
-		maxYSpeed = 2000,
+		 minYSpeed = 200,
+        maxYSpeed = 2000,
+		minXSpeed = 200,
+        maxXSpeed = 2000,
         overtime = 20, --超时时间，/分钟
         -- 地图名称列表，需和mapIds一一对应
         mapIds = {98500, 29300, 29301, 29302, 29303, 29304, 29305, 29306, 29307, 29308, 29309, 29310, 29311, 29312, 29313, 29314, 29315, 29316, 29317, 29318, 29319, 29320, 29321, 29322, 29323, 29324, 29325, 29326, 29327, 29328},

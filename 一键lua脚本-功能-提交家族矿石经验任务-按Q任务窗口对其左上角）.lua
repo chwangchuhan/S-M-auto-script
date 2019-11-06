@@ -33,6 +33,18 @@ do
 		close_npc(102)
 		sleep(10)
 	end
+	if item_if(190190203)~=0 then
+		item_use(190190203)
+		sleep(10)
+		script_mouse_load("..\\S-M-auto-script\\mouse\\接家族矿石经验任务.txt")
+		sleep(10)
+		open_npc(102)
+		sleep(10)
+		submit_task(102,1112046)
+		sleep(10)
+		close_npc(102)
+		sleep(10)
+	end
 	if item_if(190190201)==0 and item_if(190190202)==0 then
 		speak("没有家族矿石任务，lua结束")
 		break

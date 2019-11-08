@@ -7,7 +7,7 @@ common.simpleStart({
     mapCount = 1,
     planeId = nil,
     -- 地图名称列表，需和mapIds一一对应
-    mapIds = {600,1700,83900,83906,83901,83907,83902},
+    mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909},
     overtime = 150, --超时时间，/分钟
     endMapIds = {83902}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
@@ -15,31 +15,30 @@ common.simpleStart({
 		tobot_hit_range_min=10,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
-
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
     scripts = {
        -- 副本进门
        "",
-       -- 副本1
+       -- 副本1 大艾
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383234352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383236352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383238352C313430372CB2BBB1E42C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C373330302C313430372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C383530302C313430372CD7F3C5DC2C",
-       -- 副本2
+       -- 副本2	83900 接任务
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",
-       -- 副本3
+       -- 副本3	水土图
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
-       -- 副本4
+       -- 副本4	好坏草图
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
-       -- 副本5
-       "D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C313435352CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C313435352CD7F3C5DC2C",
-       -- 副本6
-       "",
-       -- 副本7
-       "",
-       -- 副本8
-       "",
-	   -- 副本9
-	   "",
+       -- 副本5	水土图
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
+       -- 副本6	玫瑰图
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
+       -- 副本7	水土图
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
+       -- 副本8	动物图
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
+	   -- 副本9	水土图
+	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
 	   -- 副本10
 	   "",
 	   -- 副本11
@@ -105,44 +104,50 @@ common.simpleStart({
 					return true
 			end
 		end
-		if getmapid() == 83900 then
+		if getmapid() == 83900 then		--接任务 杀魔女
 			bot_stop()
 			ini_change("tobot_scriptbot",0)
+			speak("小星球任务lua开始")
+			gotocoordinate(1, 200, 1407)
+			open_npc(95205)
+			request_task(95205,9522106)   --  直接完成的Q 
+			submit_task(95205,9522106)
+			request_task(95205,9522107)   --   热 喜 悲 怪
+			submit_task(95205,9522107)
+			close_npc(95205) 
+			gotocoordinate(1, 2800, 1407)
+			open_npc(95201)
+			request_task(95201,9520102)   --草儿 5
+			request_task(95201,9520106)	--邪恶魔女  消除怪物
+			submit_task(95201,9520105)
+			close_npc(95201)
+			gotocoordinate(1, 1550, 1407)
 			repeat
-				sleep(200)
-				if gettime(2)==18 and gettime(3)<=15 then --"坏的"刷15分钟
-					ini_change("tobot_hit_range_right",1500)
-					ini_change("tobot_hit_range_left",1600)
-					ini_change("tobot_nomovebot",0)
-					bot_start()
-					item_use(430453101)--用土
-					sleep(500)
+				if task_get_state(9522106)==2 then
+				local mobId = mob_obj_get('邪恶的魔女')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531001,1) --消灭怪物
+					end	
 				end
-				if gettime(2)==18 and gettime(3)<=30 and gettime(3)>15 then --"好的"刷15分钟
-					ini_change("tobot_hit_range_right",2500)
-					ini_change("tobot_hit_range_left",2600)
-					ini_change("tobot_nomovebot",0)
-					bot_start()
-					item_use(430453102)--用水
-					sleep(500)
-				end
-			until(gettime(2) == 18 and gettime(3)>30 or gettime(2)==19)
+			until(task_get_state(9522106)~=2)
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_scriptbot",1)
-			ini_change("tobot_hit_range_right",32)
-			ini_change("tobot_hit_range_left",3167)
 			script_txt_loaddata("C9CFCCF82CD7F326D3D2CAB12C323830302C313430372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313136372CD3D2C5DC2C",0)
 			bot_start()
 		end
-		if getmapid() == 83906 then   --水土	"土"刷10分钟
-			ini_change("tobot_nomovebot",0)
-			ini_change("tobot_hit_range_right",1250)
-			ini_change("tobot_hit_range_left",1700)
-			speak("获取土")
+		if getmapid() == 83901 then  --好坏草图
+			ini_change("tobot_scriptbot",0)
+			sleep(4000)
+			bot_stop()
+			labelnum=0
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)<=40 then
-					local mobId = mob_obj_get('土之魂')
+				local mobId = mob_obj_get('坏草')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
 						local mobY = gety()
@@ -150,48 +155,26 @@ common.simpleStart({
 						gotocoordinate(1, mobX, mobY)
 						sleep(500)
 						useskill(9531001,1) --消灭怪物
+						sleep(500)
+						item_use(430453101)--用土  
 						bot_start()
+						sleep(1000)
+						labelnum=labelnum+1
 					end	
 				end
-			until(gettime(2)==18 and gettime(3)>40 or gettime(2)==19)
-			ini_change("tobot_hit_range_left",3167)
-			ini_change("tobot_scriptbot",1)
-			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
-		end
-		if getmapid() == 83901 then  
+			until(labelnum==10)
+			bot_start()
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",0)
 		end
-		if getmapid() == 83907 then   --水土   "水"刷10分钟
-			ini_change("tobot_nomovebot",0)
-			ini_change("tobot_hit_range_right",1250)
-			ini_change("tobot_hit_range_left",1700)
-			speak("获取水")
-			repeat
-				sleep(200)
-				if gettime(2)==18 and gettime(3)>40 and gettime(3)<=50 then
-					local mobId = mob_obj_get('水之魂')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531001,1) --消灭怪物
-						bot_start()
-					end	
-				end
-			until(gettime(2)==18 and gettime(3)>50 or gettime(2)==19 )
-			ini_change("tobot_hit_range_left",3167)
-			ini_change("tobot_scriptbot",1)
-			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
-		end
-		if getmapid() == 83902 then	
-			label=0
+		if getmapid() == 83902 then	 --玫瑰图
+			labelxi=0
+			labelbei=0
+			labelhua=0
 			ini_change("tobot_nomovebot",0)
 			sleep(4000)
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)<=59 then --喜--"喜"刷10分钟
+				if labelxi<=20 then --喜 20次
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -204,26 +187,11 @@ common.simpleStart({
 						useskill(9531003,1) --喜
 						bot_start()
 						sleep(500)
+						labelxi=labelxi+1
 					end	
 				end
 
-				if gettime(2)==19 and gettime(3)>=0 and gettime(3)<=10 then --喜--"喜"刷10分钟
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(100)
-						useskill(9531003,1) --喜
-						bot_start()
-						sleep(500)
-					end	
-				end
-
-				if gettime(2)==19 and gettime(3)>=11 and gettime(3)<=20 then --悲--"悲"刷10分钟
+				if labelbei<=20 and labelxi==21 then --悲--"悲"刷10分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -236,9 +204,10 @@ common.simpleStart({
 						useskill(9531004,1) --悲
 						bot_start()
 						sleep(500)
+						labelbei=labelbei+1
 					end	
 				end
-				if gettime(2)==19 and gettime(3)<=59 and gettime(3)>20then--成长"成长"刷40分钟
+				if labelhua<20 and labelbei=21 then--成长"成长"刷40分钟
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('玫瑰')
@@ -253,11 +222,7 @@ common.simpleStart({
 						sleep(500)
 					end	
 				end
-				if 	gettime(2)==20 then
-					label=1
-					plane(70)
-				end
-			until(label==1)
+			until(labelhua==21)
 		end
     end
 })

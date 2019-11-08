@@ -96,8 +96,8 @@ common.simpleStart({
 					sleep(1000)
 					if getx()>=2700 and getx()<=3450 and gety()==543 and labeldoor==1 and labelwakuang==0 then --±¦Ê¯2ÍÚ¿ó
 						speak("±¦Ê¯2ÍÚ¿ó")
-						bot_stop()
 						common.wearDiaoluo()
+						bot_stop()
 						sleep(500)
 						gotocoordinate(1,3030,543)
 						sleep(1000)
@@ -179,8 +179,8 @@ common.simpleStart({
 					sleep(1000)
 					if getx()>=5504 and getx()<=6367 and gety()==1727 and labelwakuang==0 then --±¦Ê¯3ÍÚ¿ó
 						speak("±¦Ê¯3ÍÚ¿ó")
-						bot_stop()
 						common.wearDiaoluo()
+						bot_stop()
 						sleep(500)
 						gotocoordinate(1,5800,1727)
 						sleep(1000)
@@ -260,11 +260,11 @@ common.simpleStart({
 					ini_change("ban_hit_mob",1)
 					sleep(1000)
 					if getx()>=5100 and getx()<=5300 and gety()==271 and labeldoor==1 and labelwakuang==0 then --±¦Ê¯6ÍÚ¿ó
-						speak("±¦Ê¯6ÍÚ¿ó")
-						bot_stop()
 						ini_change("tobot_scriptbot",0)
+						speak("±¦Ê¯6ÍÚ¿ó")
 						gotocoordinate(1,5180,271)
 						common.wearDiaoluo()
+						bot_stop()
 						sleep(1000)
 						useskill(43501018,1)
 						sleep(800)
@@ -420,8 +420,8 @@ common.simpleStart({
 					sleep(2000)
 					if getx()>=4520 and getx()<=5090 and gety()==1167 and labeldoor==1 and labelwakuang2==0 then --±¦Ê¯9ÍÚ¿ó
 						speak("±¦Ê¯9ÍÚ¿ó2")
-						bot_stop()
 						common.wearDiaoluo()
+						bot_stop()
 						sleep(500)
 						gotocoordinate(1,4660,1167)
 						sleep(1000)
@@ -488,8 +488,8 @@ common.simpleStart({
 					sleep(2000)
 					if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 then --±¦Ê¯9ÍÚ¿ó
 						speak("±¦Ê¯9ÍÚ¿ó1")
-						bot_stop()
 						common.wearDiaoluo()
+						bot_stop()
 						sleep(500)
 						gotocoordinate(1,1930,1167)
 						sleep(1000)

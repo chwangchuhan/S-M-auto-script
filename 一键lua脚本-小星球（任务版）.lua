@@ -26,19 +26,19 @@ common.simpleStart({
        -- 副本2	83900 接任务
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",
        -- 副本3	水土图
-       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
        -- 副本4	好坏草图
-       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
        -- 副本5	水土图
-       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
        -- 副本6	玫瑰图
-       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
-       -- 副本7	水土图
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
-       -- 副本8	动物图
+       -- 副本7	水土图
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
+       -- 副本8	动物图
+       "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
 	   -- 副本9	水土图
-	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",
+	   "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313937302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313935302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313939302C3336372CD3D2C5DC2C",
 	   -- 副本10
 	   "",
 	   -- 副本11
@@ -58,6 +58,7 @@ common.simpleStart({
 	},
 	labels=0,
 	labelm=0,
+	labeldone=0,
 	 onScriptRound = function (config) -- 副本每次切换地图回调
 		if getmapid()==600 then
 			open_npc(110088)
@@ -105,15 +106,18 @@ common.simpleStart({
 			end
 		end
 		if getmapid() == 83900 then		--接任务 杀魔女
-			bot_stop()
 			ini_change("tobot_scriptbot",0)
+			sleep(4000)
+			bot_stop()
 			speak("小星球任务lua开始")
-			gotocoordinate(1, 200, 1407)
+			gotocoordinate(1, 400, 1407)
 			open_npc(95205)
 			request_task(95205,9522106)   --  直接完成的Q 
 			submit_task(95205,9522106)
 			request_task(95205,9522107)   --   热 喜 悲 怪
 			submit_task(95205,9522107)
+			request_task(95205,9522108)
+			submit_task(95205,9522108)
 			close_npc(95205) 
 			gotocoordinate(1, 2800, 1407)
 			open_npc(95201)
@@ -122,9 +126,13 @@ common.simpleStart({
 			submit_task(95201,9520105)
 			close_npc(95201)
 			gotocoordinate(1, 1550, 1407)
+			if labeldone==1 then
+				speak("小星球（任务）已做完，即将飞出副本")
+				plane(70)
+			end
 			repeat
-				if task_get_state(9522106)==2 then
-				local mobId = mob_obj_get('邪恶的魔女')
+				sleep(200)
+				local mobId = mob_obj_get('邪恶的魔女（半小时后死亡 请接任务后再杀我）')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
 						local mobY = gety()
@@ -133,9 +141,11 @@ common.simpleStart({
 						sleep(500)
 						useskill(9531001,1) --消灭怪物
 					end	
-				end
-			until(task_get_state(9522106)~=2)
-			ini_change("tobot_nomovebot",0)
+			until(mobId==0)
+			gotocoordinate(1, 2800, 1407)
+			open_npc(95201)
+			submit_task(95201,9520106)
+			close_npc(95201)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("C9CFCCF82CD7F326D3D2CAB12C323830302C313430372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313136372CD3D2C5DC2C",0)
 			bot_start()
@@ -159,18 +169,24 @@ common.simpleStart({
 						item_use(430453101)--用土  
 						bot_start()
 						sleep(1000)
-						labelnum=labelnum+1
+						labelnum = labelnum + 1
 					end	
-				end
 			until(labelnum==10)
-			bot_start()
+			gotocoordinate(1, 500, 1455)
+			open_npc(95202)
+			submit_task(95202,9520102)
+			request_task(95202,9520103)
+			close_npc(95202)
+			sleep(1000)
+			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",0)
+			bot_start()
 		end
 		if getmapid() == 83902 then	 --玫瑰图
 			labelxi=0
 			labelbei=0
 			labelhua=0
-			ini_change("tobot_nomovebot",0)
+			ini_change("tobot_scriptbot",0)
 			sleep(4000)
 			repeat
 				sleep(200)
@@ -187,7 +203,7 @@ common.simpleStart({
 						useskill(9531003,1) --喜
 						bot_start()
 						sleep(500)
-						labelxi=labelxi+1
+						labelxi = labelxi + 1
 					end	
 				end
 
@@ -207,7 +223,7 @@ common.simpleStart({
 						labelbei=labelbei+1
 					end	
 				end
-				if labelhua<20 and labelbei=21 then--成长"成长"刷40分钟
+				if labelhua<20 and labelbei==21 then--成长"成长"刷40分钟
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('玫瑰')
@@ -218,11 +234,77 @@ common.simpleStart({
 						gotocoordinate(1, mobX, mobY)
 						sleep(100)
 						useskill(9531002,1) --洒水
-						bot_start()
 						sleep(500)
+						labelhua=labelhua+1
 					end	
 				end
-			until(labelhua==21)
+			until(labelhua==20)
+			bot_stop()
+			ini_change("tobot_hit_range_right",32)
+			ini_change("tobot_hit_range_left",3167)
+			gotocoordinate(1, 500, 1455)
+			open_npc(95203)
+			submit_task(95203,9520103)
+			request_task(95203,9520104)
+			close_npc(95203)
+			sleep(1000)
+			ini_change("tobot_scriptbot",1)
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333135302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333136302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333136372C313435352CD3D2C5DC2C",0)
+			bot_start()
+		end
+		if getmapid() == 83903 then	 --动物图
+			labelre=0
+			labeldongwu=0
+			ini_change("tobot_scriptbot",0)
+			sleep(4000)
+			repeat
+				sleep(200)
+				if labelre<20 then--成长"成长"刷40分钟
+					ini_change("tobot_hit_range_right",600)
+					ini_change("tobot_hit_range_left",2300)
+					local mobId = mob_obj_get('炎热的小狗')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(100)
+						useskill(9531002,1) --洒水
+						sleep(500)
+						labelre=labelre+1
+					end	
+				end
+				if labeldongwu<20 and labelre==20 then--成长"成长"刷40分钟
+					ini_change("tobot_hit_range_right",600)
+					ini_change("tobot_hit_range_left",2300)
+					local mobId = mob_obj_get('渴望关怀的小狗')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(100)
+						useskill(9531003,1) --喜
+						bot_start()
+						sleep(500)
+						labeldongwu=labeldongwu+1
+					end	
+				end
+			until(labeldongwu==20)
+			bot_stop()
+			ini_change("tobot_hit_range_right",32)
+			ini_change("tobot_hit_range_left",3167)
+			gotocoordinate(1, 500, 1455)
+			open_npc(95204)
+			submit_task(95204,9520104)
+			request_task(95204,9520105)
+			close_npc(95204)
+			sleep(1000)
+			labeldone=1
+			ini_change("tobot_scriptbot",1)
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333130302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333133302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038302C313435352CD3D2C5DC2C",0)
+			bot_start()
+			
 		end
     end
 })

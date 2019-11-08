@@ -25,7 +25,8 @@ const checkPackFileNames = [
     /^皇帝戒指.+\.lua/,
 ]
 const filterFileNames = [
-    /^(?!一键lua脚本-小星球（经验）完整版)/
+    /^(?!一键lua脚本-小星球（经验）完整版)/,
+    /^(?!一键lua脚本-影子之书)/,
 ]
 
 

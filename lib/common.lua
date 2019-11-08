@@ -22,8 +22,8 @@ local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua"
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 500
-local defaultXMaxSpeed = 1950
+local defaultXMinSpeed = 1
+local defaultXMaxSpeed = 1480
 local defaultYMinSpeed = 1050
 local defaultYMaxSpeed = 1450
 
@@ -359,6 +359,7 @@ local function checkYSpeed(minY, maxY)
 end
 
 -- 检测道具是否存在
+-- 其中一个不存在就不行
 -- @items 道具array
 -- @returns 是否存在布尔值
 local function checkItemExist(items)

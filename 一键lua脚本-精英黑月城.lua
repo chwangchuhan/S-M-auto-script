@@ -63,6 +63,8 @@ common.simpleStart({
     onScriptRound = function () -- 副本每次切换地图回调
     if (getmapid() == 9502) then
 		ini_change("tobot_hit_range_down",50)
+		labellasttime=gettime(3)
+		labelnowtime=0
         repeat
 			sleep(100)
 			if getx()>1900 and gety()==1439 then
@@ -90,6 +92,12 @@ common.simpleStart({
 				ini_change("tobot_scriptbot",1)
 				ini_change("tobot_hit_range_max",1500)
 				ini_change("tobot_hit_range_ignore",2000)
+			end
+			labelnowtime=gettime(3)
+			if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+				speak("超时10分钟，10s退出副本")
+				sleep(10000)
+				plane(70)
 			end
 		until(door_if(3000,367)==1 or getmapid() ~= 9502)
     end

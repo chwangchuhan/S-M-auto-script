@@ -74,6 +74,8 @@ common.simpleStart({
 		ini_change("tobot_hit_range_max",300)
     end
 	if (getmapid() == 9302) then
+		labellasttime=gettime(3)
+		labelnowtime=0
 		repeat
 			sleep(100)
 			if mob_if("机关-开启传送门")==1 then
@@ -84,10 +86,18 @@ common.simpleStart({
 			if mob_if("机关-开启传送门")==0 then
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",2000)
+			end
+			labelnowtime=gettime(3)
+			if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+				speak("超时10分钟，10s退出副本")
+				sleep(10000)
+				plane(70)
 			end
 		until(door_if(3000,1519)==1 or getmapid() ~= 9302)
 	end
 	if (getmapid() == 9303) then
+		labellasttime=gettime(3)
+		labelnowtime=0
 		repeat
 			sleep(100)
 			if mob_if("机关-开启传送门")==1 then
@@ -98,6 +108,12 @@ common.simpleStart({
 			if mob_if("机关-开启传送门")==0 then
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",2000)
+			end
+			labelnowtime=gettime(3)
+			if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+				speak("超时10分钟，10s退出副本")
+				sleep(10000)
+				plane(70)
 			end
 		until(door_if(2970,1519)==1 or getmapid() ~= 9303)
 	end
@@ -129,13 +145,21 @@ common.simpleStart({
 		ini_change("ban_hit_mob",0)
 	    ini_change("tobot_scriptbot",1)
 	    bot_start()
+		labellasttime=gettime(3)
+		labelnowtime=0
 		repeat 
 			sleep(100)
-				if door_if(3065,1519) == 1 then 
-					bot_stop()--停止挂机--
-					sleep(2000)
-					plane(94801)
-				end
+			if door_if(3065,1519) == 1 then 
+				bot_stop()--停止挂机--
+				sleep(2000)
+				plane(94801)
+			end
+			labelnowtime=gettime(3)
+			if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+				speak("超时10分钟，10s退出副本")
+				sleep(10000)
+				plane(70)
+			end
 		until (getmapid() ~= 9306)
     end
 	if (getmapid() == 9307) then
@@ -151,13 +175,21 @@ common.simpleStart({
 		ini_change("ban_hit_mob",0)
 	    ini_change("tobot_scriptbot",1)
 	    bot_start()
+		labellasttime=gettime(3)
+		labelnowtime=0
 		repeat 
 			sleep(100)
-				if door_if(3065,1519) == 1 then 
-					bot_stop()--停止挂机--
-					sleep(2000)
-					plane(94801)
-				end
+			if door_if(3065,1519) == 1 then 
+				bot_stop()--停止挂机--
+				sleep(2000)
+				plane(94801)
+			end
+			labelnowtime=gettime(3)
+			if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+				speak("超时10分钟，10s退出副本")
+				sleep(10000)
+				plane(70)
+			end
 		until (getmapid() ~= 9307 )
     end
 	if (getmapid() == 9308) then
@@ -173,13 +205,21 @@ common.simpleStart({
 		ini_change("ban_hit_mob",0)
 	    ini_change("tobot_scriptbot",1)
 	    bot_start()
+		labellasttime=gettime(3)
+		labelnowtime=0
 		repeat 
 			sleep(100)
-				if door_if(3065,1519) == 1 then 
-					bot_stop()--停止挂机--
-					sleep(2000)
-					plane(94801)
-				end
+			if door_if(3065,1519) == 1 then 
+				bot_stop()--停止挂机--
+				sleep(2000)
+				plane(94801)
+			end
+			labelnowtime=gettime(3)
+			if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+				speak("超时10分钟，10s退出副本")
+				sleep(10000)
+				plane(70)
+			end
 		until (getmapid() ~= 9308 )
     end
     end

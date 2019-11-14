@@ -19,15 +19,17 @@ local jingyanConfig1 = loadfile(path_scripts.."经验装.lua")
 local jingyanConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\经验装.lua")
 local suduConfig1 = loadfile(path_scripts.."速度装.lua")
 local suduConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\速度装.lua")
+local tiaoyueConfig1 = loadfile(path_scripts.."跳跃装.lua")
+local tiaoyueConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\跳跃装.lua")
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 1
-local defaultXMaxSpeed = 1480
+local defaultXMinSpeed = 550
+local defaultXMaxSpeed = 1950
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1450
+local defaultYMaxSpeed = 1250
 
-local defaultLuckyDog = false
+local defaultLuckyDog = true
 
  -- 通用方法 --
 -- 游戏配置初始化 --
@@ -176,6 +178,7 @@ local function isMapNumOver(mapName, mapCount)
     local leftCount = mapCount - indun_get(mapName)
 
     show("["..mapName.."]副本需执行"..leftCount.."次，当前副本已执行"..indun_get(mapName).."次")
+	sleep(200)
 	return false
 end
 
@@ -507,6 +510,38 @@ local function wearSudu()
     end
 end
 
+-- 穿戴跳跃装备
+local function wearTiaoyue()
+    local wearConfig = nil
+
+    if (tiaoyueConfig1 and tiaoyueConfig2) then
+        wearConfig = tiaoyueConfig1()
+    end
+
+    if (not tiaoyueConfig1 and tiaoyueConfig2) then
+        wearConfig = tiaoyueConfig2()
+    end
+
+    if (wearConfig ~= nil) then
+        show('更换跳跃装备')
+        ini_change("ban_hit_mob",1) -- 禁止攻击，防止装备换不上
+        sleep(500)
+
+        for i,v in ipairs(wearConfig) do
+            local nums = item_if(v)
+            print(v)
+
+            -- 判断装备数量，避免错误穿装备
+            if (nums >= 1) then
+                wearitem(v)
+                show('更换装备'..v)
+                sleep(10)
+            end
+        end
+        ini_change("ban_hit_mob",0) -- 允许攻击
+    end
+end
+
 -- 穿戴掉落
 local function wearDiaoluo()
     local wearConfig = nil
@@ -595,8 +630,9 @@ local function simpleStart (config)
     print(config.mapName..'启动时间为'..startTimeSpan)
 
     if (defaultLuckyDog and config.isLuckyDog) then
-        if (getRandom(1, 1000) > 800) then
-            item_horn("大喇叭",".")
+        if (getRandom(1, 1000) > 950) then
+            item_horn("大喇叭","圣汐&莫里一键lua脚本 祭坛宝石全自动换装挖矿 新增秩序腐化 魔王 巨人图鉴 遗忘花园 皇帝戒指lua 莫里qq597673687 圣汐qq404833948")
+			item_horn("小喇叭","圣汐&莫里一键lua脚本 祭坛宝石全自动换装挖矿 新增秩序腐化 魔王 巨人图鉴 遗忘花园 皇帝戒指lua 莫里qq597673687 圣汐qq404833948")
         end
     end
 
@@ -1052,6 +1088,7 @@ return {
     wearDiaoluo = wearDiaoluo,  -- 穿掉落装备
     wearJingyan = wearJingyan,  -- 穿经验装备
     wearSudu = wearSudu,  		-- 穿速度装备
+	wearTiaoyue = wearTiaoyue,  -- 穿速度装备
     checkItemExist = checkItemExist,             -- 检测道具是否存在
     checkMobIsAside = checkMobIsAside,
 }

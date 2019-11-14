@@ -85,6 +85,8 @@ common.simpleStart({
 			common.wearDiaoluo()
 			sleep(500)
 			bot_start()
+			labellasttime=gettime(3)
+			labelnowtime=0
 			repeat
 				sleep(100)
 				if getx()<2380 or getx()> 2450 then
@@ -141,6 +143,12 @@ common.simpleStart({
 				if gety()>703 and gety()<2600 then
 					ini_change("tobot_scriptbot",1)
 					bot_start()
+				end
+				labelnowtime=gettime(3)
+				if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
+					speak("超时10分钟，10s退出副本")
+					sleep(10000)
+					plane(70)
 				end
 			until(getmapid() ~= 84009)
         end

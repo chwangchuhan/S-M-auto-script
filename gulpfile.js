@@ -27,6 +27,8 @@ const checkPackFileNames = [
 const filterFileNames = [
     /^(?!一键lua脚本-小星球（经验）完整版)/,
     /^(?!一键lua脚本-影子之书)/,
+	/^(?!一键lua脚本-小星球（任务版）)/,
+	/^(?!一键lua脚本-浮游岛)/,
 ]
 
 

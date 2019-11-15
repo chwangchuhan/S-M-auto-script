@@ -1,5 +1,23 @@
 check=1
 
+mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909}
+
+bot_stop()
+
+local function isInMap()
+	for i=1,#mapIds do
+			if getmapid() ==mapIds[i] then
+				return true
+			end
+	end
+	return false
+end
+if not isInMap() then
+		speak("S&M 小星球一键lua提醒：当前不在目标地图中")
+		sleep(1000)
+		plane(95800)
+end
+
 local common = dofile(path_scripts.."S-M-auto-script\\lib\\common.lua")
 
 common.simpleStart({
@@ -61,9 +79,14 @@ common.simpleStart({
 	labeldone=0,
 	 onScriptRound = function (config) -- 副本每次切换地图回调
 		if getmapid()==600 then
+			bot_stop()
+			gotocoordinate(1, 3700, 1455)
 			open_npc(110088)
+			sleep(20)
 			npc_plane(110088,212,4,5,0)
+			sleep(20)
 			close_npc(110088)
+			sleep(20)
 		end
 		if getmapid()==1700 then
 			speak("小星球一键lua，挂机技能请添加弱攻击，并装备<照顾雨伞>！！！")
@@ -76,9 +99,13 @@ common.simpleStart({
 			sleep(700)
 			item_wear("照顾雨伞")
 			open_npc(508)
+			sleep(20)
 			request_task(508,9520101)
+			sleep(20)
 			submit_task(508,9520101)
+			sleep(20)
 			close_npc(508)
+			sleep(20)
 			bot_start()
 			repeat
 				sleep(200)
@@ -112,22 +139,36 @@ common.simpleStart({
 			speak("小星球任务lua开始")
 			gotocoordinate(1, 400, 1407)
 			open_npc(95205)
+			sleep(20)
 			request_task(95205,9522106)   --  直接完成的Q 
+			sleep(20)
 			submit_task(95205,9522106)
+			sleep(20)
 			request_task(95205,9522107)   --   热 喜 悲 怪
+			sleep(20)
 			submit_task(95205,9522107)
+			sleep(20)
 			request_task(95205,9522108)
+			sleep(20)
 			submit_task(95205,9522108)
+			sleep(20)
 			close_npc(95205) 
+			sleep(20)
 			gotocoordinate(1, 2800, 1407)
 			open_npc(95201)
+			sleep(20)
 			request_task(95201,9520102)   --草儿 5
+			sleep(20)
 			request_task(95201,9520106)	--邪恶魔女  消除怪物
+			sleep(20)
 			submit_task(95201,9520105)
+			sleep(20)
 			close_npc(95201)
+			sleep(20)
 			gotocoordinate(1, 1550, 1407)
 			if labeldone==1 then
-				speak("小星球（任务）已做完，即将飞出副本")
+				speak("小星球（任务）已做完，30s后即将飞出副本")
+				sleep(30000)
 				plane(70)
 			end
 			repeat
@@ -144,7 +185,9 @@ common.simpleStart({
 			until(mobId==0)
 			gotocoordinate(1, 2800, 1407)
 			open_npc(95201)
+			sleep(20)
 			submit_task(95201,9520106)
+			sleep(20)
 			close_npc(95201)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("C9CFCCF82CD7F326D3D2CAB12C323830302C313430372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313136372CD3D2C5DC2C",0)
@@ -172,10 +215,14 @@ common.simpleStart({
 						labelnum = labelnum + 1
 					end	
 			until(labelnum==10)
+			bot_stop()
 			gotocoordinate(1, 500, 1455)
 			open_npc(95202)
+			sleep(20)
 			submit_task(95202,9520102)
+			sleep(20)
 			request_task(95202,9520103)
+			sleep(20)
 			close_npc(95202)
 			sleep(1000)
 			ini_change("tobot_scriptbot",1)
@@ -244,8 +291,11 @@ common.simpleStart({
 			ini_change("tobot_hit_range_left",3167)
 			gotocoordinate(1, 500, 1455)
 			open_npc(95203)
+			sleep(20)
 			submit_task(95203,9520103)
+			sleep(20)
 			request_task(95203,9520104)
+			sleep(20)
 			close_npc(95203)
 			sleep(1000)
 			ini_change("tobot_scriptbot",1)
@@ -296,8 +346,11 @@ common.simpleStart({
 			ini_change("tobot_hit_range_left",3167)
 			gotocoordinate(1, 500, 1455)
 			open_npc(95204)
+			sleep(20)
 			submit_task(95204,9520104)
+			sleep(20)
 			request_task(95204,9520105)
+			sleep(20)
 			close_npc(95204)
 			sleep(1000)
 			labeldone=1

@@ -27,7 +27,7 @@ SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 local defaultXMinSpeed = 550
 local defaultXMaxSpeed = 1950
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1250
+local defaultYMaxSpeed = 1450
 
 local defaultLuckyDog = true
 
@@ -178,7 +178,7 @@ local function isMapNumOver(mapName, mapCount)
     local leftCount = mapCount - indun_get(mapName)
 
     show("["..mapName.."]副本需执行"..leftCount.."次，当前副本已执行"..indun_get(mapName).."次")
-	sleep(200)
+	sleep(500)
 	return false
 end
 
@@ -630,7 +630,7 @@ local function simpleStart (config)
     print(config.mapName..'启动时间为'..startTimeSpan)
 
     if (defaultLuckyDog and config.isLuckyDog) then
-        if (getRandom(1, 1000) > 950) then
+        if (getRandom(1, 1000) > 970) then
             item_horn("大喇叭","圣汐&莫里一键lua脚本 祭坛宝石全自动换装挖矿 新增秩序腐化 魔王 巨人图鉴 遗忘花园 皇帝戒指lua 莫里qq597673687 圣汐qq404833948")
 			item_horn("小喇叭","圣汐&莫里一键lua脚本 祭坛宝石全自动换装挖矿 新增秩序腐化 魔王 巨人图鉴 遗忘花园 皇帝戒指lua 莫里qq597673687 圣汐qq404833948")
         end

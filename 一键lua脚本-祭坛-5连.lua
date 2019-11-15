@@ -696,24 +696,27 @@ common.simpleStart({
             repeat
 				sleep(200)
 				if getx()>2879 and getx()<=3167 and gety()==2751 and label<7 then  --右下平台
-					sleep(20000)
-					bot_stop()
-					ini_change("tobot_scriptbot",0)
-					sleep(2000)
-					if getx()>2879 and getx()<=3167 and gety()==2751 and label<7 then
-						ini_change("ban_hit_mob",1)
-						sleep(500)
-						gotocoordinate(1,3050,2751)
-						sleep(1000)
-						speak("上跳6次，已经跳了"..label.."次")
-						sleep(500)
-						jmp(1)
-						sleep(900)
-						jmp(1)
-						sleep(900)
-						jmp(1)
-						sleep(900)
-						label=label+1
+					local mobId = mob_obj_get('夕阳巫女')
+					local mobY = mob_obj_y(mobId)
+					if mobY~=2751 and mobY~=3007 then
+						bot_stop()
+						ini_change("tobot_scriptbot",0)
+						sleep(2000)
+						if getx()>2879 and getx()<=3167 and gety()==2751 and label<7 and mobY~=2751 and mobY~=3007 then
+							ini_change("ban_hit_mob",1)
+							sleep(500)
+							gotocoordinate(1,3050,2751)
+							sleep(1000)
+							speak("上跳6次，已经跳了"..label.."次")
+							sleep(500)
+							jmp(1)
+							sleep(900)
+							jmp(1)
+							sleep(900)
+							jmp(1)
+							sleep(900)
+							label=label+1
+						end
 					end
 					bot_start()
 					sleep(4000)
@@ -810,17 +813,22 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()
+					sleep(1000)
+					bot_start()	
 				end
 				if getx()>2879 and getx()<=3167 and gety()<=2383 and gety()>607 then   --台阶中间禁止打怪
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",1)
 					bot_start()
+					sleep(1000)
+					bot_start()	
 				end
 				if getx()>2879 and getx()<=3167 and gety()>2383 and gety()<=3007 then   --不在台阶的时候允许打怪
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)
 					bot_start()
-				end
+					sleep(1000)
+					bot_start()				end
 				if getx()>=1600 and getx()<=2879 and gety()== 3007 then    --boss下面的坑位自动开启挂机
 					ini_change("tobot_scriptbot",1)
 					ini_change("ban_hit_mob",0)

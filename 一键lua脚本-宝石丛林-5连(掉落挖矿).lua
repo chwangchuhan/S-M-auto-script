@@ -59,7 +59,7 @@ common.simpleStart({
 	},
 	labeljindao=0,
 	 onScriptRound = function (config) -- 副本每次切换地图回调
-		if getmapid()==36903 or getmapid()==36904 or getmapid()==36906 then --宝石457吃药
+		if getmapid()==36904 then --宝石5吃药
 			item_use(170191135)--世界树减伤药
 			sleep(100)
 			item_use(611113086)--最大吸红

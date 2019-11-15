@@ -179,7 +179,20 @@ common.simpleStart({
 
             if (x >= 1120 and common.checkMob({"´©Ëó¹âÊø"})) then
                 ini_change("ban_hit_mob", 1) -- ²»ÔÊÐí¹¥»÷
-                killMob('´©Ëó¹âÊø', kill_fengyin)
+                -- killMob('´©Ëó¹âÊø', kill_fengyin)
+
+                while (common.checkMob({"´©Ëó¹âÊø"})) do
+                    sleep(2)
+                    if (common.checkMobIsAside('´©Ëó¹âÊø', 20, 100)) then
+                        bot_stop()
+                        sleep(3000)
+                        bot_start()
+                        sleep(3000)
+                    else
+                        -- sleep(2000)
+                        -- bot_start()
+                    end
+                end
             end
         end
 

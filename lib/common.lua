@@ -24,10 +24,10 @@ local tiaoyueConfig2 = loadfile(path_scripts.."S-M-auto-script\\config\\跳跃装.l
 
 SMCode = '35f03a61-31f7-4c1a-b18c-5f4e9f6a5aa1'
 
-local defaultXMinSpeed = 550
-local defaultXMaxSpeed = 1950
+local defaultXMinSpeed = 500
+local defaultXMaxSpeed = 1980
 local defaultYMinSpeed = 1050
-local defaultYMaxSpeed = 1450
+local defaultYMaxSpeed = 1950
 
 local defaultLuckyDog = true
 
@@ -149,7 +149,7 @@ local function checkInMap(mapIdList)
     if mapIdList == nil then
         return false
     end
-
+	
     for k,v in pairs(mapIdList) do
         if getmapid() == v then
             return true
@@ -630,7 +630,7 @@ local function simpleStart (config)
     print(config.mapName..'启动时间为'..startTimeSpan)
 
     if (defaultLuckyDog and config.isLuckyDog) then
-        if (getRandom(1, 1000) > 970) then
+        if (getRandom(1, 1000) > 0) then
             item_horn("大喇叭","圣汐&莫里一键lua脚本 祭坛宝石全自动换装挖矿 新增秩序腐化 魔王 巨人图鉴 遗忘花园 皇帝戒指lua 莫里qq597673687 圣汐qq404833948")
 			item_horn("小喇叭","圣汐&莫里一键lua脚本 祭坛宝石全自动换装挖矿 新增秩序腐化 魔王 巨人图鉴 遗忘花园 皇帝戒指lua 莫里qq597673687 圣汐qq404833948")
         end

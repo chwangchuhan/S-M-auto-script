@@ -33,7 +33,7 @@ common.simpleStart({
 		tobot_hit_range_min=10,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
-	isLuckyDog = true,
+
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
@@ -114,10 +114,11 @@ common.simpleStart({
 			repeat
 				sleep(200)
 					if gettime(2)<18 then
-						speak("小星球未到时间，当前时间"..gettime(2).."点"..gettime(3).."分，请等待。")
 						bot_stop()
+						speak("小星球未到时间，当前时间"..gettime(2).."点"..gettime(3).."分，请等待。")
 					end
 					if gettime(2)>=20 then
+						bot_stop()
 						speak("小星球时间已过，当前时间"..gettime(2).."点"..gettime(3).."分，副本自动终结。")
 						sleep(10000)
 						plane(70)
@@ -138,27 +139,44 @@ common.simpleStart({
 		if getmapid() == 83900 then
 			bot_stop()
 			ini_change("tobot_scriptbot",0)
+			labelstop=0
+			labelday=gettime(1)
 			labellasttime=gettime(3)
 			labelnowtime=0
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)<=3 then --"坏的"
-					ini_change("tobot_hit_range_right",1500)
-					ini_change("tobot_hit_range_left",1600)
-					ini_change("tobot_nomovebot",0)
-					bot_start()
-					item_use(430453101)--用土
-					sleep(500)
+				labelnowtime=gettime(3)
+				if labelday==1 then   --周1刷 坏
+					speak("周一刷坏和土")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30 then --"坏的"
+						ini_change("tobot_hit_range_right",1500)
+						ini_change("tobot_hit_range_left",1600)
+						ini_change("tobot_nomovebot",0)
+						bot_start()
+						item_use(430453101)--用土
+						sleep(500)
+					end
 				end
-				if gettime(2)==18 and gettime(3)<=6 and gettime(3)>3 then --"好的"
-					ini_change("tobot_hit_range_right",2500)
-					ini_change("tobot_hit_range_left",2600)
-					ini_change("tobot_nomovebot",0)
-					bot_start()
-					item_use(430453102)--用水
-					sleep(500)
+				if labelday==2 then   --周2刷 好
+					speak("周二刷好和水")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30 then --"好的"
+						ini_change("tobot_hit_range_right",2500)
+						ini_change("tobot_hit_range_left",2600)
+						ini_change("tobot_nomovebot",0)
+						bot_start()
+						item_use(430453102)--用水
+						sleep(500)
+					end
 				end
-			until(gettime(2)==18 and gettime(3)>6 or gettime(2)==19)
+				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
+					bot_stop()
+					speak("30分钟刷坏的结束，现在去取刷土")
+					labelstop=1
+				end
+				if labelday~=1 and labelday~=2 then
+					labelstop=1
+				end
+			until(labelstop==1)
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_scriptbot",1)
 			ini_change("tobot_hit_range_right",32)
@@ -171,22 +189,37 @@ common.simpleStart({
 			ini_change("tobot_scriptbot",0)
 			ini_change("tobot_hit_range_right",1250)
 			ini_change("tobot_hit_range_left",1700)
+			labelstop=0
+			labelday=gettime(1)
+			labellasttime=gettime(3)
+			labelnowtime=0
 			speak("获取土")
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>6 and gettime(3)<=10 then
-					local mobId = mob_obj_get('土之魂')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531001,1) --消灭怪物
-						bot_start()
-					end	
+				labelnowtime=gettime(3)
+				if labelday==1 then   --周1刷 土
+					speak("周一刷坏和土")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30 then
+						local mobId = mob_obj_get('土之魂')
+						if (mobId > 0) then
+							local mobX = mob_obj_x(mobId)
+							local mobY = gety()
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(500)
+							useskill(9531001,1) --消灭怪物
+							bot_start()
+						end	
+					end
 				end
-			until(gettime(2)==18 and gettime(3)>10 or gettime(2)==19)
+				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
+					bot_stop()
+					speak("30分钟刷土的结束，30秒后离开副本")
+					sleep(30000)
+					plane(70)
+					labelstop=1
+				end
+			until(labelstop==1 or labelday~=1)
 			ini_change("tobot_hit_range_left",3167)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
@@ -196,22 +229,37 @@ common.simpleStart({
 			ini_change("tobot_scriptbot",0)
 			ini_change("tobot_hit_range_right",1250)
 			ini_change("tobot_hit_range_left",1700)
+			labelstop=0
+			labelday=gettime(1)
+			labellasttime=gettime(3)
+			labelnowtime=0
 			speak("获取水")
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>10 and gettime(3)<=14 then
-					local mobId = mob_obj_get('水之魂')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531001,1) --消灭怪物
-						bot_start()
-					end	
+				labelnowtime=gettime(3)
+				if labelday==2 then   --周2刷 水
+					speak("周二刷好和水")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30 then
+						local mobId = mob_obj_get('水之魂')
+						if (mobId > 0) then
+							local mobX = mob_obj_x(mobId)
+							local mobY = gety()
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(500)
+							useskill(9531001,1) --消灭怪物
+							bot_start()
+						end	
+					end
 				end
-			until(gettime(2)==18 and gettime(3)>14 or gettime(2)==19 )
+				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
+					bot_stop()
+					speak("30分钟刷土的结束，30秒后离开副本")
+					sleep(30000)
+					plane(70)
+					labelstop=1
+				end
+			until(labelstop==1 or labelday~=2 )
 			ini_change("tobot_hit_range_left",3167)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
@@ -221,58 +269,80 @@ common.simpleStart({
 			ini_change("tobot_nomovebot",0)
 			ini_change("tobot_scriptbot",0)
 			sleep(4000)
+			labelstop=0
+			labellasttime=gettime(3)
+			labelnowtime=0
+			labelday=gettime(1)
+			labellasttime=gettime(3)
+			labelnowtime=0
 			repeat
 				sleep(200)
-				if gettime(2)==18 and gettime(3)>14 and gettime(3)<=17 then --喜
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531003,1) --喜
-						bot_start()
-						sleep(500)
-					end	
+				labelnowtime=gettime(3)
+				if labelday==3 then   --周3刷 喜
+					speak("周三刷喜")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30 then --喜
+						ini_change("tobot_hit_range_right",2600)
+						ini_change("tobot_hit_range_left",3167)
+						local mobId = mob_obj_get('成年的玫瑰')
+						if (mobId > 0) then
+							local mobX = mob_obj_x(mobId)
+							local mobY = gety()
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(500)
+							useskill(9531003,1) --喜
+							bot_start()
+							sleep(500)
+						end	
+					end
 				end
-				if gettime(2)==18 and gettime(3)>17 and gettime(3)<=20 then --悲
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531004,1) --悲
-						bot_start()
-						sleep(500)
-					end	
+				if labelday==4 then   --周4刷 悲
+					speak("周四刷悲")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30 then --悲
+						ini_change("tobot_hit_range_right",2600)
+						ini_change("tobot_hit_range_left",3167)
+						local mobId = mob_obj_get('成年的玫瑰')
+						if (mobId > 0) then
+							local mobX = mob_obj_x(mobId)
+							local mobY = gety()
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(500)
+							useskill(9531004,1) --悲
+							bot_start()
+							sleep(500)
+						end	
+					end
 				end
-				if gettime(2)==18 and gettime(3)<=30 and gettime(3)>20then--成长
-					ini_change("tobot_hit_range_right",600)
-					ini_change("tobot_hit_range_left",2300)
-					local mobId = mob_obj_get('玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531002,1) --洒水
-						bot_start()
-						sleep(500)
-					end	
+				if labelday==5 then   --周5刷 成长
+					speak("周五刷成长")
+					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30then--成长
+						ini_change("tobot_hit_range_right",600)
+						ini_change("tobot_hit_range_left",2300)
+						local mobId = mob_obj_get('玫瑰')
+						if (mobId > 0) then
+							local mobX = mob_obj_x(mobId)
+							local mobY = gety()
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(500)
+							useskill(9531002,1) --洒水
+							bot_start()
+							sleep(500)
+						end	
+					end
 				end
-				if 	gettime(2)==18 and gettime(3)>30 then
-					label=1
+				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
+					bot_stop()
+					speak("30分钟刷土的结束，30秒后离开副本")
+					sleep(30000)
 					plane(70)
+					labelstop=1
 				end
-			until(label==1)
+				if labelday~=3 and labelday~=4 and labelday~=5 then
+					labelstop=1
+				end
+			until(labelstop==1)
 		end
     end
 })

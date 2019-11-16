@@ -12,6 +12,7 @@ common.simpleStart({
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
+	isLuckyDog = true,
     scripts = {
        -- 春植岛大厅
        "",

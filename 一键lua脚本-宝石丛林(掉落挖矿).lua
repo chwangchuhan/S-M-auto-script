@@ -602,7 +602,7 @@ common.simpleStart({
 				else
 					script_txt_loaddata("",0)
 				end
-				if door_if(1300,735)==1 and mobId==0 then
+				--[[if door_if(1300,735)==1 and mobId==0 then
 					speak("иолЬ╫Ьце")
 					if gety()==1727 then
 						bot_stop()
@@ -645,7 +645,7 @@ common.simpleStart({
 						bot_start()
 						labelnext=1
 					end
-				end
+				end]]--
 			until(labelnext==1 or getmapid()~=36909)
 		end
 		if getmapid()==36910 then

@@ -718,6 +718,7 @@ common.simpleStart({
 							label=label+1
 						end
 					end
+					ini_change("tobot_scriptbot",0)
 					bot_start()
 					sleep(4000)
 					ini_change("ban_hit_mob",0)
@@ -800,13 +801,20 @@ common.simpleStart({
 							sleep(100)
 							item_use(611113016)--三星芝士汤
 							sleep(100)
+							ini_change("tobot_scriptbot",1)
+							ini_change("ban_hit_mob",0)
+							bot_start()
+							sleep(1000)
+							bot_start()
+						else
+							ini_change("tobot_scriptbot",0)
+							bot_start()
+							sleep(4000)
+							ini_change("ban_hit_mob",0)
+							ini_change("tobot_scriptbot",1)
+							bot_start()
 						end
 					end
-					ini_change("tobot_scriptbot",1)
-					ini_change("ban_hit_mob",0)
-					bot_start()
-					sleep(1000)
-					bot_start()
 				end
 				if gety()==225 then  --右上台阶
 					jmp(0)

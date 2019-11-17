@@ -13,7 +13,7 @@ common.simpleStart({
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
-
+	isLuckyDog = true,
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
@@ -81,12 +81,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					ini_change("ban_hit_mob",1)
-					sleep(500)
-					gotocoordinate(1,2280,1423)
-					sleep(500)
-					gotocoordinate(1,2280,1423)
-					sleep(500)
-					gotocoordinate(1,2280,1423)
+					gotocoordinate(1,2300,1423)
 					sleep(500)
 					jmp(1)
 					sleep(1000)

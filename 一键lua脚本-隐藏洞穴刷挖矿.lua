@@ -12,6 +12,7 @@ common.simpleStart({
     -- 脚本名称列表，需和mapIds一一对应
     -- 支持16进制hex编码脚本
     -- 由于正则不通用，因此判断是否用hex的地方是字符串长度大于30
+	isLuckyDog = true,
     scripts = {
        -- 蘑菇森林5
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3333392C313335392CD7F3C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C313039392C313335392CD7F3C5DC2C",

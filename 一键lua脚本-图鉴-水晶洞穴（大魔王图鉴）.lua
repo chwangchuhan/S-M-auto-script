@@ -32,4 +32,20 @@ common.simpleStart({
         --4
 		"",
     },
+	 onScriptRound = function  ()
+		if getmapid()==70002 then
+			sleep(1000)
+			repeat
+				sleep(300)
+				ini_change("tobot_hit_range_top",115)
+				local mobId = mob_obj_get('大魔王分神')
+				local mobY = mob_obj_y(mobId)
+				if gety()==607 then
+					item_use(51801002)
+					sleep(50)
+					useskill(5000008,0)
+				end
+			until(mobId==0)
+		end
+    end,
 })

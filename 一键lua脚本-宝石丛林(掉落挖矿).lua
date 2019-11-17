@@ -59,7 +59,7 @@ common.simpleStart({
 	},
 	labeljindao=0,
 	 onScriptRound = function (config) -- 副本每次切换地图回调
-		if getmapid()==36903 or getmapid()==36904 or getmapid()==36906 then --宝石457吃药
+		if getmapid()==36904 then --宝石5吃药
 			item_use(170191135)--世界树减伤药
 			sleep(100)
 			item_use(611113086)--最大吸红
@@ -386,6 +386,12 @@ common.simpleStart({
 					ini_change("ban_hit_mob",0)
 					bot_start()
 					ini_change("ban_hit_mob",0)
+					item_use(170191135)--世界树减伤药
+					sleep(100)
+					item_use(611113086)--最大吸红
+					sleep(100)
+					item_use(611113016)--三星芝士汤
+					sleep(100)
 					label=1
 				end
 			until(label==1 or door_if(1471,303)==1)
@@ -596,7 +602,7 @@ common.simpleStart({
 				else
 					script_txt_loaddata("",0)
 				end
-				if door_if(1300,735)==1 and mobId==0 then
+				--[[if door_if(1300,735)==1 and mobId==0 then
 					speak("上跳进门")
 					if gety()==1727 then
 						bot_stop()
@@ -639,7 +645,7 @@ common.simpleStart({
 						bot_start()
 						labelnext=1
 					end
-				end
+				end]]--
 			until(labelnext==1 or getmapid()~=36909)
 		end
 		if getmapid()==36910 then

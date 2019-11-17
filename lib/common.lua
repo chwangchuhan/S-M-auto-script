@@ -858,11 +858,14 @@ local function shendianStart (config)
 
                 if (config.task) then
                     doTask(config.task.npcId, config.task.taskIds)
+                    if (config.onTaskCallback) then
+                        config.onTaskCallback()
+                    end
                 end
 
                 script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C313832322E36362C3635362E34382CD7F3C5DC2CC3BBD3D0B8BDBCD3B2CECAFD2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C3639302E3039342C3637312E322CD3D2C5DC2CC3BBD3D0B8BDBCD3B2CECAFD2C", 1)
                 bot_start()
-                sleep(5000)
+                sleep(15000)
                 bot_stop()
                 sleep(500)
                 gotocoordinate(1, 3238, 1312) --走至传送门

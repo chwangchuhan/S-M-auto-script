@@ -215,7 +215,7 @@ common.simpleStart({
 						sleep(1000)
 						labelnum = labelnum + 1
 					end	
-			until(labelnum==10)
+			until(labelnum==20)
 			bot_stop()
 			gotocoordinate(1, 500, 1455)
 			open_npc(95202)
@@ -238,7 +238,7 @@ common.simpleStart({
 			sleep(4000)
 			repeat
 				sleep(200)
-				if labelxi<=20 then --喜 20次
+				if labelxi<40 then --喜 20次
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -255,7 +255,7 @@ common.simpleStart({
 					end	
 				end
 
-				if labelbei<=20 and labelxi==21 then --悲--"悲"刷10分钟
+				if labelbei<40 and labelxi==40 then --悲--"悲"刷10分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
 					local mobId = mob_obj_get('成年的玫瑰')
@@ -271,7 +271,7 @@ common.simpleStart({
 						labelbei=labelbei+1
 					end	
 				end
-				if labelhua<20 and labelbei==21 then--成长"成长"刷40分钟
+				if labelhua<40 and labelbei==40 then--成长
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('玫瑰')
@@ -286,7 +286,7 @@ common.simpleStart({
 						labelhua=labelhua+1
 					end	
 				end
-			until(labelhua==20)
+			until(labelhua==40)
 			bot_stop()
 			ini_change("tobot_hit_range_right",32)
 			ini_change("tobot_hit_range_left",3167)
@@ -310,7 +310,7 @@ common.simpleStart({
 			sleep(4000)
 			repeat
 				sleep(200)
-				if labelre<20 then--成长"成长"刷40分钟
+				if labelre<40 then
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('炎热的小狗')
@@ -325,7 +325,7 @@ common.simpleStart({
 						labelre=labelre+1
 					end	
 				end
-				if labeldongwu<20 and labelre==20 then--成长"成长"刷40分钟
+				if labeldongwu<40 and labelre==40 then
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					local mobId = mob_obj_get('渴望关怀的小狗')
@@ -335,13 +335,12 @@ common.simpleStart({
 						bot_stop()
 						gotocoordinate(1, mobX, mobY)
 						sleep(100)
-						useskill(9531003,1) --喜
-						bot_start()
+						useskill(9531003,1) 
 						sleep(500)
 						labeldongwu=labeldongwu+1
 					end	
 				end
-			until(labeldongwu==20)
+			until(labeldongwu==40)
 			bot_stop()
 			ini_change("tobot_hit_range_right",32)
 			ini_change("tobot_hit_range_left",3167)
@@ -357,8 +356,7 @@ common.simpleStart({
 			labeldone=1
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333130302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333133302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038302C313435352CD3D2C5DC2C",0)
-			bot_start()
-			
+			bot_start()	
 		end
     end
 })

@@ -396,7 +396,6 @@ common.simpleStart({
 					ini_change("tobot_hit_range_right",32)
 					ini_change("tobot_hit_range_left",99999)
 					bot_stop()
-					gotocoordinate(1,3200,1839)
 					jmp(2)
 					sleep(900)
 					jmp(2)
@@ -429,7 +428,7 @@ common.simpleStart({
 			useskill(43501022,1)
 			repeat
 				sleep(200)
-				if door_if(930,1007)==1 then
+				if gety()==1007 and door_if(930,1007)==1 then
 					speak("门开了")
 					ini_change("ban_hit_mob",1)
 					sleep(200)
@@ -452,7 +451,18 @@ common.simpleStart({
 					ini_change("find_is_youhao",0)
 					ini_change("find_is_ewai",0)
 				end
-			until(door_if(930,1007)==1)
+				if (getmapid() == 37911) then
+					ini_change("find_zhiding","宝箱")
+					ini_change("find_is_zhiding",1)
+					ini_change("find_is_youhao",1)
+					ini_change("find_is_ewai",1)
+					ini_change("tobot_scriptbot",0)
+					speak("开启宝箱,60s后退出副本")
+					sleep(60000)
+					ini_change("tobot_scriptbot",1)
+					script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3538302C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C313430372CB2BBB1E42C",0)
+				end
+			until(door_if(930,1007)==1 or getmapid() ~= 37910 )
 			bot_start()
         end
 		if (getmapid() == 37911) then
@@ -460,8 +470,10 @@ common.simpleStart({
 			ini_change("find_is_zhiding",1)
 			ini_change("find_is_youhao",1)
 			ini_change("find_is_ewai",1)
-			speak("开启宝箱,10s后退出副本")
-			sleep(10000)
+			ini_change("tobot_scriptbot",0)
+			speak("开启宝箱,60s后退出副本")
+			sleep(60000)
+			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3538302C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C313430372CB2BBB1E42C",0)
 		end
     end

@@ -129,8 +129,10 @@ common.simpleStart({
 				config.labelm=gettime(3)    --记录进入时间
 			end
 			if 	gettime(2)==20 then
-					plane(70)
-					return true
+				common.wearGongji()
+				bot_stop()
+				plane(70)
+				return true
 			end
 		end
 		if getmapid() == 83900 then		--接任务 杀魔女
@@ -169,6 +171,8 @@ common.simpleStart({
 			gotocoordinate(1, 1550, 1407)
 			if labeldone==1 then
 				speak("小星球（任务）已做完，30s后即将飞出副本")
+				common.wearGongji()
+				bot_stop()
 				sleep(30000)
 				plane(70)
 			end

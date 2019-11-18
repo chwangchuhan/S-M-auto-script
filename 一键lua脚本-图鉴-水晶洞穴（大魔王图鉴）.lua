@@ -40,10 +40,20 @@ common.simpleStart({
 				ini_change("tobot_hit_range_top",115)
 				local mobId = mob_obj_get('大魔王分神')
 				local mobY = mob_obj_y(mobId)
+				if gety()==1071 and door_if(750,1071)==1 then
+					ini_change("ban_hit_mob",1)
+					sleep(200)
+					bot_start()
+					sleep(200)
+					bot_start()
+				end
+				if gety()==847 then
+					ini_change("ban_hit_mob",0)
+					ini_change("tobot_hit_range_down",115)
+				end
 				if gety()==607 then
-					item_use(51801002)
-					sleep(50)
-					useskill(5000008,0)
+					useskill(51801002,0)
+					ini_change("ban_hit_mob",0)
 				end
 			until(mobId==0)
 		end

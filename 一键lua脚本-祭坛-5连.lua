@@ -13,6 +13,8 @@ common.simpleStart({
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
 		tobot_giveitemif=1, --捡完东西才进门
 		tobot_fastladder = 1, -- 取消快速爬梯，防止大桥下楼梯不稳定
+		tobot_script_x_distance = 40,
+		tobot_script_y_distance = 20,
     },
 	isLuckyDog = true,
     -- 脚本名称列表，需和mapIds一一对应
@@ -1000,6 +1002,7 @@ common.simpleStart({
 		if (getmapid() == 35710) then   --祭坛11
 			bot_stop()
 			ini_change("ban_hit_mob",1)
+			ini_change("tobot_scriptbot",0)
 			common.wearDiaoluo()
 			sleep(500)
 			ini_change("ban_hit_mob",0)
@@ -1008,6 +1011,7 @@ common.simpleStart({
 			bot_stop()
 			common.wearGongji()
 			sleep(1000)
+			ini_change("tobot_scriptbot",1)
 			bot_start()
 			script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C333030372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C333136372C333030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313432302C333030372CD3D2C5DC2C",0)
         end

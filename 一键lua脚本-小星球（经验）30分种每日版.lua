@@ -132,8 +132,10 @@ common.simpleStart({
 				config.labelm=gettime(3)    --记录进入时间
 			end
 			if 	gettime(2)==20 then
-					plane(70)
-					return true
+				common.wearGongji()
+				bot_stop()
+				plane(70)
+				return true
 			end
 		end
 		if getmapid() == 83900 then
@@ -215,6 +217,8 @@ common.simpleStart({
 				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
 					bot_stop()
 					speak("30分钟刷土的结束，30秒后离开副本")
+					common.wearGongji()
+					bot_stop()
 					sleep(30000)
 					plane(70)
 					labelstop=1
@@ -255,6 +259,8 @@ common.simpleStart({
 				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
 					bot_stop()
 					speak("30分钟刷土的结束，30秒后离开副本")
+					common.wearGongji()
+					bot_stop()
 					sleep(30000)
 					plane(70)
 					labelstop=1
@@ -335,6 +341,8 @@ common.simpleStart({
 				if labelnowtime - labellasttime ==30 or labelnowtime - labellasttime ==-30 then
 					bot_stop()
 					speak("30分钟刷土的结束，30秒后离开副本")
+					common.wearGongji()
+					bot_stop()
 					sleep(30000)
 					plane(70)
 					labelstop=1

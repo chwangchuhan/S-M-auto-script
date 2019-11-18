@@ -131,8 +131,10 @@ common.simpleStart({
 				config.labelm=gettime(3)    --记录进入时间
 			end
 			if 	gettime(2)==20 then
-					plane(70)
-					return true
+				common.wearGongji()
+				bot_stop()
+				plane(70)
+				return true
 			end
 		end
 		if getmapid() == 83900 then
@@ -270,6 +272,8 @@ common.simpleStart({
 				end
 				if 	gettime(2)==18 and gettime(3)>30 then
 					label=1
+					common.wearGongji()
+					bot_stop()
 					plane(70)
 				end
 			until(label==1)

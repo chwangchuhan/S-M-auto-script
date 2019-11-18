@@ -87,6 +87,18 @@ common.simpleStart({
 			labelnowtime=0
 			repeat
 				sleep(100)
+				if getx()>=32 and getx()<=223 and gety()==751 then
+					local mobId = mob_obj_get('兰花指的流氓')
+					if (mobId > 0) then
+						ini_change("tobot_scriptbot",0)
+						ini_change("tobot_hit_range_right",32)
+						ini_change("tobot_hit_range_left",223)
+					else
+						ini_change("tobot_scriptbot",1)
+						ini_change("tobot_hit_range_right",32)
+						ini_change("tobot_hit_range_left",99999)
+					end
+				end
 				if gety()==1359 then
 					bot_stop()
 					ini_change("tobot_hit_range_max",700)

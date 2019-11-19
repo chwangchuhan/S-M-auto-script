@@ -71,11 +71,25 @@ common.simpleStart({
 			ini_change("find_is_ewai",1)
 			item_use(170191135)--世界树减伤药
 			sleep(100)
+			if isbuff('铭·属性力药水')==0 then
+				item_use(430139031)--属性力药水
+				sleep(100)
+			elseif isbuff('效果')==0 then
+				item_use(430139017)--武器最大伤害药水
+				sleep(100)
+			end
 		end
         if (getmapid() == 90113) then
 			labelnext=0
 			labeldoor=0
 			labelnum=0
+			if isbuff('铭·属性力药水')==0 then
+				item_use(430139031)--属性力药水
+				sleep(100)
+			elseif isbuff('效果')==0 then
+				item_use(430139017)--武器最大伤害药水
+				sleep(100)
+			end
 			repeat
 				sleep(100)
 				local mobId = mob_obj_get('沃瑞克斯矿石')
@@ -179,17 +193,18 @@ common.simpleStart({
 										elseif isbuff('古代之力')==0 then
 											item_use(430453126)--星球坚不可摧
 											sleep(100)
-										elseif isbuff('铭·属性力药水')==0 then
-											item_use(430139031)--属性力药水
-											sleep(100)
-										elseif isbuff('效果')==0 then
-											item_use(430139017)--武器最大伤害药水
-											sleep(100)
 										end
 									end
 								end
 							end
 						end
+					end
+					if isbuff('铭·属性力药水')==0 then
+						item_use(430139031)--属性力药水
+						sleep(100)
+					elseif isbuff('效果')==0 then
+						item_use(430139017)--武器最大伤害药水
+						sleep(100)
 					end
 			until(labeldoor==1)
         end

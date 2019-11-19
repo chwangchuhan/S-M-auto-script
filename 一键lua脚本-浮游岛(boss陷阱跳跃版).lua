@@ -89,17 +89,18 @@ common.simpleStart({
 									elseif isbuff('古代之力')==0 then
 										item_use(430453126)--星球坚不可摧
 										sleep(100)
-									elseif isbuff('铭·属性力药水')==0 then
-										item_use(430139031)--属性力药水
-										sleep(100)
-									elseif isbuff('效果')==0 then
-										item_use(430139017)--武器最大伤害药水
-										sleep(100)
 									end
 								end
 							end
 						end
 					end
+				end
+				if isbuff('铭·属性力药水')==0 then
+					item_use(430139031)--属性力药水
+					sleep(100)
+				elseif isbuff('效果')==0 then
+					item_use(430139017)--武器最大伤害药水
+					sleep(100)
 				end
 				if door_if(6222,623)==1 then
 					speak("门开了")
@@ -276,17 +277,18 @@ common.simpleStart({
 											elseif isbuff('古代之力')==0 then
 												item_use(430453126)--星球坚不可摧
 												sleep(100)
-											elseif isbuff('铭·属性力药水')==0 then
-												item_use(430139031)--属性力药水
-												sleep(100)
-											elseif isbuff('效果')==0 then
-												item_use(430139017)--武器最大伤害药水
-												sleep(100)
 											end
 										end
 									end
 								end
 							end
+						end
+						if isbuff('铭·属性力药水')==0 then
+							item_use(430139031)--属性力药水
+							sleep(100)
+						elseif isbuff('效果')==0 then
+							item_use(430139017)--武器最大伤害药水
+							sleep(100)
 						end
 					end
 					if labelkuang==1 and mobx4~=0 then --采集
@@ -375,16 +377,18 @@ common.simpleStart({
 									elseif isbuff('吸收效果')==0 then
 										item_use(611113086)--最大吸红
 										sleep(100)
-									elseif isbuff('铭·属性力药水')==0 then
-										item_use(430139031)--属性力药水
-										sleep(100)
-									elseif isbuff('效果')==0 then
-										item_use(430139017)--武器最大伤害药水
-										sleep(100)
 									end
 								end
 							end
+							
 						end
+					end
+					if isbuff('铭·属性力药水')==0 then
+						item_use(430139031)--属性力药水
+						sleep(100)
+					elseif isbuff('效果')==0 then
+						item_use(430139017)--武器最大伤害药水
+						sleep(100)
 					end
 					ini_change("ban_hit_mob",1)
 					bot_start()
@@ -509,16 +513,17 @@ common.simpleStart({
 										if isbuff('免疫效果')==0 then
 											useskill(43501018,1)
 											sleep(100)
-										elseif isbuff('铭·属性力药水')==0 then
-											item_use(430139031)--属性力药水
-											sleep(100)
-										elseif isbuff('效果')==0 then
-											item_use(430139017)--武器最大伤害药水
-											sleep(100)
 										end
 									end
 								end
 							end
+						end
+						if isbuff('铭·属性力药水')==0 then
+							item_use(430139031)--属性力药水
+							sleep(100)
+						elseif isbuff('效果')==0 then
+							item_use(430139017)--武器最大伤害药水
+							sleep(100)
 						end
 						jmp(0)
 						ini_change("tobot_hit_range_right",3168)
@@ -615,17 +620,18 @@ common.simpleStart({
 										elseif isbuff('古代之力')==0 then
 											item_use(430453126)--星球坚不可摧
 											sleep(100)
-										elseif isbuff('铭·属性力药水')==0 then
-											item_use(430139031)--属性力药水
-											sleep(100)
-										elseif isbuff('效果')==0 then
-											item_use(430139017)--武器最大伤害药水
-											sleep(100)
 										end
 									end
 								end
 							end
 						end
+					end
+					if isbuff('铭·属性力药水')==0 then
+						item_use(430139031)--属性力药水
+						sleep(100)
+					elseif isbuff('效果')==0 then
+						item_use(430139017)--武器最大伤害药水
+						sleep(100)
 					end
 				else
 					ini_change("find_is_zhiding",0)

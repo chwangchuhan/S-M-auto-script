@@ -1017,16 +1017,17 @@ common.simpleStart({
 									elseif isbuff('吸收效果')==0 then
 										item_use(611113086)--最大吸红
 										sleep(100)
-									elseif isbuff('铭·属性力药水')==0 then
-										item_use(430139031)--属性力药水
-										sleep(100)
-									elseif isbuff('效果')==0 then
-										item_use(430139017)--武器最大伤害药水
-										sleep(100)
 									end
 								end
 							end
 						end
+					end
+					if isbuff('铭·属性力药水')==0 then
+						item_use(430139031)--属性力药水
+						sleep(100)
+					elseif isbuff('效果')==0 then
+						item_use(430139017)--武器最大伤害药水
+						sleep(100)
 					end
 				end
 			until (getmapid() ~= 35709 or door_if(1467,3007)==1)

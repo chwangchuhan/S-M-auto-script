@@ -11,7 +11,7 @@ common.simpleStart({
     overtime = 400, --超时时间，/分钟
     endMapIds = {37911}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
-        tobot_giveitemif=0, 
+        tobot_giveitemif=0,
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
     },
     isLuckyDog = true,
@@ -23,7 +23,7 @@ common.simpleStart({
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3237302C3637312CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3239302C3637312CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3331302C3637312CB2BBB1E42C0D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C313539392C313433392CD7F3C5DC2CCAB9D3C3B7C9BBFA2C3238390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C323530302C313433392CD7F3C5DC2CCAB9D3C3B7C9BBFA2C323839",
        -- 浮游岛
        "D3D2CCF82CD7F326D3D2CAB12C313732372C3731392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323133302C3539312CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323135302C3539312CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323137302C3539312CB2BBB1E42C",
-       -- 路口 
+       -- 路口
        "D3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3530302C3535392CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3634302C3638372CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3736382C3831352CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C313335302C3934332CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C323032302C313037312CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C323636302C313139392CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C333331302C313332372CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C343331302C313435352CD7F3C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C363336372C313538332CB2BBB1E42C",
        -- 入口
        "D7F3CCF828D6FAC5DC292CD7F326D3D2CAB12C323232302C3837392CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313836302C313030372CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313838302C313030372CD7F3C5DC2C0D0AD7F3CCF828D6FAC5DC292CD7F326D3D2CAB12C313831302C313030372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313438302C313133352CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313530302C313133352CD7F3C5DC2C0D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3531322C313339312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3135302C313030372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323334302C3837392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323332302C3837392CD7F3C5DC2C",
@@ -61,29 +61,54 @@ common.simpleStart({
 			ini_change("find_is_zhiding",0)
 			item_use(170191135)--世界树减伤药
 			sleep(100)
-			item_use(611113086)--最大吸红
-			sleep(100)
-			item_use(611113016)--三星芝士汤
-			sleep(100)
-			item_use(430453126)--星球坚不可摧
-			local mobId1 = mob_obj_get('贵族剑龙队')
-			local mobId2 = mob_obj_get('贵族神秘会')
-			if mobId1~=0 or mobId2~=0 then
-				useskill(5000420,1)
-				sleep(14000)
-				useskill(43501018,1)
-				sleep(12000)
-				useskill(43501022,1)
-			end
+			labelnext=0
 			repeat
-				sleep(200)
+				useskill(43501018,1)
+				sleep(100)
+				if isbuff('一花一世界，一叶一菩提')==0 then --物免
+					useskill(5000420,1)
+					sleep(100)
+					if isbuff('灵宠技能效果')==0 then --魔免
+						useskill(43501022,1)
+						sleep(100)
+						if isbuff('每天都要美美哒')==0 then --魔免
+							useskill(43501025,1)
+							sleep(100)
+							if isbuff('破坏王技能')==0 then
+								item_use(611113089)
+								sleep(100)
+								if isbuff('免疫效果')==0 then
+									useskill(43501018,1)
+									sleep(100)
+									if isbuff('食品效果')==0 then --三星芝士汤
+										item_use(611113016)
+										sleep(100)
+									elseif isbuff('吸收效果')==0 then
+										item_use(611113086)--最大吸红
+										sleep(100)
+									elseif isbuff('古代之力')==0 then
+										item_use(430453126)--星球坚不可摧
+										sleep(100)
+									elseif isbuff('铭·属性力药水')==0 then
+										item_use(430139031)--属性力药水
+										sleep(100)
+									elseif isbuff('效果')==0 then
+										item_use(430139017)--武器最大伤害药水
+										sleep(100)
+									end
+								end
+							end
+						end
+					end
+				end
 				if door_if(6222,623)==1 then
 					speak("门开了")
+					bot_stop()
 					ini_change("ban_hit_mob",1)
-					bot_start()
+					labelnext=1
 					bot_start()
 				end
-			until(door_if(6222,623)==1)
+			until(labelnext==1)
 			script_txt_loaddata("D3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3530302C3535392CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3634302C3638372CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3736382C3831352CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C313335302C3934332CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C323032302C313037312CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C323636302C313139392CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C333331302C313332372CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C343331302C313435352CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363230302C3632332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363232302C3632332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363234302C3632332CB2BBB1E42C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C363336372C313538332CB2BBB1E42C",0)
 			bot_start()
         end
@@ -92,23 +117,24 @@ common.simpleStart({
 			ini_change("tobot_giveitemif",0)
         end
 		if (getmapid() == 37903) then --训练1
+			labelnext=0
             repeat
 				sleep(200)
 				if gety()==1471 or gety()==735 then
 					speak("禁止攻击")
 					ini_change("ban_hit_mob",1)
 					bot_start()
-					bot_start()
 				else
 					ini_change("ban_hit_mob",0)
 				end
 				if door_if(3540,1839)==1 then
 					speak("门开了")
+					bot_stop()
 					ini_change("ban_hit_mob",1)
-					bot_start()
+					labelnext=1
 					bot_start()
 				end
-			until( door_if(3540,1839)==1)
+			until(labelnext==1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333536302C313833392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333534302C313833392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333532302C313833392CB2BBB1E42C0D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C3438302C3730342CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C3438302C3730342CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C313035352C3730342CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C313530342C3730342CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C323037392C3730342CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C3939322C313434302CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C313536372C313434302CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C323539312C313434302CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C323031362C313434302CB2BBB1E42CCAB9D3C3BCBCC4DC2C393837393939390D0AC9CFCCF82CD3D2C5DCCAB12C313138302C313833392CB2BBB1E42C0D0AC9CFCCF82CD3D2C5DCCAB12C323135302C313833392CB2BBB1E42C",0)
 			bot_start()
         end
@@ -125,7 +151,6 @@ common.simpleStart({
 				if gety()==431 and getx()<5600 and getx()>3800 then
 					speak("禁止攻击")
 					ini_change("ban_hit_mob",1)
-					bot_start()
 					bot_start()
 				end
 				if gety()==431 and getx()<=3800 and getx()>=3680 then
@@ -166,7 +191,6 @@ common.simpleStart({
 						ini_change("tobot_hit_range_left",3800)
 						ini_change("ban_hit_mob",1)
 						bot_start()
-						bot_start()
 					elseif mobY2==431 then
 						speak("躲避闪电1")
 						jmp(0)
@@ -174,19 +198,7 @@ common.simpleStart({
 						ini_change("tobot_hit_range_left",3800)
 						ini_change("ban_hit_mob",1)
 						bot_start()
-						bot_start()
 					end
-				end
-				if gety()==943 and getx()<=3800 and getx()>=3680 and labelyao<1 then --吃药一次
-					item_use(611113086)--最大吸红
-					sleep(10)
-					item_use(611113016)--三星芝士汤
-					sleep(10)
-					item_use(430453126)--星球坚不可摧
-					sleep(10)
-					item_use(611113089)--最大攻免
-					useskill(43501022,1)
-					labelyao=1
 				end
 				if gety()==943 and getx()<4500 and getx()>3800  then
 					local mobId1 = mob_obj_get('秘密森林召唤术士')
@@ -206,7 +218,6 @@ common.simpleStart({
 						ini_change("tobot_hit_range_left",3800)
 						ini_change("ban_hit_mob",1)
 						bot_start()
-						bot_start()
 					elseif mobY2==943 and  mobX2<=4300 then
 						speak("躲避闪电2")
 						jmp(0)
@@ -214,13 +225,11 @@ common.simpleStart({
 						ini_change("tobot_hit_range_left",3800)
 						ini_change("ban_hit_mob",1)
 						bot_start()
-						bot_start()
 					end
 				end
 				if gety()==943 and getx()<6000 and getx()>3800 then
 					speak("禁止攻击")
 					ini_change("ban_hit_mob",1)
-					bot_start()
 					bot_start()
 				end
 				if gety()==943 and getx()<=3800 and getx()>=3680 then
@@ -235,11 +244,50 @@ common.simpleStart({
 					local mobX2 = mob_obj_x(mobId2)
 					local mobId4 = mob_obj_get('??? ?')
 					local mobx4 = mob_obj_x(mobId4)
-					if mobY2~=943 and mobY1~=943 and mobY3~=943 then 
+					if mobY2~=943 and mobY1~=943 then
 						speak("二层左边已清")
 						ini_change("tobot_hit_range_right",32)
 						ini_change("tobot_hit_range_left",99999)
 						labelkuang=1
+					else
+						useskill(43501018,1)
+						sleep(100)
+						if isbuff('一花一世界，一叶一菩提')==0 then --物免
+							useskill(5000420,1)
+							sleep(100)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)
+								sleep(100)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1)
+									sleep(100)
+									if isbuff('破坏王技能')==0 then
+										item_use(611113089)
+										sleep(100)
+										if isbuff('免疫效果')==0 then
+											useskill(43501018,1)
+											sleep(100)
+											if isbuff('食品效果')==0 then --三星芝士汤
+												item_use(611113016)
+												sleep(100)
+											elseif isbuff('吸收效果')==0 then
+												item_use(611113086)--最大吸红
+												sleep(100)
+											elseif isbuff('古代之力')==0 then
+												item_use(430453126)--星球坚不可摧
+												sleep(100)
+											elseif isbuff('铭·属性力药水')==0 then
+												item_use(430139031)--属性力药水
+												sleep(100)
+											elseif isbuff('效果')==0 then
+												item_use(430139017)--武器最大伤害药水
+												sleep(100)
+											end
+										end
+									end
+								end
+							end
+						end
 					end
 					if labelkuang==1 and mobx4~=0 then --采集
 						bot_stop()
@@ -279,7 +327,6 @@ common.simpleStart({
 					ini_change("tobot_hit_range_left",99999)
 					ini_change("ban_hit_mob",1)
 					bot_start()
-					bot_start()
 				end
 				if gety()==1391 and getx()<3700 then
 					ini_change("ban_hit_mob",0)
@@ -291,13 +338,13 @@ common.simpleStart({
 				end
 			until(door_if(180,1391)==1)
         end
-		if (getmapid() == 37907) then  --修炼2			
+		if (getmapid() == 37907) then  --修炼2
+			labelnext=0
 			repeat
 				sleep(200)
 				if gety()==671 and getx()>=1792 and getx()<=2815 then  --上面的黑雾
 					speak("禁止攻击")
 					ini_change("ban_hit_mob",1)
-					bot_start()
 					bot_start()
 				end
 				if (getmapid() == 37907) then
@@ -308,13 +355,38 @@ common.simpleStart({
 				end
 				if gety()==1839 and getx()>450 and getx()<=3200 then --修炼2黑雾
 					speak("禁止攻击")
-					item_use(611113086)--最大吸红
-					sleep(10)
-					item_use(611113016)--三星芝士汤
-					sleep(10)
 					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then
+									useskill(43501018,1)
+									sleep(100)
+									if isbuff('食品效果')==0 then --三星芝士汤
+										item_use(611113016)
+										sleep(100)
+									elseif isbuff('吸收效果')==0 then
+										item_use(611113086)--最大吸红
+										sleep(100)
+									elseif isbuff('铭·属性力药水')==0 then
+										item_use(430139031)--属性力药水
+										sleep(100)
+									elseif isbuff('效果')==0 then
+										item_use(430139017)--武器最大伤害药水
+										sleep(100)
+									end
+								end
+							end
+						end
+					end
 					ini_change("ban_hit_mob",1)
-					bot_start()
 					bot_start()
 				end
 				if gety()==1839 and getx()>3200 then
@@ -330,7 +402,6 @@ common.simpleStart({
 						ini_change("tobot_hit_range_right",4608)
 						ini_change("tobot_hit_range_left",4700)
 						ini_change("ban_hit_mob",1)
-						bot_start()
 						bot_start()
 					end
 				end
@@ -355,15 +426,17 @@ common.simpleStart({
 				end
 				if door_if(150,1839)==1 then
 					speak("门开了")
+					bot_stop()
 					ini_change("ban_hit_mob",1)
-					bot_start()
+					labelnext=1
 					bot_start()
 				end
-			until(door_if(150,1839)==1)
+			until(labelnext==1)
 			script_txt_loaddata("D3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3336302C3238372CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3939302C3431352CD7F3C5DC2C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C313538302C3534332CB2BBB1E42C0D0ABDFBD6B9B4F2B9D62CD7F326D3D2CAB12C313630302C3534332CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C313935302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323030302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323130302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323230302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323330302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323430302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323530302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323630302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323730302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323830302C3637312CB2BBB1E42C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C323831352C3637312CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C343234302C3431352CD7F3C5DC2CD6B4D0D0BAF3B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C343236302C3431352CD7F3C5DC2CD6B4D0D0BAF3B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C343238302C3431352CD7F3C5DC2CD6B4D0D0BAF3B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0AD7F3CCF828D6FAC5DC292CD7F326D3D2CAB12C333734302C3431352CD3D2C5DC2C0D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C333030302C3534332CD7F3C5DC2C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C343237302C3431352CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C343335312C3431352CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C343130302C3431352CB2BBB1E42C0D0ACFC2C5C0CCDDD7D32CD7F326D3D2CAB12C353933362C3534332CD3D2C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C353535302C313833392CD7F3C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C343936302C313530342CD7F3C5DC2C0D0AD7F3CCF82CD7F326D3D2CAB12C333933362C313530342CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3133302C313833392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3135302C313833392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3137302C313833392CB2BBB1E42C0D0ABDFBD6B9B4F2B9D62CD3D2C5DCCAB12C3435302C313833392CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C33322C313833392CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C3130302C313833392CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C3230302C313833392CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C3330302C313833392CB2BBB1E42C0D0AD4CAD0EDB4F2B9D62CD7F326D3D2CAB12C3430302C313833392CB2BBB1E42C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C343335312C3431352CD7F3C5DC2C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C333538332C313833392CD3D2C5DC2C",0)
 			bot_start()
 		end
 		if (getmapid() == 37909) then
+			labelnext=0
 			repeat
 				sleep(200)
 				local mobId1 = mob_obj_get('雅典幻影术士')
@@ -390,7 +463,7 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					bot_start()
 				end
-				if gety()==1839 and getx()>=3168 and getx()<3400 then 
+				if gety()==1839 and getx()>=3168 and getx()<3400 then
 					local mobId1 = mob_obj_get('雅典幻影术士')
 					local mobY1 = mob_obj_y(mobId1)
 					local mobId2 = mob_obj_get('秘密森林战士')
@@ -407,11 +480,7 @@ common.simpleStart({
 						ini_change("ban_hit_mob",0)
 					end
 				end
-				if gety()==1839 and getx()>=3400 then 
-					item_use(611113086)--最大吸红
-					sleep(10)
-					item_use(611113016)--三星芝士汤
-					sleep(10)
+				if gety()==1839 and getx()>=3400 then
 					local mobId1 = mob_obj_get('雅典幻影术士')
 					local mobY1 = mob_obj_y(mobId1)
 					local mobId2 = mob_obj_get('秘密森林战士')
@@ -423,12 +492,40 @@ common.simpleStart({
 					local mobId4 = mob_obj_get('??? ?')
 					local mobx4 = mob_obj_x(mobId4)
 					if mobY2~=0 and mobY3~=0 and mobId5~=0 then
+						useskill(43501018,1)
+						sleep(100)
+						if isbuff('一花一世界，一叶一菩提')==0 then --物免
+							useskill(5000420,1)
+							sleep(100)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)
+								sleep(100)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1)
+									sleep(100)
+									if isbuff('破坏王技能')==0 then
+										item_use(611113089)
+										sleep(100)
+										if isbuff('免疫效果')==0 then
+											useskill(43501018,1)
+											sleep(100)
+										elseif isbuff('铭·属性力药水')==0 then
+											item_use(430139031)--属性力药水
+											sleep(100)
+										elseif isbuff('效果')==0 then
+											item_use(430139017)--武器最大伤害药水
+											sleep(100)
+										end
+									end
+								end
+							end
+						end
 						jmp(0)
 						ini_change("tobot_hit_range_right",3168)
 						ini_change("tobot_hit_range_left",3400)
 						ini_change("ban_hit_mob",1)
 						bot_start()
-						bot_start()
+
 					end
 					if mobY2~=1839 and mobY3~=1839 and mobId5~=1839 then
 						ini_change("tobot_hit_range_right",32)
@@ -445,32 +542,28 @@ common.simpleStart({
 				end
 				if door_if(6150,1327)==1 then
 					speak("门开了")
-					useskill(5000420,1)
+					useskill(43501018,1)
+					bot_stop()
 					ini_change("ban_hit_mob",1)
-					bot_start()
+					labelnext=1
 					bot_start()
 				end
-			until(door_if(6150,1327)==1)
+			until(labelnext ==1)
 			bot_start()
 		end
 		if (getmapid() == 37910) then
 			ini_change("ban_hit_mob",0)
 			item_use(170191135)--世界树减伤药
 			sleep(100)
-			item_use(611113086)--最大吸红
-			sleep(100)
-			item_use(611113016)--三星芝士汤
-			sleep(100)
-			item_use(430453126)--星球坚不可摧
-			sleep(100)
+			labelnext=0
 			repeat
 				sleep(200)
-				if door_if(930,1007)==1 then
+				if gety()==1007 and door_if(930,1007)==1 then
 					speak("门开了")
+					bot_stop()
 					ini_change("ban_hit_mob",1)
-					bot_start()
-					bot_start()
 					labelnext=1
+					bot_start()
 				end
 				if gety()==1775 and getx()>=32 and getx()<=767 then
 					bot_stop()
@@ -492,14 +585,48 @@ common.simpleStart({
 				end
 				local mobId = mob_obj_get('比尔布拉特')
 				if mobId~=0 then
-					useskill(5000420,1)
-					useskill(43501018,1)
-					useskill(43501022,1)
-					item_use(611113089)--最大攻免
 					ini_change("find_zhiding","比尔布拉特")
-					ini_change("find_is_zhiding",1)
+					endini_change("find_is_zhiding",1)
 					ini_change("find_is_youhao",0)
 					ini_change("find_is_ewai",0)
+					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then
+									item_use(611113089)
+									sleep(100)
+									if isbuff('免疫效果')==0 then
+										useskill(43501018,1)
+										sleep(100)
+										if isbuff('食品效果')==0 then --三星芝士汤
+											item_use(611113016)
+											sleep(100)
+										elseif isbuff('吸收效果')==0 then
+											item_use(611113086)--最大吸红
+											sleep(100)
+										elseif isbuff('古代之力')==0 then
+											item_use(430453126)--星球坚不可摧
+											sleep(100)
+										elseif isbuff('铭·属性力药水')==0 then
+											item_use(430139031)--属性力药水
+											sleep(100)
+										elseif isbuff('效果')==0 then
+											item_use(430139017)--武器最大伤害药水
+											sleep(100)
+										end
+									end
+								end
+							end
+						end
+					end
 				else
 					ini_change("find_is_zhiding",0)
 					ini_change("find_is_youhao",0)
@@ -518,7 +645,7 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3538302C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3630302C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3632302C313430372CB2BBB1E42C",0)
 				end
-			until(door_if(930,1007)==1)
+			until(labelnext==1)
         end
 		if (getmapid() == 37911) then
 			ini_change("ban_hit_mob",0)

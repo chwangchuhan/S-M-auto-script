@@ -997,7 +997,40 @@ common.simpleStart({
 					speak("走中间")
 					break
 				end
-			until (getmapid() ~= 35709)
+				if gety()==3007 then
+					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then  
+									useskill(43501018,1)
+									sleep(100)
+									if isbuff('食品效果')==0 then --三星芝士汤
+										item_use(611113016)
+										sleep(100)
+									elseif isbuff('吸收效果')==0 then
+										item_use(611113086)--最大吸红
+										sleep(100)
+									elseif isbuff('铭·属性力药水')==0 then
+										item_use(430139031)--属性力药水
+										sleep(100)
+									elseif isbuff('效果')==0 then
+										item_use(430139017)--武器最大伤害药水
+										sleep(100)
+									end
+								end
+							end
+						end
+					end
+				end
+			until (getmapid() ~= 35709 or door_if(1467,3007)==1)
         end
 		if (getmapid() == 35710) then   --祭坛11
 			bot_stop()

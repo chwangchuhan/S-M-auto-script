@@ -57,29 +57,116 @@ common.simpleStart({
 	},
     onScriptRound = function () -- 副本每次切换地图回调
 		if (getmapid() == 34502) then
-			useskill(5000420,1)
-			sleep(14000)
-			useskill(43501018,1)
-			sleep(12000)
-			useskill(43501022,1)
+			repeat
+				sleep(200)
+				local mobId = mob_obj_get('努比亚')
+				if mobId~=0 then
+					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then
+									item_use(611113089)
+									sleep(100)
+									if isbuff('免疫效果')==0 then
+										useskill(43501018,1)
+										sleep(100)
+										if isbuff('食品效果')==0 then --三星芝士汤
+											item_use(611113016)
+											sleep(100)
+										elseif isbuff('吸收效果')==0 then
+											item_use(611113086)--最大吸红
+											sleep(100)
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			until(door_if(1797,1359)==1)
         end
 		if (getmapid() == 34505) then
-            useskill(5000420,1)
-			sleep(14000)
-			useskill(43501018,1)
-			sleep(12000)
-			useskill(43501022,1)
-			
+           repeat
+				sleep(200)
+				local mobId = mob_obj_get('努比亚')
+				if mobId~=0 then
+					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then
+									item_use(611113089)
+									sleep(100)
+									if isbuff('免疫效果')==0 then
+										useskill(43501018,1)
+										sleep(100)
+										if isbuff('食品效果')==0 then --三星芝士汤
+											item_use(611113016)
+											sleep(100)
+										elseif isbuff('吸收效果')==0 then
+											item_use(611113086)--最大吸红
+											sleep(100)
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			until(door_if(1797,1359)==1)
         end
 		if (getmapid() == 34509) then
-            if mob_if("努比亚")==1 then
-				useskill(5000420,1)
-				sleep(14000)
-				useskill(43501018,1)
-				sleep(12000)
-				useskill(43501022,1)
-			end
+			sleep(2000)
+            repeat
+				sleep(200)
+				local mobId = mob_obj_get('努比亚')
+				if mobId~=0 then
+					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then
+									item_use(611113089)
+									sleep(100)
+									if isbuff('免疫效果')==0 then
+										useskill(43501018,1)
+										sleep(100)
+										if isbuff('食品效果')==0 then --三星芝士汤
+											item_use(611113016)
+											sleep(100)
+										elseif isbuff('吸收效果')==0 then
+											item_use(611113086)--最大吸红
+											sleep(100)
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			until(mobId==0)
         end
-		
     end
 })

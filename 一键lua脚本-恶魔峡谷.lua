@@ -45,6 +45,10 @@ common.simpleStart({
 			sleep(100)
 			item_use(611113016)--三星芝士汤
 			sleep(100)
+			item_use(430139031)--属性力药水
+			sleep(100)
+			item_use(430139017)--武器最大伤害药水
+			sleep(100)
 			useskill(5000420,1)
         end
 		if (getmapid() == 34302) then
@@ -66,6 +70,24 @@ common.simpleStart({
 				if gety()> 575 and gety()< 1407 then
 					common.wearGongji()
 				end
+					useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then  
+									useskill(43501018,1)
+									sleep(100)
+								end
+							end
+						end
+					end
 			until(door_if(795,1407)==1)
         end
 		if (getmapid() == 34307) then

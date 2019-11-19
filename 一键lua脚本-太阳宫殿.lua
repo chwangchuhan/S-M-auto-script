@@ -68,18 +68,53 @@ common.simpleStart({
 			ini_change("tobot_hit_range_ignore",2000)
 			item_use(170191135)--世界树减伤药
 			sleep(100)
-			item_use(611113086)--最大吸红
-			sleep(100)
-			item_use(611113016)--三星芝士汤
-			sleep(100)
 			--item_use(430453126)--星球坚不可摧
+			repeat
+				useskill(43501018,1)
+					sleep(100)
+					if isbuff('一花一世界，一叶一菩提')==0 then --物免
+						useskill(5000420,1)
+						sleep(100)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(100)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(100)
+								if isbuff('破坏王技能')==0 then
+									item_use(611113089)
+									sleep(100)
+									if isbuff('免疫效果')==0 then
+										useskill(43501018,1)
+										sleep(100)
+										if isbuff('食品效果')==0 then --三星芝士汤
+											item_use(611113016)
+											sleep(100)
+										elseif isbuff('吸收效果')==0 then
+											item_use(611113086)--最大吸红
+											sleep(100)
+										elseif isbuff('铭·属性力药水')==0 then
+											item_use(430139031)--属性力药水
+											sleep(100)
+										elseif isbuff('效果')==0 then
+											item_use(430139017)--武器最大伤害药水
+											sleep(100)
+										end
+									end
+								end
+							end
+						end
+					end
+			until(door_if(950,799)==1)
         end
 		if (getmapid() == 35605) then
 			ini_change("tobot_hit_range_top",100)
 			ini_change("tobot_hit_range_down",20)
 			ini_change("tobot_hit_range_max",250)
 			ini_change("tobot_hit_range_ignore",2000)
+			ini_change("tobot_scriptbot",0)
 			sleep(3000)
+			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3933362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3935362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C3830300D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C3934362C3739392CD3D2C5DC2CD6B4D0D0C7B0B5C8B4FDA3A8BAC1C3EBA3A92C383030",0)
 		end
     end

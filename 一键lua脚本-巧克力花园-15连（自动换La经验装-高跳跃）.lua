@@ -67,6 +67,13 @@ common.simpleStart({
 			ini_change("ban_hit_mob",0)
 			bot_start()
 			item_use(430453149)--古语
+			if isbuff('铭·属性力药水')==0 then
+				item_use(430139031)--属性力药水
+				sleep(100)
+			elseif isbuff('效果')==0 then
+				item_use(430139017)--武器最大伤害药水
+				sleep(100)
+			end
         end
 		if (getmapid() == 35000) then
 			labellasttime=gettime(3)
@@ -101,6 +108,13 @@ common.simpleStart({
 			labellasttime=gettime(3)
 		    labelnowtime=0
 			labelnext=0
+			if isbuff('铭·属性力药水')==0 then
+				item_use(430139031)--属性力药水
+				sleep(100)
+			elseif isbuff('效果')==0 then
+				item_use(430139017)--武器最大伤害药水
+				sleep(100)
+			end
 			repeat
 				sleep(100)
 				if getx()>2550 and getx()<2650 and gety()==1215 then

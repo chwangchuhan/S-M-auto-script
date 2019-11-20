@@ -76,7 +76,8 @@ common.simpleStart({
 			if isbuff('铭·属性力药水')==0 then
 				item_use(430139031)--属性力药水
 				sleep(100)
-			elseif isbuff('效果')==0 then
+			end
+			if isbuff('效果')==0 then
 				item_use(430139017)--武器最大伤害药水
 				sleep(100)
 			end
@@ -85,7 +86,8 @@ common.simpleStart({
 			if isbuff('铭·属性力药水')==0 then
 				item_use(430139031)--属性力药水
 				sleep(100)
-			elseif isbuff('效果')==0 then
+			end
+			if isbuff('效果')==0 then
 				item_use(430139017)--武器最大伤害药水
 				sleep(100)
 			end

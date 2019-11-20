@@ -6,7 +6,7 @@ common.simpleStart({
     mapName = "水晶洞穴",
     mapCount = 9999999999999999,
     planeId = 601,
-	maxYSpeed = 1180,
+	--maxYSpeed = 1180,
 	-- 结束地图id
     endMapIds = {70002},
     overtime = 60,
@@ -36,16 +36,16 @@ common.simpleStart({
 		if getmapid()==70002 then
 			sleep(1000)
 			repeat
-				sleep(300)
+				sleep(100)
 				ini_change("tobot_hit_range_top",115)
 				local mobId = mob_obj_get('大魔王分神')
 				local mobY = mob_obj_y(mobId)
 				if gety()==1071 and door_if(750,1071)==1 then
+					bot_stop()
+					sleep(200)
 					ini_change("ban_hit_mob",1)
-					sleep(200)
 					bot_start()
-					sleep(200)
-					bot_start()
+					sleep(1000)
 				end
 				if gety()==847 then
 					ini_change("ban_hit_mob",0)

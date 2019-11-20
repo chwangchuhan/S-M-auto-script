@@ -73,7 +73,8 @@ common.simpleStart({
 			if isbuff('铭·属性力药水')==0 then
 				item_use(430139031)--属性力药水
 				sleep(100)
-			elseif isbuff('效果')==0 then
+			end
+			if isbuff('效果')==0 then
 				item_use(430139017)--武器最大伤害药水
 				sleep(100)
 			end
@@ -85,7 +86,8 @@ common.simpleStart({
 			if isbuff('铭·属性力药水')==0 then
 				item_use(430139031)--属性力药水
 				sleep(100)
-			elseif isbuff('效果')==0 then
+			end
+			if isbuff('效果')==0 then
 				item_use(430139017)--武器最大伤害药水
 				sleep(100)
 			end
@@ -148,13 +150,6 @@ common.simpleStart({
         end
 		if (getmapid() == 90115) then
 			labeldoor=0
-			if isbuff('铭·属性力药水')==0 then
-				item_use(430139031)--属性力药水
-				sleep(100)
-			elseif isbuff('效果')==0 then
-				item_use(430139017)--武器最大伤害药水
-				sleep(100)
-			end
 			repeat
 				sleep(100)
 				if door_if(3100,912)==1 then
@@ -192,10 +187,12 @@ common.simpleStart({
 										if isbuff('食品效果')==0 then --三星芝士汤
 											item_use(611113016)
 											sleep(100)
-										elseif isbuff('吸收效果')==0 then
+										end
+										if isbuff('吸收效果')==0 then
 											item_use(611113086)--最大吸红
 											sleep(100)
-										elseif isbuff('古代之力')==0 then
+										end
+										if isbuff('古代之力')==0 then
 											item_use(430453126)--星球坚不可摧
 											sleep(100)
 										end

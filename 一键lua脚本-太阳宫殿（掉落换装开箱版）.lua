@@ -87,19 +87,16 @@ common.simpleStart({
 							if isbuff('每天都要美美哒')==0 then --魔免
 								useskill(43501025,1)
 								sleep(100)
-								if isbuff('破坏王技能')==0 then
-									item_use(611113089)
+								if isbuff('破坏王技能')==0 then  
+									useskill(43501018,1)
 									sleep(100)
-									if isbuff('免疫效果')==0 then
-										useskill(43501018,1)
+									if isbuff('食品效果')==0 then --三星芝士汤
+										item_use(611113016)
 										sleep(100)
-										if isbuff('食品效果')==0 then --三星芝士汤
-											item_use(611113016)
-											sleep(100)
-										elseif isbuff('吸收效果')==0 then
-											item_use(611113086)--最大吸红
-											sleep(100)
-										end
+									end
+									if isbuff('吸收效果')==0 then
+										item_use(611113086)--最大吸红
+										sleep(100)
 									end
 								end
 							end
@@ -108,7 +105,8 @@ common.simpleStart({
 					if isbuff('铭·属性力药水')==0 then
 						item_use(430139031)--属性力药水
 						sleep(100)
-					elseif isbuff('效果')==0 then
+					end
+					if isbuff('效果')==0 then
 						item_use(430139017)--武器最大伤害药水
 						sleep(100)
 					end
@@ -116,8 +114,10 @@ common.simpleStart({
         end
 		if (getmapid() == 35605) then
 			bot_stop()
+			ini_change("ban_hit_mob",1)
 			ini_change("tobot_scriptbot",0)
 			common.wearDiaoluo()
+			ini_change("ban_hit_mob",0)
 			sleep(500)
 			ini_change("tobot_hit_range_top",100)
 			ini_change("tobot_hit_range_down",20)
@@ -127,6 +127,7 @@ common.simpleStart({
 			sleep(4000)
 			bot_stop()
 			common.wearGongji()
+			ini_change("ban_hit_mob",0)
 			sleep(2000)
 			ini_change("tobot_scriptbot",1)
 			bot_start()

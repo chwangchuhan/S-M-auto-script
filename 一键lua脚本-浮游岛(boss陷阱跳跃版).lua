@@ -494,7 +494,7 @@ common.simpleStart({
 					local mobY5 = mob_obj_y(mobId5)
 					local mobId4 = mob_obj_get('??? ?')
 					local mobx4 = mob_obj_x(mobId4)
-					if mobY2~=0 and mobY3~=0 and mobId5~=0 then
+					if mobY2~=0 or mobY3~=0 or mobId5~=0 then
 						ini_change("tobot_hit_range_right",3168)
 						ini_change("tobot_hit_range_left",3400)
 						ini_change("ban_hit_mob",0)
@@ -511,7 +511,7 @@ common.simpleStart({
 					local mobY5 = mob_obj_y(mobId5)
 					local mobId4 = mob_obj_get('??? ?')
 					local mobx4 = mob_obj_x(mobId4)
-					if mobY2~=0 and mobY3~=0 and mobId5~=0 then
+					if mobY2~=0 or mobY3~=0 or mobId5~=0 then
 						useskill(43501018,1)
 						sleep(100)
 						if isbuff('一花一世界，一叶一菩提')==0 then --物免

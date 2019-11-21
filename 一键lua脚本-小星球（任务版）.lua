@@ -245,17 +245,22 @@ common.simpleStart({
 				if labelxi<40 then --喜 20次
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
+					ini_change("ban_hit_mob",1)
+					speak("1")
 					local mobId = mob_obj_get('成年的玫瑰')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
 						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(100)
-						useskill(9531003,1) --喜
-						bot_start()
-						sleep(500)
-						labelxi = labelxi + 1
+						if isbuff('发现玫瑰的喜悦')==1 then
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(100)
+							useskill(9531003,1) --喜
+							bot_start()
+							ini_change("ban_hit_mob",0)
+							sleep(300)
+							labelxi = labelxi + 1
+						end
 					end	
 				end
 
@@ -266,18 +271,21 @@ common.simpleStart({
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
 						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(100)
-						useskill(9531004,1) --悲
-						bot_start()
-						sleep(500)
-						labelbei=labelbei+1
+						if isbuff('发现玫瑰的伤心')==1 then
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(100)
+							useskill(9531004,1) --悲
+							bot_start()
+							sleep(300)
+							labelbei=labelbei+1
+						end
 					end	
 				end
 				if labelhua<40 and labelbei==40 then--成长
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
+					ini_change("ban_hit_mob",1)
 					local mobId = mob_obj_get('玫瑰')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -294,6 +302,7 @@ common.simpleStart({
 			bot_stop()
 			ini_change("tobot_hit_range_right",32)
 			ini_change("tobot_hit_range_left",3167)
+			ini_change("ban_hit_mob",0)
 			gotocoordinate(1, 500, 1455)
 			open_npc(95203)
 			sleep(20)
@@ -311,6 +320,7 @@ common.simpleStart({
 			labelre=0
 			labeldongwu=0
 			ini_change("tobot_scriptbot",0)
+			ini_change("ban_hit_mob",1)
 			sleep(4000)
 			repeat
 				sleep(200)
@@ -348,6 +358,7 @@ common.simpleStart({
 			bot_stop()
 			ini_change("tobot_hit_range_right",32)
 			ini_change("tobot_hit_range_left",3167)
+			ini_change("ban_hit_mob",0)
 			gotocoordinate(1, 500, 1455)
 			open_npc(95204)
 			sleep(20)

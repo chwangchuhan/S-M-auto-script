@@ -31,7 +31,7 @@ common.simpleStart({
        -- 3
        "D7F3CCF828D6FAC5DC292CD7F326D3D2CAB12C333130342E31342C313838372E38342CD7F3C5DC2C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C323037392E37322C313838372E382CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323532382E34362C3635352E36342CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C343532352E31352C3935392E39362CD3D2C5DC2C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C343930372E33382C3532372E30382CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363237352E362C3232332E39322CD7F3C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD3D2C5DCCAB12C363335302C313838372CD7F3C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C323832322C313734372CB2BBB1E42C0D0AD7F3CCF82CD7F3C5DCCAB12C323334312C313735372CB2BBB1E42C0D0AD3D2CCF828D6FAC5DC292CD7F326D3D2CAB12C3230302C3335312CD7F3C5DC2C",
        -- 4
-       "D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C",
+       "D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C3737382E3935392C313636332E39362CD7F3C5DC2C",
        -- 0
        "BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313032312E342C313735392CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313737302C313735392CD7F3C5DC2C0D0AD3D2CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C3130302C313735392CB2BBB1E42C",
        -- 0
@@ -116,6 +116,7 @@ common.simpleStart({
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					gotocoordinate(1,6350,1887)
+					useskill(5000420,1)
 					common.wearTiaoyue()
 					jmp(1)
 					sleep(900)
@@ -129,7 +130,7 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					bot_start()
 				end
-			until(labeldoor==1 and gety()==223 and mobx4==0)
+			until(getmapid() ~= 37703 or getmapid() == 37704)
         end
 		if (getmapid() == 37704) then --沼泽4
 			labelnext=0
@@ -139,14 +140,14 @@ common.simpleStart({
 			labellasttime=gettime(3)
 			labelnowtime=0
 			repeat
-				sleep(100)
+				sleep(10)
 				if isbuff('铭·属性力药水')==0 then
 					item_use(430139031)--属性力药水
-					sleep(100)
+					sleep(10)
 				end
 				if isbuff('效果')==0 then
 					item_use(430139017)--武器最大伤害药水
-					sleep(100)
+					sleep(10)
 				end
 				local mobId4 = mob_obj_get('??? ?')
 				local mobx4 = mob_obj_x(mobId4)
@@ -156,13 +157,13 @@ common.simpleStart({
 					speak("开启进门")
 					bot_stop()
 					ini_change("ban_hit_mob",1)
-					script_txt_loaddata("D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C333834352C3839352CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C333835302C3839352CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C333835352C3839352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363133302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363135302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363137302C3839352CB2BBB1E42C",0)
+					script_txt_loaddata("D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C3737382E3935392C313636332E39362CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363133302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363135302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363137302C3839352CB2BBB1E42C",0)
 					bot_start()
 					end
 					if labelnowtime - labellasttime ==10 or labelnowtime - labellasttime ==-50 then
 						speak("超时10分钟，开启进门")
 						labelnext=1
-						script_txt_loaddata("D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C333834352C3839352CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C333835302C3839352CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C333835352C3839352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363133302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363135302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363137302C3839352CB2BBB1E42C",0)
+						script_txt_loaddata("D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C3737382E3935392C313636332E39362CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363133302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363135302C3839352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C363137302C3839352CB2BBB1E42C",0)
 					end
 				end
 				if getx()>3300 and getx()<=3800 and gety()> 863 and gety()<1000then
@@ -176,29 +177,31 @@ common.simpleStart({
 					sleep(1000)
 					bot_start()
 				end
-				if getx()>3900 and getx()<=4300 and gety()> 895 then
-					bot_stop()
-					sleep(110)
-					jmp(1)
-					sleep(1000)
-					useskill(5000028,1)
-					sleep(1000)
-					useskill(5000028,1)
-					sleep(1000)
-					bot_start()
-				end
-				if getx()>4300 and getx()<=5000 and gety()> 895 then
+				if getx()>4200 and getx()<=5000 and gety()> 895 then
 					bot_stop()
 					sleep(200)
 					jmp(1)
-					sleep(1000)
+					sleep(900)
+					jmp(1)
+					sleep(900)
+					jmp(1)
+					sleep(900)
+					jmp(1)
+					sleep(900)
+					jmp(1)
+					sleep(900)
+					bot_start()
+				end
+				if getx()>4200 and getx()<=5000 and gety()==895 then
+					bot_stop()
 					useskill(5000028,1)
 					sleep(1000)
 					useskill(5000028,1)
 					sleep(1000)
 					bot_start()
+					sleep(1000)
 				end
-				if getx()>5800 and gety()> 895 then
+				if getx()>6000 and gety()> 895 then
 					bot_stop()
 					jmp(1)
 					sleep(900)
@@ -207,41 +210,43 @@ common.simpleStart({
 					bot_start()
 				end
 				if getmapid() == 37704 and door_if(6150,895)== 0 then
-					script_txt_loaddata("D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C",0)
+					script_txt_loaddata("D3D2CCF82CD7F326D3D2CAB12C3537362E36342C313636332E30382CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C3737382E3935392C313636332E39362CD7F3C5DC2C",0)
 				end
 				if (getmapid() == 37705) then
 					ini_change("ban_hit_mob",0)
 					repeat
 						sleep(100)
-						if isbuff('玛烈赤斯之眼')==0 then --紫金
-							useskill(5000420,1)
-							sleep(100)
-							if isbuff('灵宠技能效果')==0 then --魔免
-								useskill(43501022,1)
+						if door_if(1021,1759)==0 then
+							if isbuff('玛烈赤斯之眼')==0 then --紫金
+								useskill(5000420,1)
 								sleep(100)
-								if isbuff('每天都要美美哒')==0 then --魔免
-									useskill(43501025,1)
+								if isbuff('灵宠技能效果')==0 then --魔免
+									useskill(43501022,1)
 									sleep(100)
-									if isbuff('破坏王技能')==0 then
-										item_use(611113089)  --最大攻击免疫
+									if isbuff('每天都要美美哒')==0 then --魔免
+										useskill(43501025,1)
 										sleep(100)
-										if isbuff('免疫效果')==0 then --免疫
-											item_use(611113088)  --最大属性免疫
+										if isbuff('破坏王技能')==0 then
+											item_use(611113089)  --最大攻击免疫
 											sleep(100)
 											if isbuff('免疫效果')==0 then --免疫
-												useskill(43501018,1)
+												item_use(611113088)  --最大属性免疫
 												sleep(100)
-												if isbuff('食品效果')==0 then --三星芝士汤
-													item_use(611113016)
+												if isbuff('免疫效果')==0 then --免疫
+													useskill(43501018,1)
 													sleep(100)
-												end
-												if isbuff('吸收效果')==0 then
-													item_use(611113086)--最大吸红
-													sleep(100)
-												end
-												if isbuff('古代之力')==0 then
-													--item_use(430453126)--星球坚不可摧
-													sleep(100)
+													if isbuff('食品效果')==0 then --三星芝士汤
+														item_use(611113016)
+														sleep(100)
+													end
+													if isbuff('吸收效果')==0 then
+														item_use(611113086)--最大吸红
+														sleep(100)
+													end
+													if isbuff('古代之力')==0 then
+														--item_use(430453126)--星球坚不可摧
+														sleep(100)
+													end
 												end
 											end
 										end
@@ -307,35 +312,37 @@ common.simpleStart({
 			ini_change("ban_hit_mob",0)
 			repeat
 				sleep(100)
-				if isbuff('玛烈赤斯之眼')==0 then --紫金
-					useskill(5000420,1)
-					sleep(100)
-					if isbuff('灵宠技能效果')==0 then --魔免
-						useskill(43501022,1)
+				if door_if(1021,1759)==0 then
+					if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(5000420,1)
 						sleep(100)
-						if isbuff('每天都要美美哒')==0 then --魔免
-							useskill(43501025,1)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
 							sleep(100)
-							if isbuff('破坏王技能')==0 then
-								item_use(611113089)  --最大攻击免疫
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
 								sleep(100)
-								if isbuff('免疫效果')==0 then --免疫
-									item_use(611113088)  --最大属性免疫
+								if isbuff('破坏王技能')==0 then
+									item_use(611113089)  --最大攻击免疫
 									sleep(100)
 									if isbuff('免疫效果')==0 then --免疫
-										useskill(43501018,1)
+										item_use(611113088)  --最大属性免疫
 										sleep(100)
-										if isbuff('食品效果')==0 then --三星芝士汤
-											item_use(611113016)
+										if isbuff('免疫效果')==0 then --免疫
+											useskill(43501018,1)
 											sleep(100)
-										end
-										if isbuff('吸收效果')==0 then
-											item_use(611113086)--最大吸红
-											sleep(100)
-										end
-										if isbuff('古代之力')==0 then
-											--item_use(430453126)--星球坚不可摧
-											sleep(100)
+											if isbuff('食品效果')==0 then --三星芝士汤
+												item_use(611113016)
+												sleep(100)
+											end
+											if isbuff('吸收效果')==0 then
+												item_use(611113086)--最大吸红
+												sleep(100)
+											end
+											if isbuff('古代之力')==0 then
+												--item_use(430453126)--星球坚不可摧
+												sleep(100)
+											end
 										end
 									end
 								end
@@ -415,8 +422,20 @@ common.simpleStart({
         end
 		if (getmapid() == 37708) then --贝斯
 			ini_change("ban_hit_mob",0)
+			repeat
+				sleep(200)
+				if	door_if(6143,1455)==1 then
+					speak("门开了")
+					bot_stop()
+					sleep(100)
+					ini_change("ban_hit_mob",1)
+					sleep(100)
+					bot_start()
+				end
+			until( door_if(6143,1455)==1)
 		end
 		if (getmapid() == 37709) then 
+			ini_change("ban_hit_mob",0)
 			repeat
 				sleep(200)
 				local mobId = mob_obj_get('爱丽丝的噩梦')
@@ -482,12 +501,24 @@ common.simpleStart({
 					sleep(100)
 					bot_start()
 				end
-			until( door_if(1790,880.)==1)
+			until( door_if(1790,880)==1)
         end
-		if (getmapid() == 37709) then 
+		if (getmapid() == 37710) then 
 			ini_change("ban_hit_mob",0)
+			repeat
+				sleep(200)
+				if	door_if(68,1631)==1 then
+					speak("门开了")
+					bot_stop()
+					sleep(100)
+					ini_change("ban_hit_mob",1)
+					sleep(100)
+					bot_start()
+				end
+			until( door_if(68,1631)==1)
 		end
 		if (getmapid() == 37712) then
+			ini_change("ban_hit_mob",0)
 			wearitem("紫金星朵")
 			sleep(10)
 			item_use(170191135)--世界树减伤药
@@ -549,6 +580,14 @@ common.simpleStart({
 					ini_change("find_is_youhao",0)
 					ini_change("find_is_ewai",0)
 				end
+				if	door_if(1020,1759)==1 then
+					speak("门开了")
+					bot_stop()
+					sleep(100)
+					ini_change("ban_hit_mob",1)
+					sleep(100)
+					bot_start()
+				end
 			until(door_if(1020,1759)==1)
         end
 		if (getmapid() == 37713) then
@@ -556,6 +595,7 @@ common.simpleStart({
 			ini_change("find_is_zhiding",1)
 			ini_change("find_is_youhao",1)
 			ini_change("find_is_ewai",1)
+			ini_change("ban_hit_mob",0)
 			speak("开启宝箱,60s后退出副本")
 			sleep(60000)
 			ini_change("find_is_zhiding",0)

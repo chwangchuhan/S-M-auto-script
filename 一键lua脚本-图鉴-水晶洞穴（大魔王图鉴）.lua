@@ -15,6 +15,8 @@ common.simpleStart({
 	initSettings = {  -- 脚本初始化时的配置参数 可以不设置
 		tobot_fastladder = 0, -- 取消快速爬梯，防止大桥下楼梯不稳定
 		tobot_hit_range_top = 115,
+		tobot_hit_range_down = 115,
+		tobot_hit_range_max=400,
 	},
 	
     -- 脚本名称列表，需和mapIds一一对应
@@ -34,12 +36,30 @@ common.simpleStart({
     },
 	 onScriptRound = function  ()
 		if getmapid()==70002 then
+			useskill(43501018,1)
 			sleep(1000)
 			repeat
 				sleep(100)
 				ini_change("tobot_hit_range_top",115)
+				ini_change("tobot_hit_range_down",115)
 				local mobId = mob_obj_get('大魔王分神')
 				local mobY = mob_obj_y(mobId)
+				if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+					useskill(5000420,1)	--灵宠
+					sleep(10)
+					if isbuff('灵宠技能效果')==0 then --魔免
+						useskill(43501022,1)
+						sleep(10)
+						if isbuff('每天都要美美哒')==0 then --魔免
+							useskill(43501025,1)
+							sleep(10)
+							if isbuff('破坏王技能')==0 then
+								useskill(43501018,1)
+								sleep(10)
+							end
+						end
+					end
+				end
 				if gety()==1071 and door_if(750,1071)==1 then
 					bot_stop()
 					sleep(200)
@@ -49,7 +69,6 @@ common.simpleStart({
 				end
 				if gety()==847 then
 					ini_change("ban_hit_mob",0)
-					ini_change("tobot_hit_range_down",115)
 				end
 				if gety()==607 then
 					useskill(51801002,0)

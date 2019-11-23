@@ -624,7 +624,8 @@ local function simpleStart (config)
     local startTimeSpan = getTimeSpan()
 
 	bot_stop() --站立启动，检测站街速度
-
+    indun_init()-- 副本初始化
+	
     gameConfigInit(config.initSettings)
     mapInitDesc(config.mapName, config.mapCount)
     print(config.mapName..'启动时间为'..startTimeSpan)

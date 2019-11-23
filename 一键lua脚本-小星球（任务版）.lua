@@ -170,6 +170,7 @@ common.simpleStart({
 			sleep(20)
 			gotocoordinate(1, 1550, 1407)
 			if labeldone==1 then
+				ini_change("ban_hit_mob",0)
 				speak("小星球（任务）已做完，30s后即将飞出副本")
 				common.wearGongji()
 				bot_stop()
@@ -198,6 +199,32 @@ common.simpleStart({
 			script_txt_loaddata("C9CFCCF82CD7F326D3D2CAB12C323830302C313430372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323838302C313136372CD3D2C5DC2C",0)
 			bot_start()
 		end
+		if getmapid() == 83906 then   --水土	
+			ini_change("tobot_nomovebot",0)
+			ini_change("tobot_scriptbot",0)
+			ini_change("tobot_hit_range_right",1250)
+			ini_change("tobot_hit_range_left",1700)
+			speak("获取土")
+			labelnum=0
+			repeat
+				sleep(200)
+					local mobId = mob_obj_get('土之魂')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531001,1) --消灭怪物
+						bot_start()
+						sleep(1000)
+						labelnum = labelnum + 1
+					end	
+			until(labelnum==40)
+			ini_change("tobot_hit_range_left",3167)
+			ini_change("tobot_scriptbot",1)
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
+		end
 		if getmapid() == 83901 then  --好坏草图
 			ini_change("tobot_scriptbot",0)
 			sleep(4000)
@@ -205,6 +232,7 @@ common.simpleStart({
 			labelnum=0
 			repeat
 				sleep(200)
+				ini_change("ban_hit_mob",1)
 				local mobId = mob_obj_get('坏草')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -219,7 +247,7 @@ common.simpleStart({
 						sleep(1000)
 						labelnum = labelnum + 1
 					end	
-			until(labelnum==20)
+			until(labelnum==40)
 			bot_stop()
 			gotocoordinate(1, 500, 1455)
 			open_npc(95202)
@@ -230,9 +258,36 @@ common.simpleStart({
 			sleep(20)
 			close_npc(95202)
 			sleep(1000)
+			ini_change("ban_hit_mob",0)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323837302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323835302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323839302C313435352CD3D2C5DC2C",0)
 			bot_start()
+		end
+		if getmapid() == 83907 then   --水土   
+			ini_change("tobot_nomovebot",0)
+			ini_change("tobot_scriptbot",0)
+			ini_change("tobot_hit_range_right",1250)
+			ini_change("tobot_hit_range_left",1700)
+			speak("获取水")
+			labelnum=0
+			repeat
+				sleep(200)
+					local mobId = mob_obj_get('水之魂')
+					if (mobId > 0) then
+						local mobX = mob_obj_x(mobId)
+						local mobY = gety()
+						bot_stop()
+						gotocoordinate(1, mobX, mobY)
+						sleep(500)
+						useskill(9531001,1) --消灭怪物
+						bot_start()
+						sleep(1000)
+						labelnum = labelnum + 1
+					end	
+			until(labelnum==40)
+			ini_change("tobot_hit_range_left",3167)
+			ini_change("tobot_scriptbot",1)
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
 		end
 		if getmapid() == 83902 then	 --玫瑰图
 			labelxi=0
@@ -242,42 +297,50 @@ common.simpleStart({
 			sleep(4000)
 			repeat
 				sleep(200)
+				ini_change("ban_hit_mob",1)
 				if labelxi<40 then --喜 20次
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
+					ini_change("ban_hit_mob",0)
 					local mobId = mob_obj_get('成年的玫瑰')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
 						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(100)
-						useskill(9531003,1) --喜
-						bot_start()
-						sleep(500)
-						labelxi = labelxi + 1
+						if isbuff('发现玫瑰的喜悦')==1 then
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(300)
+							useskill(9531003,1) --喜
+							bot_start()
+							sleep(300)
+							labelxi = labelxi + 1
+						end
 					end	
 				end
 
 				if labelbei<40 and labelxi==40 then --悲--"悲"刷10分钟
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
+					ini_change("ban_hit_mob",0)
 					local mobId = mob_obj_get('成年的玫瑰')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
 						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(100)
-						useskill(9531004,1) --悲
-						bot_start()
-						sleep(500)
-						labelbei=labelbei+1
+						if isbuff('发现玫瑰的伤心')==1 then
+							bot_stop()
+							gotocoordinate(1, mobX, mobY)
+							sleep(300)
+							useskill(9531004,1) --悲
+							bot_start()
+							sleep(300)
+							labelbei=labelbei+1
+						end
 					end	
 				end
 				if labelhua<40 and labelbei==40 then--成长
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
+					ini_change("ban_hit_mob",1)
 					local mobId = mob_obj_get('玫瑰')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -294,6 +357,7 @@ common.simpleStart({
 			bot_stop()
 			ini_change("tobot_hit_range_right",32)
 			ini_change("tobot_hit_range_left",3167)
+			ini_change("ban_hit_mob",0)
 			gotocoordinate(1, 500, 1455)
 			open_npc(95203)
 			sleep(20)
@@ -311,12 +375,15 @@ common.simpleStart({
 			labelre=0
 			labeldongwu=0
 			ini_change("tobot_scriptbot",0)
+			ini_change("ban_hit_mob",1)
 			sleep(4000)
 			repeat
 				sleep(200)
+				ini_change("ban_hit_mob",1)
 				if labelre<40 then
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
+					ini_change("ban_hit_mob",1)
 					local mobId = mob_obj_get('炎热的小狗')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -332,6 +399,7 @@ common.simpleStart({
 				if labeldongwu<40 and labelre==40 then
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
+					ini_change("ban_hit_mob",1)
 					local mobId = mob_obj_get('渴望关怀的小狗')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -348,6 +416,7 @@ common.simpleStart({
 			bot_stop()
 			ini_change("tobot_hit_range_right",32)
 			ini_change("tobot_hit_range_left",3167)
+			ini_change("ban_hit_mob",0)
 			gotocoordinate(1, 500, 1455)
 			open_npc(95204)
 			sleep(20)
@@ -358,6 +427,7 @@ common.simpleStart({
 			close_npc(95204)
 			sleep(1000)
 			labeldone=1
+			ini_change("ban_hit_mob",0)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333130302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333133302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038302C313435352CD3D2C5DC2C",0)
 			bot_start()	

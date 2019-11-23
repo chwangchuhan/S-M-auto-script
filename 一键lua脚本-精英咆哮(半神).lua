@@ -118,10 +118,11 @@ common.simpleStart({
 		until(door_if(2970,1519)==1 or getmapid() ~= 9303)
 	end
 	if (getmapid() == 9304) then
-	   ini_change("tobot_hit_range_max",250)
-	   ini_change("tobot_hit_range_ignore",400)
+	   ini_change("tobot_hit_range_max",2000)
+	   ini_change("tobot_hit_range_ignore",2000)
 	end
 	if (getmapid() == 9305) then
+	   ini_change("tobot_hit_range_max",250)
 	   ini_change("find_showname",1)
 	   ini_change("find_showhp",1)
 	   bot_stop()

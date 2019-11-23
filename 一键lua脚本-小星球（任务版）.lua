@@ -301,7 +301,7 @@ common.simpleStart({
 				if labelxi<40 then --喜 20次
 					ini_change("tobot_hit_range_right",2600)
 					ini_change("tobot_hit_range_left",3167)
-					ini_change("ban_hit_mob",0)
+					ini_change("ban_hit_mob",1)
 					local mobId = mob_obj_get('成年的玫瑰')
 					if (mobId > 0) then
 						local mobX = mob_obj_x(mobId)
@@ -309,9 +309,10 @@ common.simpleStart({
 						if isbuff('发现玫瑰的喜悦')==1 then
 							bot_stop()
 							gotocoordinate(1, mobX, mobY)
-							sleep(300)
+							sleep(100)
 							useskill(9531003,1) --喜
 							bot_start()
+							ini_change("ban_hit_mob",0)
 							sleep(300)
 							labelxi = labelxi + 1
 						end
@@ -329,7 +330,7 @@ common.simpleStart({
 						if isbuff('发现玫瑰的伤心')==1 then
 							bot_stop()
 							gotocoordinate(1, mobX, mobY)
-							sleep(300)
+							sleep(100)
 							useskill(9531004,1) --悲
 							bot_start()
 							sleep(300)

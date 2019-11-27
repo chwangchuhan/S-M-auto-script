@@ -21,6 +21,7 @@ do
 		end
 		if mob_if('大魔王分神')==1 then
 			ini_change("tobot_hit_range_max",600)
+			useskill(43501018,1)
 			sleep(2000)
 			if mob_if('大魔王分神')==0 then
 				sleep(500)

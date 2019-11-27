@@ -78,6 +78,7 @@ common.simpleStart({
 			labelwakuang=0
 			labeldoor=0
 			labelnext=0
+			common.wearGongji()
 			ini_change("tobot_hit_range_top",350)
 			ini_change("tobot_hit_range_ignore",500)
 			script_txt_loaddata("D3D2CCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C3435302C313732372CD7F3C5DC2C0D0AC9CFCCF82BC9CFC5C0CCDDD7D32CD7F326D3D2CAB12C3732302C3935392CD7F3C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C3436352C3535392CD3D2C5DC2C0D0AD3D2CCF828D6FAC5DC292CD3D2C5DCCAB12C313035302C3535392CD3D2C5DC2C0D0AD7F3CCF828D6FAC5DC292CD7F3C5DCCAB12C323635302C313437312CD3D2C5DC2C0D0AD3D2CCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C343530302C313732372CD7F3C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C343136302C313732372CD3D2C5DC2C0D0AD3D2CCF82CD7F3C5DCCAB12C343136302C313532342CD3D2C5DC2C0D0AD3D2CCF82CD3D2C5DCCAB12C343939352C313231352CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C343535302C313231352CD3D2C5DC2C0D0AD7F3CCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C353530302C313033392CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C363137352C313033392CD7F3C5DC2C0D0AD7F3CCF8A3A8B6E0B6CECCF8A3A92CD7F326D3D2CAB12C363034382C3633392CD7F3C5DC2C0D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333830302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333730302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333630302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333530302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333430302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333330302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333230302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333130302C302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0ACEBBD6C3B6A8CEBB2CD3D2C5DCCAB12C313737352C3731392CB2BBB1E42C0D0ACEBBD6C3B6A8CEBB2CD3D2C5DCCAB12C313830302C3731392CB2BBB1E42C0D0ACEBBD6C3B6A8CEBB2CD3D2C5DCCAB12C313835302C3731392CB2BBB1E42C0D0AC9CFCCF82CD3D2C5DCCAB12C313737352C3731392CD3D2C5DC2C0D0AC9CFCCF82CD3D2C5DCCAB12C313830302C3731392CD3D2C5DC2C0D0AC9CFCCF82CD3D2C5DCCAB12C313835302C3731392CD3D2C5DC2C0D0AD3D2CCF828D6FAC5DC292CD3D2C5DCCAB12C333335302C3534332CD7F3C5DC2C0D0AD7F3CCF828D6FAC5DC292CD7F3C5DCCAB12C323739302C3534332CD3D2C5DC2C0D0AC9CFCCF82CD3D2C5DCCAB12C333830302C313539392CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C323835302C313334332CD3D2C5DC2C",0)
@@ -114,54 +115,65 @@ common.simpleStart({
 						speak("±¦Ê¯2ÍÚ¿ó")
 						bot_stop()
 						sleep(500)
-						gotocoordinate(1,3030,543)
-						sleep(1000)
 						useskill(43501018,1)
-						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,3030,543)
 						useskill(5000008,1)
 						sleep(800)
 						labelwakuang=1
@@ -287,13 +299,11 @@ common.simpleStart({
 					sleep(1000)
 					if getx()>=5100 and getx()<=5300 and gety()==271 and labeldoor==1 and labelwakuang==0 then --±¦Ê¯6ÍÚ¿ó
 						speak("±¦Ê¯6ÍÚ¿ó")
-						bot_stop()
 						ini_change("tobot_scriptbot",0)
 						gotocoordinate(1,5180,271)
-						common.wearDiaoluo()
-						sleep(1000)
+						bot_stop()
 						useskill(43501018,1)
-						sleep(800)
+						sleep(1000)
 						useskill(5000008,1)
 						sleep(800)
 						bot_stop()
@@ -342,8 +352,6 @@ common.simpleStart({
 						useskill(5000008,1)
 						sleep(800)
 						labelwakuang=1
-						sleep(800)
-						common.wearGongji()
 						sleep(500)
 						bot_stop()
 					end
@@ -469,12 +477,12 @@ common.simpleStart({
 					labeldoor=1
 					speak("¿ªÆôÍÚ¿óÄ£Ê½")
 				end
-				if getx()>=4520 and getx()<=5090 and gety()==1167 and labeldoor==1 and labelwakuang2==0 then --±¦Ê¯9ÍÚ¿ó
+				if getx()>=4520 and getx()<=5090 and gety()==1167 and labeldoor==1 and labelwakuang2==0 and mob_if("Ğ­ÖúÆÕÀ×¶ûÂå")==0 and mob_if("º®ÀäÆÕÀ×¶ûÂå")==0 then --±¦Ê¯9ÍÚ¿ó
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					ini_change("ban_hit_mob",1)
 					sleep(2000)
-					if getx()>=4520 and getx()<=5090 and gety()==1167 and labeldoor==1 and labelwakuang2==0 then --±¦Ê¯9ÍÚ¿ó
+					if getx()>=4520 and getx()<=5090 and gety()==1167 and labeldoor==1 and labelwakuang2==0 and mob_if("Ğ­ÖúÆÕÀ×¶ûÂå")==0 and mob_if("º®ÀäÆÕÀ×¶ûÂå")==0 then --±¦Ê¯9ÍÚ¿ó
 						speak("±¦Ê¯9ÍÚ¿ó2")
 						bot_stop()
 						sleep(500)
@@ -535,62 +543,73 @@ common.simpleStart({
 					ini_change("tobot_scriptbot",1)
 					bot_start()
 				end
-				if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 then --±¦Ê¯9ÍÚ¿ó
+				if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 and mob_if("Ğ­ÖúÆÕÀ×¶ûÂå")==0 and mob_if("º®ÀäÆÕÀ×¶ûÂå")==0  then --±¦Ê¯9ÍÚ¿ó
 					bot_stop()
 					ini_change("tobot_scriptbot",0)
 					sleep(2000)
-					if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 then --±¦Ê¯9ÍÚ¿ó
+					if getx()>=1750 and getx()<=2300 and gety()==1167 and labeldoor==1 and labelwakuang1==0 and mob_if("Ğ­ÖúÆÕÀ×¶ûÂå")==0 and mob_if("º®ÀäÆÕÀ×¶ûÂå")==0 then --±¦Ê¯9ÍÚ¿ó
 						speak("±¦Ê¯9ÍÚ¿ó1")
 						bot_stop()
 						sleep(500)
-						gotocoordinate(1,1930,1167)
-						sleep(1000)
 						useskill(43501018,1)
-						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
-						useskill(5000008,1)
-						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
+						gotocoordinate(1,1930,1167)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,1930,1167)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,1930,1167)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,1930,1167)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,1930,1167)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,1930,1167)
+						useskill(5000008,1)
+						sleep(800)
+						gotocoordinate(1,1930,1167)
 						useskill(5000008,1)
 						sleep(800)
 						labelwakuang1=1
@@ -628,6 +647,7 @@ common.simpleStart({
 			wearitem("´¦Å®×ùµÄ»Æ½ğÊØ»¤+4")
 			sleep(10)
 			wearitem("×Ï½ğĞÇ¶ä")
+			wearitem("»Æ½ğĞÇ¶ä")
 			sleep(10)
 			item_use(170191135)--ÊÀ½çÊ÷¼õÉËÒ©
 			sleep(100)
@@ -638,43 +658,53 @@ common.simpleStart({
 				local mobId = mob_obj_get('±´Ë¹¿¨')
 				local mobY = mob_obj_y(mobId)
 				if mobY~=1727 then
-					script_txt_loaddata("C9CFCCF8A3A8B6E0B6CECCF8A3A92CD3D2C5DCCAB12C323333302C313732372CD7F3C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD3D2C5DCCAB12C323238352C313732372CD7F3C5DC2C0D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3532362CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3533352CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3535302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3538302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3532362CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3533352CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3535302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3538302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AC9CFCCF82CD7F3C5DCCAB12C3833312C313037312CD3D2C5DC2C0D0AD6BBD6B4D0D0B2CECAFD2CD7F3C5DCCAB12C3833312C3638302CD3D2C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F3C5DCCAB12C3833312C3730302CD3D2C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313238302C3733352CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313330302C3733352CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313332302C3733352CD7F3C5DC2C",0)
+					script_txt_loaddata("C9CFCCF8A3A8B6E0B6CECCF8A3A92CD3D2C5DCCAB12C323333302C313732372CD3D2C5DC2C0D0AC9CFCCF8A3A8B6E0B6CECCF8A3A92CD3D2C5DCCAB12C323238352C313732372CD3D2C5DC2C0D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3532362CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3533352CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3535302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323333302C3538302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3532362CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3533352CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3535302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD3D2C5DCCAB12C323238352C3538302CD7F3C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AC9CFCCF82CD7F3C5DCCAB12C3833312C313037312CD7F3C5DC2C0D0AD6BBD6B4D0D0B2CECAFD2CD7F3C5DCCAB12C3833312C3638302CD3D2C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0AD6BBD6B4D0D0B2CECAFD2CD7F3C5DCCAB12C3833312C3730302CD3D2C5DC2CCAB9D3C3BCBCC4DC2C393837393939390D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313238302C3733352CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313330302C3733352CD7F3C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313332302C3733352CD7F3C5DC2C",0)
 				else
 					script_txt_loaddata("",0)
 				end
 				if mobId~=0 then
-					useskill(43501018,1)
-					sleep(100)
-					if isbuff('Ò»»¨Ò»ÊÀ½ç£¬Ò»Ò¶Ò»ÆĞÌá')==0 then --ÎïÃâ
-						useskill(5000420,1)
+					if isbuff('ÂêÁÒ³àË¹Ö®ÑÛ')==0 then --×Ï½ğ
+						useskill(43501018,1) --ºï×Ó
 						sleep(100)
-						if isbuff('Áé³è¼¼ÄÜĞ§¹û')==0 then --Ä§Ãâ
-							useskill(43501022,1)
+						if isbuff('Ò»»¨Ò»ÊÀ½ç£¬Ò»Ò¶Ò»ÆĞÌá')==0 then  --ÎŞµĞ
+							useskill(5000420,1)	--Áé³è
 							sleep(100)
-							if isbuff('Ã¿Ìì¶¼ÒªÃÀÃÀßÕ')==0 then --Ä§Ãâ
-								useskill(43501025,1)
+							if isbuff('Áé³è¼¼ÄÜĞ§¹û')==0 then --Ä§Ãâ
+								useskill(43501022,1)  --¶ä¶ä
 								sleep(100)
-								if isbuff('ÆÆ»µÍõ¼¼ÄÜ')==0 then  
-									item_use(611113089)
+								if isbuff('Ã¿Ìì¶¼ÒªÃÀÃÀßÕ')==0 then --Ä§Ãâ
+									useskill(43501025,1) --ºìÃ«
 									sleep(100)
-									if isbuff('ÃâÒßĞ§¹û')==0 then
-										useskill(43501018,1)
+									if isbuff('ÆÆ»µÍõ¼¼ÄÜ')==0 then
+										item_use(611113089)  --×î´ó¹¥»÷ÃâÒß
 										sleep(100)
-										if isbuff('Ê³Æ·Ğ§¹û')==0 then --ÈıĞÇÖ¥Ê¿ÌÀ
-											item_use(611113016)
+										if isbuff('ÃâÒßĞ§¹û')==0 then --ÃâÒß
+											item_use(611113088)  --×î´óÊôĞÔÃâÒß
 											sleep(100)
-										end
-										if isbuff('ÎüÊÕĞ§¹û')==0 then
-											item_use(611113086)--×î´óÎüºì
-											sleep(100)
-										end
-										if isbuff('¹Å´úÖ®Á¦')==0 then
-											item_use(430453126)--ĞÇÇò¼á²»¿É´İ
-											sleep(100)
-										end
-										if isbuff('¾üÍÅ¿ËĞÇÒ©¼Á')==0 then
-											item_use(61300045)--¾üÍÅ¿ËĞÇÒ©
-											sleep(100)
+											if isbuff('ÃâÒßĞ§¹û')==0 then --ÃâÒß
+												useskill(999005,1) --Éã»ê
+												sleep(100)
+												if isbuff('³èÎïĞ§¹û')==0 then--»ìÂÒ
+													useskill(999006,1) --°®ºÓ
+													sleep(100)
+													if isbuff('³èÎïĞ§¹û')==0 then--Ñ£ÔÎ
+														useskill(999003,1) --°®ºÓ
+														sleep(100)
+													end
+												end
+												if isbuff('Ê³Æ·Ğ§¹û')==0 then --ÈıĞÇÖ¥Ê¿ÌÀ
+													item_use(611113016)
+													sleep(100)
+												end
+												if isbuff('ÎüÊÕĞ§¹û')==0 then
+													item_use(611113086)--×î´óÎüºì
+													sleep(100)
+												end
+												if isbuff('¹Å´úÖ®Á¦')==0 then
+													item_use(430453126)--ĞÇÇò¼á²»¿É´İ
+													sleep(100)
+												end
+											end
 										end
 									end
 								end

@@ -103,14 +103,6 @@ common.simpleStart({
 			item_wear("’’πÀ”Í…°")
 			sleep(700)
 			item_wear("’’πÀ”Í…°")
-			open_npc(508)
-			sleep(20)
-			request_task(508,9520101)
-			sleep(20)
-			submit_task(508,9520101)
-			sleep(20)
-			close_npc(508)
-			bot_start()
 			repeat
 				sleep(200)
 					if gettime(2)<18 then
@@ -125,6 +117,15 @@ common.simpleStart({
 					end
 			until(gettime(2)==18 or gettime(2)==19)
 			if gettime(2)==18 or gettime(2)==19 then
+				open_npc(508)
+				sleep(20)
+				request_task(508,9520101)
+				sleep(20)
+				submit_task(508,9520101)
+				sleep(20)
+				close_npc(508)
+				sleep(20)
+				common.wearDiaoluo()
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383234352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383236352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383238352C313430372CB2BBB1E42C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C373330302C313430372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C383530302C313430372CD7F3C5DC2C",0)
 				bot_start()
 				config.labels=gettime(2)    --º«¬ºΩ¯»Î ±º‰

@@ -8,7 +8,7 @@ common.simpleStart({
     planeId = 274,
     -- 地图名称列表，需和mapIds一一对应
     mapIds = {35404,35403,35400,35500},
-    overtime = 20, --超时时间，/分钟
+    overtime = 10, --超时时间，/分钟
     endMapIds = {35500}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
         ban_hit_mob=1,

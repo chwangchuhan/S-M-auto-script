@@ -32,6 +32,8 @@ common.simpleStart({
     tasks = {},
 	 onScriptRound = function  ()
 		if getmapid()==23105 then
+			useskill(43501018,1)
+			sleep(100)
 			repeat
 				sleep(100)
 				ini_change("tobot_hit_range_top",200)
@@ -41,13 +43,25 @@ common.simpleStart({
 					ini_change("tobot_hit_range_max",600)
 					ini_change("find_zhiding","大魔王分神")
 					ini_change("find_is_zhiding",1)
-					ini_change("find_is_youhao",0)
-					ini_change("find_is_ewai",0)
+					if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+						useskill(5000420,1)	--灵宠
+						sleep(10)
+						if isbuff('灵宠技能效果')==0 then --魔免
+							useskill(43501022,1)
+							sleep(10)
+							if isbuff('每天都要美美哒')==0 then --魔免
+								useskill(43501025,1)
+								sleep(10)
+								if isbuff('破坏王技能')==0 then
+									useskill(43501018,1)
+									sleep(10)
+								end
+							end
+						end
+					end
 				else
 					ini_change("tobot_hit_range_max",300)
 					ini_change("find_is_zhiding",0)
-					ini_change("find_is_youhao",1)
-					ini_change("find_is_ewai",1)
 				end				
 			until(mobId==0)
 		end

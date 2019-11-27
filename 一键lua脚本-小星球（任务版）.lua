@@ -1,6 +1,6 @@
 check=1
 
-mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909}
+mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909,83905,83912,84101,84102,84103,84104,84105,84100}
 
 bot_stop()
 
@@ -25,7 +25,7 @@ common.simpleStart({
     mapCount = 1,
     planeId = nil,
     -- 地图名称列表，需和mapIds一一对应
-    mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909},
+    mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909,83905,83912,84101,84102,84103,84104,84105,84100},
     overtime = 150, --超时时间，/分钟
     endMapIds = {83902}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
@@ -99,15 +99,6 @@ common.simpleStart({
 			item_wear("照顾雨伞")
 			sleep(700)
 			item_wear("照顾雨伞")
-			open_npc(508)
-			sleep(20)
-			request_task(508,9520101)
-			sleep(20)
-			submit_task(508,9520101)
-			sleep(20)
-			close_npc(508)
-			sleep(20)
-			bot_start()
 			repeat
 				sleep(200)
 					if gettime(2)<18 then
@@ -123,6 +114,16 @@ common.simpleStart({
 			until(gettime(2)==18 or gettime(2)==19)
 			if gettime(2)==18 or gettime(2)==19 then
 				ini_change("tobot_scriptbot",1)
+				open_npc(508)
+				sleep(20)
+				request_task(508,9520101)
+				sleep(20)
+				submit_task(508,9520101)
+				sleep(20)
+				close_npc(508)
+				sleep(20)
+				common.wearDiaoluo()
+				bot_start()
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383234352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383236352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383238352C313430372CB2BBB1E42C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C373330302C313430372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C383530302C313430372CD7F3C5DC2C",0)
 				bot_start()
 				config.labels=gettime(2)    --记录进入时间
@@ -145,9 +146,13 @@ common.simpleStart({
 			sleep(20)
 			request_task(95205,9522106)   --  直接完成的Q 
 			sleep(20)
+			request_task(95205,9521106,1)
+			sleep(20)
 			submit_task(95205,9522106)
 			sleep(20)
 			request_task(95205,9522107)   --   热 喜 悲 怪
+			sleep(20)
+			request_task(95205,9521107,1)
 			sleep(20)
 			submit_task(95205,9522107)
 			sleep(20)
@@ -171,11 +176,10 @@ common.simpleStart({
 			gotocoordinate(1, 1550, 1407)
 			if labeldone==1 then
 				ini_change("ban_hit_mob",0)
-				speak("小星球（任务）已做完，30s后即将飞出副本")
-				common.wearGongji()
+				speak("小星球（任务）前半段做完，30s后开启后半段限时副本")
 				bot_stop()
 				sleep(30000)
-				plane(70)
+				item_use(430453146)--所恨之石
 			end
 			repeat
 				sleep(200)
@@ -433,5 +437,59 @@ common.simpleStart({
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333130302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333133302C313435352CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C333038302C313435352CD3D2C5DC2C",0)
 			bot_start()	
 		end
+		if  getmapid() == 83905 then  
+			bot_stop()
+			sleep(2000)
+			bot_stop()
+			gotocoordinate(1,1350,1455)
+			open_npc(95206)
+			sleep(100)
+			request_task(95206,9521110,1)
+			sleep(100)
+			close_npc(95206)
+			sleep(100)
+			useskill(9531003,1)
+			sleep(1000)
+			open_npc(95206)
+			sleep(100)
+			submit_task(95206,9521110)
+			sleep(100)
+			close_npc(95206)
+			script_txt_loaddata("D3D2CCF82BC9CFC5C0CCDDD7D32CD7F326D3D2CAB12C3130302C313435352CB2BBB1E42C0D0AD6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C3433322C3235352CB2BBB1E42CCAB9D3C3CEEFC6B72C3433303435333134380D0A3833393132",0)
+			bot_start()	
+		end
+		if  getmapid() == 83912 then
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323730302C313437312CB2BBB1E42C",0)
+			bot_start()	
+		end
+		if  getmapid() == 84101 then
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3436352C3635352CB2BBB1E42C",0)
+			bot_start()	
+		end
+		if  getmapid() == 84102 then
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3436352C3635352CB2BBB1E42C",0)
+			bot_start()	
+		end
+		if  getmapid() == 84103 then
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3436352C3635352CB2BBB1E42C",0)
+			bot_start()	
+		end
+		if  getmapid() == 84104 then
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3436352C3635352CB2BBB1E42C",0)
+			bot_start()	
+		end
+		if  getmapid() == 84105 then
+			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3436352C3635352CB2BBB1E42C",0)
+			bot_start()	
+		end
+		if  getmapid() == 84100 then
+			script_txt_loaddata("D6BBD6B4D0D0B2CECAFD2CD7F326D3D2CAB12C333136372C3635352CB2BBB1E42CCAB9D3C3B7C9BBFA2C373033",0)
+			bot_start()	
+		end
+		if  getmapid() == 1900 then
+			common.wearGongji()
+			plane(70)
+		end
+		
     end
 })

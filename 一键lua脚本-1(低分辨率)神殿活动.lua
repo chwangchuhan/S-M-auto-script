@@ -39,8 +39,10 @@ common.shendianStart({
         if (getmapid() == 68202) then
             while (true) do
                 if (common.checkMob('终极神殿二阶 英雄王')) then
+					bot_stop()
                     speak('遇到英雄王了')
                     useskill(43501018,1) -- 使用猴子无敌
+					bot_start()
                     break
                 end
             end

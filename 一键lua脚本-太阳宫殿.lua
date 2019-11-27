@@ -57,6 +57,12 @@ common.simpleStart({
 	   "",
 	},
     onScriptRound = function () -- 副本每次切换地图回调
+		if (getmapid() == 35600) then
+            bot_stop()
+			common.wearGongji()
+			sleep(1000)
+			bot_start()
+        end
 		if (getmapid() == 35603) then
             useskill(43501018,1)
 			ini_change("ban_hit_mob",1)--禁止攻击--
@@ -66,31 +72,58 @@ common.simpleStart({
 			ini_change("tobot_hit_range_down",100)
 			ini_change("tobot_hit_range_max",300)
 			ini_change("tobot_hit_range_ignore",2000)
+			wearitem("金牛座的黄金守护+4")
+			wearitem("摩羯座的黄金守护+4")
+			wearitem("处女座的黄金守护+4")
+			wearitem("紫金星朵")
+			wearitem("黄金星朵")
 			item_use(170191135)--世界树减伤药
 			sleep(100)
 			--item_use(430453126)--星球坚不可摧
 			repeat
-				useskill(43501018,1)
-					sleep(100)
-					if isbuff('一花一世界，一叶一菩提')==0 then --物免
-						useskill(5000420,1)
+				if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(43501018,1) --猴子
 						sleep(100)
-						if isbuff('灵宠技能效果')==0 then --魔免
-							useskill(43501022,1)
+						if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+							useskill(5000420,1)	--灵宠
 							sleep(100)
-							if isbuff('每天都要美美哒')==0 then --魔免
-								useskill(43501025,1)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)  --朵朵
 								sleep(100)
-								if isbuff('破坏王技能')==0 then  
-									useskill(43501018,1)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1) --红毛
 									sleep(100)
-									if isbuff('食品效果')==0 then --三星芝士汤
-										item_use(611113016)
+									if isbuff('破坏王技能')==0 then
+										item_use(611113089)  --最大攻击免疫
 										sleep(100)
-									end
-									if isbuff('吸收效果')==0 then
-										item_use(611113086)--最大吸红
-										sleep(100)
+										if isbuff('免疫效果')==0 then --免疫
+											item_use(611113088)  --最大属性免疫
+											sleep(100)
+											if isbuff('免疫效果')==0 then --免疫
+												useskill(999005,1) --摄魂
+												sleep(100)
+												if isbuff('宠物效果')==0 then--混乱
+													useskill(999006,1) --爱河
+													sleep(100)
+													if isbuff('宠物效果')==0 then--眩晕
+														useskill(999003,1) --爱河
+														sleep(100)
+													end
+												end
+												if isbuff('食品效果')==0 then --三星芝士汤
+													item_use(611113016)
+													sleep(100)
+												end
+												if isbuff('吸收效果')==0 then
+													item_use(611113086)--最大吸红
+													sleep(100)
+												end
+												if isbuff('古代之力')==0 then
+													--item_use(430453126)--星球坚不可摧
+													sleep(100)
+												end
+											end
+										end
 									end
 								end
 							end

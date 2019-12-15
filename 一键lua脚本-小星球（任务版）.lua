@@ -1,6 +1,6 @@
 check=1
 
-mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909,83905,83912,84101,84102,84103,84104,84105,84100}
+mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909,83905,83912,84101,84102,84103,84104,84105,84100,1900}
 
 bot_stop()
 
@@ -25,7 +25,7 @@ common.simpleStart({
     mapCount = 1,
     planeId = nil,
     -- 地图名称列表，需和mapIds一一对应
-    mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909,83905,83912,84101,84102,84103,84104,84105,84100},
+    mapIds = {600,1700,83900,83906,83901,83907,83902,83908,83903,83909,83905,83912,84101,84102,84103,84104,84105,84100,1900},
     overtime = 150, --超时时间，/分钟
     endMapIds = {83902}, -- 结束一轮的地图id 默认为最后一张图，设置则以此值为准，没有可以不设置
     initSettings = {  -- 脚本初始化时的配置参数 可以不设置
@@ -94,11 +94,6 @@ common.simpleStart({
 			bot_stop()
 			gotocoordinate(1, 8265, 1407)
 			sleep(1000)
-			item_wear("照顾雨伞")
-			sleep(700)
-			item_wear("照顾雨伞")
-			sleep(700)
-			item_wear("照顾雨伞")
 			repeat
 				sleep(200)
 					if gettime(2)<18 then
@@ -123,6 +118,12 @@ common.simpleStart({
 				close_npc(508)
 				sleep(20)
 				common.wearDiaoluo()
+				sleep(10)
+				item_wear("照顾雨伞")
+				sleep(10)
+				item_wear("照顾雨伞")
+				sleep(10)
+				item_wear("照顾雨伞")
 				bot_start()
 				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383234352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383236352C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C383238352C313430372CB2BBB1E42C0D0AD6C7C4DCD7AAC9ED2CD7F3C5DCCAB12C373330302C313430372CD3D2C5DC2C0D0AD6C7C4DCD7AAC9ED2CD3D2C5DCCAB12C383530302C313430372CD7F3C5DC2C",0)
 				bot_start()
@@ -189,7 +190,6 @@ common.simpleStart({
 						local mobY = gety()
 						bot_stop()
 						gotocoordinate(1, mobX, mobY)
-						sleep(500)
 						useskill(9531001,1) --消灭怪物
 					end	
 			until(mobId==0)
@@ -218,13 +218,12 @@ common.simpleStart({
 						local mobY = gety()
 						bot_stop()
 						gotocoordinate(1, mobX, mobY)
-						sleep(500)
 						useskill(9531001,1) --消灭怪物
 						bot_start()
-						sleep(1000)
 						labelnum = labelnum + 1
+						sleep(1000)
 					end	
-			until(labelnum==40)
+			until(labelnum==20)
 			ini_change("tobot_hit_range_left",3167)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
@@ -237,21 +236,32 @@ common.simpleStart({
 			repeat
 				sleep(200)
 				ini_change("ban_hit_mob",1)
-				local mobId = mob_obj_get('坏草')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
-						local mobY = gety()
-						bot_stop()
-						gotocoordinate(1, mobX, mobY)
-						sleep(500)
-						useskill(9531001,1) --消灭怪物
-						sleep(500)
+				local mobId2 = mob_obj_get('(30s)打死我获得草儿照料证明')
+				if (mobId2 > 0) then
+					local mobX = mob_obj_x(mobId2)-50
+					local mobY = gety()
+					bot_stop()
+					gotocoordinate(1, mobX, mobY)
+					ini_change("ban_hit_mob",0)
+					bot_start()
+					sleep(500)
+					bot_stop()
+				end	
+				local mobId1 = mob_obj_get('坏草')
+				if (mobId1 > 0) then
+					local mobX = mob_obj_x(mobId1)
+					local mobY = gety()
+					bot_stop()
+					gotocoordinate(1, mobX, mobY)
+					useskill(9531001,1) --消灭怪物
+					if isbuff('发现了坏的草')==1 then
 						item_use(430453101)--用土  
-						bot_start()
-						sleep(1000)
 						labelnum = labelnum + 1
-					end	
-			until(labelnum==40)
+						sleep(1000)
+					end
+					bot_start()
+				end	
+			until(labelnum==10)
 			bot_stop()
 			gotocoordinate(1, 500, 1455)
 			open_npc(95202)
@@ -282,13 +292,12 @@ common.simpleStart({
 						local mobY = gety()
 						bot_stop()
 						gotocoordinate(1, mobX, mobY)
-						sleep(500)
 						useskill(9531001,1) --消灭怪物
 						bot_start()
-						sleep(1000)
 						labelnum = labelnum + 1
+						sleep(1000)
 					end	
-			until(labelnum==40)
+			until(labelnum==20)
 			ini_change("tobot_hit_range_left",3167)
 			ini_change("tobot_scriptbot",1)
 			script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313936302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313938302C3336372CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C323030302C3336372CD3D2C5DC2C",0)
@@ -302,47 +311,48 @@ common.simpleStart({
 			repeat
 				sleep(200)
 				ini_change("ban_hit_mob",1)
-				if labelxi<40 then --喜 20次
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					ini_change("ban_hit_mob",1)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
+				if labelxi<20 then --喜 20次
+					bot_stop()
+					gotocoordinate(1,2950,1455)
+					if isbuff('发现玫瑰的喜悦')==1 then
+						useskill(9531003,1) --喜
+					end
+					local mobId2 = mob_obj_get('(30s)打死我获得喜')
+					if (mobId2 > 0) then
+						local mobX = mob_obj_x(mobId2)-50
 						local mobY = gety()
-						if isbuff('发现玫瑰的喜悦')==1 then
-							bot_stop()
-							gotocoordinate(1, mobX, mobY)
-							sleep(100)
-							useskill(9531003,1) --喜
-							bot_start()
-							ini_change("ban_hit_mob",0)
-							sleep(300)
-							labelxi = labelxi + 1
-						end
+						bot_stop()
+						gotocoordinate(1,mobX,mobY)
+						sleep(1000)
+						ini_change("ban_hit_mob",0)
+						bot_start()
+						labelxi = labelxi + 1
+						sleep(500)
+						bot_stop()
 					end	
 				end
 
-				if labelbei<40 and labelxi==40 then --悲--"悲"刷10分钟
-					ini_change("tobot_hit_range_right",2600)
-					ini_change("tobot_hit_range_left",3167)
-					ini_change("ban_hit_mob",0)
-					local mobId = mob_obj_get('成年的玫瑰')
-					if (mobId > 0) then
-						local mobX = mob_obj_x(mobId)
+				if labelbei<20 then --悲--"悲"刷10分钟
+					bot_stop()
+					gotocoordinate(1,2900,1455)
+					if isbuff('发现玫瑰的伤心')==1 then
+						useskill(9531004,1) --悲
+					end
+					local mobId2 = mob_obj_get('(30s)打死我获得悲')
+					if (mobId2 > 0) then
+						local mobX = mob_obj_x(mobId2)-50
 						local mobY = gety()
-						if isbuff('发现玫瑰的伤心')==1 then
-							bot_stop()
-							gotocoordinate(1, mobX, mobY)
-							sleep(100)
-							useskill(9531004,1) --悲
-							bot_start()
-							sleep(300)
-							labelbei=labelbei+1
-						end
+						bot_stop()
+						gotocoordinate(1,mobX,mobY)
+						sleep(1000)
+						ini_change("ban_hit_mob",0)
+						bot_start()
+						labelbei = labelbei + 1
+						sleep(500)
+						bot_stop()
 					end	
 				end
-				if labelhua<40 and labelbei==40 then--成长
+				if labelhua<40 and labelxi==20 and labelbei==20 then--成长
 					ini_change("tobot_hit_range_right",600)
 					ini_change("tobot_hit_range_left",2300)
 					ini_change("ban_hit_mob",1)
@@ -352,9 +362,8 @@ common.simpleStart({
 						local mobY = gety()
 						bot_stop()
 						gotocoordinate(1, mobX, mobY)
-						sleep(100)
+						sleep(3000)
 						useskill(9531002,1) --洒水
-						sleep(500)
 						labelhua=labelhua+1
 					end	
 				end
@@ -411,7 +420,7 @@ common.simpleStart({
 						local mobY = gety()
 						bot_stop()
 						gotocoordinate(1, mobX, mobY)
-						sleep(100)
+						sleep(100) 
 						useskill(9531003,1) 
 						sleep(500)
 						labeldongwu=labeldongwu+1

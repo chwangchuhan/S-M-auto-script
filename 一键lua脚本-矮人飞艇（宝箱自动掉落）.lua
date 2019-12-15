@@ -86,20 +86,50 @@ common.simpleStart({
 					speak("速度出门")
 					ini_change("ban_hit_mob",1)
 				end
-					useskill(43501018,1)
-					sleep(100)
-					if isbuff('一花一世界，一叶一菩提')==0 then --物免
-						useskill(5000420,1)
+				if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(43501018,1) --猴子
 						sleep(100)
-						if isbuff('灵宠技能效果')==0 then --魔免
-							useskill(43501022,1)
+						if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+							useskill(5000420,1)	--灵宠
 							sleep(100)
-							if isbuff('每天都要美美哒')==0 then --魔免
-								useskill(43501025,1)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)  --朵朵
 								sleep(100)
-								if isbuff('破坏王技能')==0 then  
-									useskill(43501018,1)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1) --红毛
 									sleep(100)
+									if isbuff('破坏王技能')==0 then
+										--item_use(611113089)  --最大攻击免疫
+										sleep(100)
+										if isbuff('免疫效果')==0 then --免疫
+											--item_use(611113088)  --最大属性免疫
+											sleep(100)
+											if isbuff('免疫效果')==0 then --免疫
+												useskill(999005,1) --摄魂
+												sleep(100)
+												if isbuff('宠物效果')==0 then--混乱
+													useskill(999006,1) --爱河
+													sleep(100)
+													if isbuff('宠物效果')==0 then--眩晕
+														useskill(999003,1) --爱河
+														sleep(100)
+													end
+												end
+												if isbuff('食品效果')==0 then --三星芝士汤
+													--item_use(611113016)
+													sleep(100)
+												end
+												if isbuff('吸收效果')==0 then
+													--item_use(611113086)--最大吸红
+													sleep(100)
+												end
+												if isbuff('古代之力')==0 then
+													--item_use(430453126)--星球坚不可摧
+													sleep(100)
+												end
+											end
+										end
+									end
 								end
 							end
 						end
@@ -119,8 +149,57 @@ common.simpleStart({
 			end
         end
 		if (getmapid() == 35107) then
-			item_use(611113016)--三星芝士汤
-			sleep(100)
+			repeat
+				sleep(100)
+				if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(43501018,1) --猴子
+						sleep(100)
+						if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+							useskill(5000420,1)	--灵宠
+							sleep(100)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)  --朵朵
+								sleep(100)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1) --红毛
+									sleep(100)
+									if isbuff('破坏王技能')==0 then
+										--item_use(611113089)  --最大攻击免疫
+										sleep(100)
+										if isbuff('免疫效果')==0 then --免疫
+											--item_use(611113088)  --最大属性免疫
+											sleep(100)
+											if isbuff('免疫效果')==0 then --免疫
+												useskill(999005,1) --摄魂
+												sleep(100)
+												if isbuff('宠物效果')==0 then--混乱
+													useskill(999006,1) --爱河
+													sleep(100)
+													if isbuff('宠物效果')==0 then--眩晕
+														useskill(999003,1) --爱河
+														sleep(100)
+													end
+												end
+												if isbuff('食品效果')==0 then --三星芝士汤
+													--item_use(611113016)
+													sleep(100)
+												end
+												if isbuff('吸收效果')==0 then
+													--item_use(611113086)--最大吸红
+													sleep(100)
+												end
+												if isbuff('古代之力')==0 then
+													--item_use(430453126)--星球坚不可摧
+													sleep(100)
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+			until(door_if(610,847)==1)
 		end
 		if getmapid() == 35108 or getmapid() == 35109 then
 			bot_stop()

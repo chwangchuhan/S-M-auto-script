@@ -632,14 +632,15 @@ local function simpleStart (config)
 
     if (defaultLuckyDog and config.isLuckyDog) then
         if (getRandom(1, 1000) > 0) then
-            item_horn("大喇叭","S&M一键lua 祭坛宝石秩序腐化换装挖矿 魔王 巨人图鉴 小星球经验 白嫖孤儿家族无敌 莫里qq597673687 圣汐qq404833948")
-			item_horn("小喇叭","S&M一键lua 祭坛宝石秩序腐化换装挖矿 魔王 巨人图鉴 小星球经验 白嫖孤儿家族无敌 莫里qq597673687 圣汐qq404833948")
+            item_horn("大喇叭","土拨鼠一键lua 非xc 收费脚本 不在收费群的都是白嫖怪 祭坛宝石秩序腐化换装挖矿魔王小星球 虎头鲍爱与毁白嫖怪 实名diss 莫里qq597673687 圣汐qq404833948 群472390696")
+			item_horn("小喇叭","土拨鼠一键lua 非xc 收费脚本 不在收费群的都是白嫖怪 祭坛宝石秩序腐化换装挖矿魔王小星球 虎头鲍爱与毁白嫖怪 实名diss 莫里qq597673687 圣汐qq404833948 群472390696")
+			speak("土拨鼠一键lua 非xc 收费脚本 不在收费群的都是白嫖怪 祭坛宝石秩序腐化换装挖矿魔王小星球 虎头鲍爱与毁白嫖怪 实名diss 莫里qq597673687 圣汐qq404833948 群472390696")
         end
     end
 
     -- 速度检测
     if (not checkXSpeed(config.minXSpeed, config.maxXSpeed) or not checkYSpeed(config.minYSpeed, config.maxYSpeed)) then
-        show('脚本结束')
+        show('脚本结束，白嫖的？')
         sleep(3000)
         return
     end

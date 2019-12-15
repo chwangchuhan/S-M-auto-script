@@ -81,7 +81,7 @@ common.simpleStart({
 				item_use(430139017)--武器最大伤害药水
 				sleep(100)
 			end
-			sleep(10000)
+			sleep(1000)
 			repeat
 				sleep(200)
 				local mobId = mob_obj_get('特里尼雅')
@@ -97,6 +97,62 @@ common.simpleStart({
 					script_txt_loaddata("D6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C313838372C313530332CD7F3C5DC2C0D0AD6C7C4DCD7AAC9ED2CD7F326D3D2CAB12C33322C313530332CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313030362C313530332CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313032362C313530332CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313034362C313530332CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313036362C313530332CD3D2C5DC2C0D0ABDF8C8EBB4ABCBCDC3C52CD7F3C5DCCAB12C313038362C313530332CD3D2C5DC2C0D0A",0)
 					break
 				end
+				if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(43501018,1) --猴子
+						sleep(100)
+						if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+							useskill(5000420,1)	--灵宠
+							sleep(100)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)  --朵朵
+								sleep(100)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1) --红毛
+									sleep(100)
+									if isbuff('破坏王技能')==0 then
+										--item_use(611113089)  --最大攻击免疫
+										sleep(100)
+										if isbuff('免疫效果')==0 then --免疫
+											--item_use(611113088)  --最大属性免疫
+											sleep(100)
+											if isbuff('免疫效果')==0 then --免疫
+												useskill(999005,1) --摄魂
+												sleep(100)
+												if isbuff('宠物效果')==0 then--混乱
+													useskill(999006,1) --爱河
+													sleep(100)
+													if isbuff('宠物效果')==0 then--眩晕
+														useskill(999003,1) --爱河
+														sleep(100)
+													end
+												end
+												if isbuff('食品效果')==0 then --三星芝士汤
+													--item_use(611113016)
+													sleep(100)
+												end
+												if isbuff('吸收效果')==0 then
+													--item_use(611113086)--最大吸红
+													sleep(100)
+												end
+												if isbuff('古代之力')==0 then
+													--item_use(430453126)--星球坚不可摧
+													sleep(100)
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+					if isbuff('铭·属性力药水')==0 then
+						item_use(430139031)--属性力药水
+						sleep(100)
+					end
+					if isbuff('效果')==0 then
+						item_use(430139017)--武器最大伤害药水
+						sleep(100)
+					end
 			until(getmapid() ~= 37106)
         end
 		if (getmapid() == 37107) then

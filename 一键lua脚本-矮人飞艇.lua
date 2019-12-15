@@ -73,50 +73,135 @@ common.simpleStart({
 			repeat
 				sleep(100)
 				if door_if(1550,1023)~=1 then
-					speak("亚齐龙")
+					ini_change("find_zhiding","亚奇龙")
+					ini_change("find_is_zhiding",1)
 					ini_change("tobot_findmobif",0) 
 					ini_change("ban_hit_mob",0)
 					useskill(43501018,1)
 				end
 				if door_if(1550,1023)==1 then
 					speak("速度出门")
-					ini_change("ban_hit_mob",1)
 				end
-					useskill(43501018,1)
-					sleep(100)
-					if isbuff('一花一世界，一叶一菩提')==0 then --物免
-						useskill(5000420,1)
-						sleep(100)
-						if isbuff('灵宠技能效果')==0 then --魔免
-							useskill(43501022,1)
-							sleep(100)
-							if isbuff('每天都要美美哒')==0 then --魔免
-								useskill(43501025,1)
-								sleep(100)
-								if isbuff('破坏王技能')==0 then  
-									useskill(43501018,1)
-									sleep(100)
+					if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(43501018,1) --猴子
+						sleep(10)
+						if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+							useskill(5000420,1)	--灵宠
+							sleep(10)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)  --朵朵
+								sleep(10)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1) --红毛
+									sleep(10)
+									if isbuff('破坏王技能')==0 then
+										--item_use(611113089)  --最大攻击免疫
+										sleep(10)
+										if isbuff('免疫效果')==0 then --免疫
+											--item_use(611113088)  --最大属性免疫
+											sleep(10)
+											if isbuff('免疫效果')==0 then --免疫
+												useskill(999005,1) --摄魂
+												sleep(10)
+												if isbuff('宠物效果')==0 then--混乱
+													useskill(999006,1) --爱河
+													sleep(10)
+													if isbuff('宠物效果')==0 then--眩晕
+														useskill(999003,1) --爱河
+														sleep(10)
+													end
+												end
+												if isbuff('食品效果')==0 then --三星芝士汤
+													--item_use(611113016)
+													sleep(10)
+												end
+												if isbuff('吸收效果')==0 then
+													--item_use(611113086)--最大吸红
+													sleep(10)
+												end
+												if isbuff('古代之力')==0 then
+													--item_use(430453126)--星球坚不可摧
+													sleep(10)
+												end
+											end
+										end
+									end
 								end
 							end
 						end
 					end
 			until(door_if(1550,1023)==1)
-			ini_change("ban_hit_mob",1)
 		end
 		if (getmapid() == 35106) then
-		ini_change("ban_hit_mob",0)
-            if config.label ==0 then
-				speak("返程")
-				ini_change("tobot_findmobif",1) 
-				script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C39302C313032332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C36302C313032332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C37352C31303233372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3130352C313032332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3131352C313032332CB2BBB1E42C0D0AC9CFCCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C323939322C313430372CB2BBB1E42C0D0AC9CFCCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C333038382C313430372CB2BBB1E42C0D0ACFC2C5C0CCDDD7D32CD7F326D3D2CAB12C313936382C3635352CB2BBB1E42C0D0AD7F3CCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C313534302C313430372CB2BBB1E42C0D0ACFC2C5C0CCDDD7D32CD7F326D3D2CAB12C3237322C3635352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3131372C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3133372C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3135372C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313736302C3731392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313737302C3731392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313738302C3731392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313739302C3731392CB2BBB1E42C",1)
-			end
-			if config.label ==1 then
-				script_txt_load("",1)
-			end
+			ini_change("find_is_zhiding",0)
+			ini_change("ban_hit_mob",0)
+			labelnext=0
+			repeat
+				sleep(100)
+				if getx()>=1400 and config.label ==0 then
+					speak("返程")
+					labelnext=1
+					ini_change("tobot_findmobif",1) 
+					script_txt_loaddata("BDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C39302C313032332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C36302C313032332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C37352C31303233372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3130352C313032332CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3131352C313032332CB2BBB1E42C0D0AC9CFCCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C323939322C313430372CB2BBB1E42C0D0AC9CFCCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C333038382C313430372CB2BBB1E42C0D0ACFC2C5C0CCDDD7D32CD7F326D3D2CAB12C313936382C3635352CB2BBB1E42C0D0AD7F3CCF82BC9CFC5C0CCDDD7D32CD7F3C5DCCAB12C313534302C313430372CB2BBB1E42C0D0ACFC2C5C0CCDDD7D32CD7F326D3D2CAB12C3237322C3635352CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3131372C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3133372C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C3135372C313430372CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313736302C3731392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313737302C3731392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313738302C3731392CB2BBB1E42C0D0ABDF8C8EBB4ABCBCDC3C52CD7F326D3D2CAB12C313739302C3731392CB2BBB1E42C",1)
+				end
+				if config.label ==1 then
+					labelnext=1
+					script_txt_load("",1)
+				end
+			until(labelnext==1)
         end
 		if (getmapid() == 35107) then
-			item_use(611113016)--三星芝士汤
-			sleep(100)
+			repeat
+				sleep(100)
+				if isbuff('玛烈赤斯之眼')==0 then --紫金
+						useskill(43501018,1) --猴子
+						sleep(100)
+						if isbuff('一花一世界，一叶一菩提')==0 then  --无敌
+							useskill(5000420,1)	--灵宠
+							sleep(100)
+							if isbuff('灵宠技能效果')==0 then --魔免
+								useskill(43501022,1)  --朵朵
+								sleep(100)
+								if isbuff('每天都要美美哒')==0 then --魔免
+									useskill(43501025,1) --红毛
+									sleep(100)
+									if isbuff('破坏王技能')==0 then
+										--item_use(611113089)  --最大攻击免疫
+										sleep(100)
+										if isbuff('免疫效果')==0 then --免疫
+											--item_use(611113088)  --最大属性免疫
+											sleep(100)
+											if isbuff('免疫效果')==0 then --免疫
+												useskill(999005,1) --摄魂
+												sleep(100)
+												if isbuff('宠物效果')==0 then--混乱
+													useskill(999006,1) --爱河
+													sleep(100)
+													if isbuff('宠物效果')==0 then--眩晕
+														useskill(999003,1) --爱河
+														sleep(100)
+													end
+												end
+												if isbuff('食品效果')==0 then --三星芝士汤
+													--item_use(611113016)
+													sleep(100)
+												end
+												if isbuff('吸收效果')==0 then
+													--item_use(611113086)--最大吸红
+													sleep(100)
+												end
+												if isbuff('古代之力')==0 then
+													--item_use(430453126)--星球坚不可摧
+													sleep(100)
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+			until(door_if(610,847)==1)
 		end
 		if getmapid() == 35108 or getmapid() == 35109 then
 			sleep(3000)

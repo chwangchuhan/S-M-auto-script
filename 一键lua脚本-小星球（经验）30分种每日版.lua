@@ -326,16 +326,15 @@ common.simpleStart({
 					if labelnowtime - labellasttime <30 or labelnowtime - labellasttime <-30then--³É³¤
 						ini_change("tobot_hit_range_right",600)
 						ini_change("tobot_hit_range_left",2300)
+						ini_change("ban_hit_mob",1)
 						local mobId = mob_obj_get('Ãµ¹å')
 						if (mobId > 0) then
 							local mobX = mob_obj_x(mobId)
 							local mobY = gety()
 							bot_stop()
 							gotocoordinate(1, mobX, mobY)
-							sleep(500)
+							sleep(2000)
 							useskill(9531002,1) --È÷Ë®
-							bot_start()
-							sleep(500)
 						end	
 					end
 				end
